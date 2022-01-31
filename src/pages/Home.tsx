@@ -48,20 +48,20 @@ const Home: React.FC = () => {
 
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large" color="danger">
+            <IonTitle className="title-bar" color="danger">
             Lucid Companion
             </IonTitle>
           </IonToolbar>
         </IonHeader>
-        <IonButton href="#" expand="full" fill="outline" color="dark">Journal</IonButton>
-        <IonButton href="#" expand="full" fill="outline" color="dark">Alarm</IonButton>
-        <IonButton href="#" expand="full" fill="outline" color="dark">Get Lucid</IonButton>
-        <IonButton href="#" expand="full" fill="outline" color="dark">Settings</IonButton>
+        <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Journal</IonButton>
+        <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Alarm</IonButton>
+        <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Get Lucid</IonButton>
+        <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Settings</IonButton>
         {/* <IonList>
           {messages.map(m => <MessageListItem key={m.id} message={m} />)}
         </IonList> */}
         <IonFooter>
-          The buttons are supposed to be bigger. -_-
+
         </IonFooter>
       </IonContent>
     </IonPage>
