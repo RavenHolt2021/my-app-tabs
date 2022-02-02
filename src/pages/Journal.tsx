@@ -9,10 +9,13 @@ import {
   IonRefresher,
   IonRefresherContent,
   IonTitle,
+  IonBackButton,
+  IonFooter,
   IonToolbar,
-  useIonViewWillEnter
+  useIonViewWillEnter,
+  IonButtons
 } from '@ionic/react';
-import './Home.css';
+import './Journal.css';
 
 const Journal: React.FC = () => {
 
@@ -33,6 +36,9 @@ const Journal: React.FC = () => {
     <IonPage id="home-page">
       <IonHeader>
         <IonToolbar>
+            <IonButtons slot="start">
+              <IonBackButton></IonBackButton>
+            </IonButtons>
           <IonTitle>Inbox</IonTitle>
         </IonToolbar>
       </IonHeader>
@@ -43,15 +49,19 @@ const Journal: React.FC = () => {
 
         <IonHeader collapse="condense">
           <IonToolbar>
+            {/* <IonButtons slot="start">
+              <IonBackButton></IonBackButton>
+            </IonButtons> */}
             <IonTitle size="large">
-              Inbox
+              Journal Menu
             </IonTitle>
           </IonToolbar>
         </IonHeader>
 
-        <IonList>
-          {messages.map(m => <MessageListItem key={m.id} message={m} />)}
-        </IonList>
+        
+        <IonFooter>
+          THIS IS SUPPOSED TO BE A DROP DOWN LIST!
+        </IonFooter>
       </IonContent>
     </IonPage>
   );

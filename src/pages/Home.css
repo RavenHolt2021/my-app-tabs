@@ -1,7 +1,21 @@
+/*
+.page-content {
+    color: violet;
+}
+*/
+
 .title-bar {
     font-size: large;
+    background-color: deeppink;
+    color: white;
 }
 
 .big-button {
     font-size: xx-large;
+    background-color: darkblue;
+    margin: 1em;
+}
+
+.footer-content {
+    text-align: center;
 }

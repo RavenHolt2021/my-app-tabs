@@ -9,14 +9,15 @@ import {
   IonRefresher,
   IonRefresherContent,
   IonTitle,
+  IonBackButton,
   IonFooter,
-  IonButton,
   IonToolbar,
-  useIonViewWillEnter
+  useIonViewWillEnter,
+  IonButtons
 } from '@ionic/react';
-import './Home.css';
+import './Journal.css';
 
-const Home: React.FC = () => {
+const Journal: React.FC = () => {
 
   const [messages, setMessages] = useState<Message[]>([]);
 
@@ -33,35 +34,37 @@ const Home: React.FC = () => {
 
   return (
     <IonPage id="home-page">
-      {/* <IonHeader>
+      <IonHeader>
         <IonToolbar>
-          <IonTitle>Lucid Companion</IonTitle>
+            <IonButtons slot="start">
+              <IonBackButton></IonBackButton>
+            </IonButtons>
+          <IonTitle>Inbox</IonTitle>
         </IonToolbar>
-      </IonHeader> */}
-
-      {/* Keep this how it is for now. Speak with teacher if need be! */}
-
-      <IonContent color="success" fullscreen>
+      </IonHeader>
+      <IonContent fullscreen>
         <IonRefresher slot="fixed" onIonRefresh={refresh}>
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
+
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle className="title-bar">
-            Lucid Companion
+            {/* <IonButtons slot="start">
+              <IonBackButton></IonBackButton>
+            </IonButtons> */}
+            <IonTitle size="large">
+              Alarm Menu
             </IonTitle>
           </IonToolbar>
         </IonHeader>
-        <IonButton routerLink="/journal" className="big-button" expand="full" fill="outline" color="dark">Journal</IonButton>
-        <IonButton routerLink="/alarm" className="big-button" expand="full" fill="outline" color="dark">Alarm</IonButton>
-        <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Get Lucid</IonButton>
-        <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Settings</IonButton>
-        <IonFooter className="footer-content">
-        Still working on the colors
+
+        
+        <IonFooter>
+          DO IT AGAIN!
         </IonFooter>
       </IonContent>
     </IonPage>
   );
 };
 
-export default Home;
+export default Journal;
