@@ -3,7 +3,9 @@ import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
 import Journal from './pages/Journal';
+import Alarm from './pages/Alarm';
 import ViewMessage from './pages/ViewMessage';
+/* ABOUVE ViewMessage YOU SHOULD HAVE import GET/LUCID & SETTINGS */
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -30,15 +32,32 @@ const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonRouterOutlet>
-        <Route path="/" exact={true}>
-          <Redirect to="/home" />
-        </Route>
+
         <Route path="/home" exact={true}>
           <Home />
         </Route>
+        
         <Route path="/journal" exact={true}>
           <Journal />
         </Route>
+
+        <Route path="/alarm" exact={true}>
+          <Redirect to="/alarm" />
+          <Alarm />
+        </Route>
+
+        {/* THIS SHOULD BE GET LUCID
+        <Route path="/alarm" exact={true}>
+          <Redirect to="/alarm" />
+          <Alarm />
+        </Route> */}
+
+        {/* THIS SHOULD BE APP SETTINGS!
+        <Route path="/alarm" exact={true}>
+          <Redirect to="/alarm" />
+          <Alarm />
+        </Route> */}
+
         <Route path="/message/:id">
            <ViewMessage />
         </Route>
