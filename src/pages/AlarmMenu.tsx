@@ -12,11 +12,12 @@ import {
   IonFooter,
   IonButton,
   IonToolbar,
-  useIonViewWillEnter
+  useIonViewWillEnter,
+  IonBackButton
 } from '@ionic/react';
 import './Home.css';
 
-const Home: React.FC = () => {
+const AlarmMenu: React.FC = () => {
 
   const [messages, setMessages] = useState<Message[]>([]);
 
@@ -48,24 +49,29 @@ const Home: React.FC = () => {
 
         <IonHeader collapse="condense">
           <IonToolbar>
+            <IonButton slot="start">
+              <IonBackButton></IonBackButton>
+            </IonButton>
             <IonTitle className="title-bar">
-            Lucid Companion
+            Alarms
             </IonTitle>
           </IonToolbar>
         </IonHeader>
-        <IonButton routerLink="/journalmenu" className="big-button" expand="full" fill="outline" color="dark">Journal</IonButton>
-        <IonButton routerLink="/alarmmenu" className="big-button" expand="full" fill="outline" color="dark">Alarm</IonButton>
-        <IonButton routerLink="/lucidmenu" className="big-button" expand="full" fill="outline" color="dark">Get Lucid potato</IonButton>
-        <IonButton routerLink="/settingsmenu" className="big-button" expand="full" fill="outline" color="dark">Settings</IonButton>
+
+        <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Manual Alarms</IonButton>
+        <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Smart Alarms</IonButton>
+        <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">View Alarms</IonButton>
+        <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Alarm Sounds</IonButton>
+        <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Stop Alarms</IonButton>
         {/* <IonList>
           {messages.map(m => <MessageListItem key={m.id} message={m} />)}
         </IonList> */}
         <IonFooter className="footer-content">
-          Still working on the
+
         </IonFooter>
       </IonContent>
     </IonPage>
   );
 };
 
-export default Home;
+export default AlarmMenu;

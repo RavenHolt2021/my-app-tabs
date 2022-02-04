@@ -48,20 +48,20 @@ const Home: React.FC = () => {
 
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle className="title-bar">
+            <IonTitle size="large" color="danger">
             Lucid Companion
             </IonTitle>
           </IonToolbar>
         </IonHeader>
-        <IonButton routerLink="/journalmenu" className="big-button" expand="full" fill="outline" color="dark">Journal</IonButton>
-        <IonButton routerLink="/alarmmenu" className="big-button" expand="full" fill="outline" color="dark">Alarm</IonButton>
-        <IonButton routerLink="/lucidmenu" className="big-button" expand="full" fill="outline" color="dark">Get Lucid potato</IonButton>
-        <IonButton routerLink="/settingsmenu" className="big-button" expand="full" fill="outline" color="dark">Settings</IonButton>
+        <IonButton href="#" expand="full" fill="outline" color="dark">New Entries</IonButton>
+        <IonButton href="#" expand="full" fill="outline" color="dark">Today's Entries</IonButton>
+        <IonButton href="#" expand="full" fill="outline" color="dark">My Dreams</IonButton>
+        <IonButton href="#" expand="full" fill="outline" color="dark">Recall Help</IonButton>
+
         {/* <IonList>
           {messages.map(m => <MessageListItem key={m.id} message={m} />)}
         </IonList> */}
-        <IonFooter className="footer-content">
-          Still working on the
+        <IonFooter>
         </IonFooter>
       </IonContent>
     </IonPage>
