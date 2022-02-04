@@ -57,7 +57,7 @@ const Home: React.FC = () => {
         <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Get Lucid</IonButton>
         <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Settings</IonButton>
         <IonFooter className="footer-content">
-        Still working on the colors
+        This app is a pain.
         </IonFooter>
       </IonContent>
     </IonPage>
