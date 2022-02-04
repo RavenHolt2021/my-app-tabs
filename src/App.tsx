@@ -8,6 +8,8 @@ import ViewMessage from './pages/ViewMessage';
 import LucidMenu from './pages/LucidMenu';
 import AlarmMenu from './pages/AlarmMenu';
 import SettingsMenu from './pages/SettingsMenu';
+import Alarm from './pages/Alarm';
+/* ABOVE ViewMessage YOU SHOULD HAVE import GET/LUCID & SETTINGS */
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -42,6 +44,10 @@ const App: React.FC = () => (
           <Home />
         </Route>
 
+        <Route path="/home" exact={true}>
+          <Home />
+        </Route>
+        
         <Route path="/journal" exact={true}>
           <Journal />
         </Route>
@@ -61,6 +67,22 @@ const App: React.FC = () => (
         <Route path="/journalmenu" exact={true}>
           <JournalMenu />
         </Route>
+        <Route path="/alarm" exact={true}>
+          <Redirect to="/alarm" />
+          <Alarm />
+        </Route>
+
+        {/* THIS SHOULD BE GET LUCID
+        <Route path="/alarm" exact={true}>
+          <Redirect to="/alarm" />
+          <Alarm />
+        </Route> */}
+
+        {/* THIS SHOULD BE APP SETTINGS!
+        <Route path="/alarm" exact={true}>
+          <Redirect to="/alarm" />
+          <Alarm />
+        </Route> */}
 
         <Route path="/message/:id">
            <ViewMessage />

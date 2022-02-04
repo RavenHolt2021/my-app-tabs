@@ -17,7 +17,7 @@ import {
 } from '@ionic/react';
 import './Journal.css';
 
-const Journal: React.FC = () => {
+const Alarm: React.FC = () => {
 
   const [messages, setMessages] = useState<Message[]>([]);
 
@@ -53,18 +53,18 @@ const Journal: React.FC = () => {
               <IonBackButton></IonBackButton>
             </IonButtons> */}
             <IonTitle size="large">
-              Journal Menu
+              Alarm Menu
             </IonTitle>
           </IonToolbar>
         </IonHeader>
 
         
         <IonFooter>
-          THIS IS SUPPOSED TO BE A DROP DOWN LIST!
+          DO IT AGAIN!
         </IonFooter>
       </IonContent>
     </IonPage>
   );
 };
 
-export default Journal;
+export default Alarm;

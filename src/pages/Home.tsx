@@ -45,7 +45,6 @@ const Home: React.FC = () => {
         <IonRefresher slot="fixed" onIonRefresh={refresh}>
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
-
         <IonHeader collapse="condense">
           <IonToolbar>
             <IonTitle className="title-bar">
@@ -55,7 +54,7 @@ const Home: React.FC = () => {
         </IonHeader>
         <IonButton routerLink="/journalmenu" className="big-button" expand="full" fill="outline" color="dark">Journal</IonButton>
         <IonButton routerLink="/alarmmenu" className="big-button" expand="full" fill="outline" color="dark">Alarm</IonButton>
-        <IonButton routerLink="/lucidmenu" className="big-button" expand="full" fill="outline" color="dark">Get Lucid potato</IonButton>
+        <IonButton routerLink="/lucidmenu" className="big-button" expand="full" fill="outline" color="dark">Get Lucid</IonButton>
         <IonButton routerLink="/settingsmenu" className="big-button" expand="full" fill="outline" color="dark">Settings</IonButton>
         {/* <IonList>
           {messages.map(m => <MessageListItem key={m.id} message={m} />)}
