@@ -17,7 +17,7 @@ import {
 } from '@ionic/react';
 import './Journal.css';
 
-const Journal: React.FC = () => {
+const Alarm: React.FC = () => {
 
   const [messages, setMessages] = useState<Message[]>([]);
 
@@ -67,4 +67,4 @@ const Journal: React.FC = () => {
   );
 };
 
-export default Journal;
+export default Alarm;
