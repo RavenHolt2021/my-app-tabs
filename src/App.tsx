@@ -5,7 +5,7 @@ import Home from './pages/Home';
 import Journal from './pages/Journal';
 import Alarm from './pages/Alarm';
 import ViewMessage from './pages/ViewMessage';
-/* ABOUVE ViewMessage YOU SHOULD HAVE import GET/LUCID & SETTINGS */
+/* ABOVE ViewMessage YOU SHOULD HAVE import GET/LUCID & SETTINGS */
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
