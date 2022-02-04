@@ -17,7 +17,7 @@ import {
 } from '@ionic/react';
 import './Home.css';
 
-const AlarmMenu: React.FC = () => {
+const SmartAlarmMenu: React.FC = () => {
 
   const [messages, setMessages] = useState<Message[]>([]);
 
@@ -52,26 +52,22 @@ const AlarmMenu: React.FC = () => {
             <IonButton slot="start">
               <IonBackButton></IonBackButton>
             </IonButton>
-            <IonTitle className="title-bar">
-            Alarms
+            <IonTitle size="large" color="danger">
+            Lucid Companion
             </IonTitle>
           </IonToolbar>
         </IonHeader>
-
-        <IonButton routerLink="/manualalarmmenu" className="big-button" expand="full" fill="outline" color="dark">Manual Alarms</IonButton>
-        <IonButton routerLink="/smartalarmmenu" className="big-button" expand="full" fill="outline" color="dark">Smart Alarms</IonButton>
-        <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">View Alarms</IonButton>
-        <IonButton routerLink="/alarmsoundsmenu" className="big-button" expand="full" fill="outline" color="dark">Alarm Sounds</IonButton>
-        <IonButton routerLink="/pausealarmsmenu" className="big-button" expand="full" fill="outline" color="dark">Stop Alarms</IonButton>
+        <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Technique Alarms</IonButton>
+        <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">REM Alarms</IonButton>
+        <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Reminder Alarms</IonButton>
         {/* <IonList>
           {messages.map(m => <MessageListItem key={m.id} message={m} />)}
         </IonList> */}
         <IonFooter className="footer-content">
-
         </IonFooter>
       </IonContent>
     </IonPage>
   );
 };
 
-export default AlarmMenu;
+export default SmartAlarmMenu;
