@@ -9,15 +9,15 @@ import {
   IonRefresher,
   IonRefresherContent,
   IonTitle,
-  IonBackButton,
   IonFooter,
+  IonButton,
   IonToolbar,
   useIonViewWillEnter,
-  IonButtons
+  IonBackButton
 } from '@ionic/react';
 import './Home.css';
 
-const Journal: React.FC = () => {
+const LucidMenu: React.FC = () => {
 
   const [messages, setMessages] = useState<Message[]>([]);
 
@@ -34,37 +34,41 @@ const Journal: React.FC = () => {
 
   return (
     <IonPage id="home-page">
-      <IonHeader>
+      {/* <IonHeader>
         <IonToolbar>
-            <IonButtons slot="start">
-              <IonBackButton className="go-back"></IonBackButton>
-            </IonButtons>
-          <IonTitle>Inbox</IonTitle>
+          <IonTitle>Lucid Companion</IonTitle>
         </IonToolbar>
-      </IonHeader>
-      <IonContent className="page-background" fullscreen>
+      </IonHeader> */}
+
+      {/* Keep this how it is for now. Speak with teacher if need be! */}
+
+      <IonContent color="success" fullscreen>
         <IonRefresher slot="fixed" onIonRefresh={refresh}>
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
 
         <IonHeader collapse="condense">
           <IonToolbar>
-            {/* <IonButtons slot="start">
+            <IonButton slot="start">
               <IonBackButton></IonBackButton>
-            </IonButtons> */}
-            <IonTitle size="large">
-              Journal Menu
+            </IonButton>
+            <IonTitle className="title-bar">
+            Get Lucid
             </IonTitle>
           </IonToolbar>
         </IonHeader>
-
-        
-        <IonFooter>
-          THIS IS SUPPOSED TO BE A DROP DOWN LIST!
+        <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">My Techniques</IonButton>
+        <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Day Practices</IonButton>
+        <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Night Practices</IonButton>
+        <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Other Guides</IonButton>
+        {/* <IonList>
+          {messages.map(m => <MessageListItem key={m.id} message={m} />)}
+        </IonList> */}
+        <IonFooter className="footer-content">
         </IonFooter>
       </IonContent>
     </IonPage>
   );
 };
 
-export default Journal;
+export default LucidMenu;

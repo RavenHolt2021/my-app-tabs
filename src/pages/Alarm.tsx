@@ -15,7 +15,7 @@ import {
   useIonViewWillEnter,
   IonButtons
 } from '@ionic/react';
-import './Journal.css';
+import './Home.css';
 
 const Alarm: React.FC = () => {
 

@@ -3,8 +3,20 @@ import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
 import Journal from './pages/Journal';
-import Alarm from './pages/Alarm';
+import JournalMenu from './pages/JournalMenu';
 import ViewMessage from './pages/ViewMessage';
+import LucidMenu from './pages/LucidMenu';
+import AlarmMenu from './pages/AlarmMenu';
+import SettingsMenu from './pages/SettingsMenu';
+import Alarm from './pages/Alarm';
+import MyDreamsMenu from './pages/MyDreamsMenu';
+import ManualAlarmMenu from './pages/ManualAlarmMenu';
+import SmartAlarmMenu from './pages/SmartAlarmMenu';
+import RecallHelpMenu from './pages/RecallHelpMenu';
+import AlarmSoundsMenu from './pages/AlarmSoundsMenu';
+import PauseAlarmsMenu from './pages/PauseAlarmsMenu';
+
+
 /* ABOVE ViewMessage YOU SHOULD HAVE import GET/LUCID & SETTINGS */
 
 /* Core CSS required for Ionic components to work properly */
@@ -33,12 +45,56 @@ const App: React.FC = () => (
     <IonReactRouter>
       <IonRouterOutlet>
 
+        <Route path="/" exact={true}>
+          <Redirect to="/home" />
+        </Route>
+
         <Route path="/home" exact={true}>
           <Home />
         </Route>
         
         <Route path="/journal" exact={true}>
           <Journal />
+        </Route>
+
+        <Route path="/alarmmenu" exact={true}>
+          <AlarmMenu />
+        </Route>
+
+        <Route path="/settingsmenu" exact={true}>
+          <SettingsMenu />
+        </Route>
+
+        <Route path="/lucidmenu" exact={true}>
+          <LucidMenu />
+        </Route>
+
+        <Route path="/journalmenu" exact={true}>
+          <JournalMenu />
+        </Route>
+
+        <Route path="/mydreamsmenu" exact={true}>
+          <MyDreamsMenu />
+        </Route>
+
+        <Route path="/manualalarmmenu" exact={true}>
+          <ManualAlarmMenu />
+        </Route>
+
+        <Route path="/smartalarmmenu" exact={true}>
+          <SmartAlarmMenu />
+        </Route>
+
+        <Route path="/recallhelpmenu" exact={true}>
+          <RecallHelpMenu />
+        </Route>
+
+        <Route path="/alarmsoundsmenu" exact={true}>
+          <AlarmSoundsMenu />
+        </Route>
+
+        <Route path="/pausealarmsmenu" exact={true}>
+          <PauseAlarmsMenu />
         </Route>
 
         <Route path="/alarm" exact={true}>
@@ -61,6 +117,7 @@ const App: React.FC = () => (
         <Route path="/message/:id">
            <ViewMessage />
         </Route>
+        
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>
