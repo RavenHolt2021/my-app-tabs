@@ -41,7 +41,7 @@ const Home: React.FC = () => {
 
       {/* Keep this how it is for now. Speak with teacher if need be! */}
 
-      <IonContent color="success" fullscreen>
+      <IonContent className="page-background" fullscreen>
         <IonRefresher slot="fixed" onIonRefresh={refresh}>
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
