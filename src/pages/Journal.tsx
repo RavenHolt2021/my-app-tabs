@@ -37,12 +37,12 @@ const Journal: React.FC = () => {
       <IonHeader>
         <IonToolbar>
             <IonButtons slot="start">
-              <IonBackButton></IonBackButton>
+              <IonBackButton className="go-back"></IonBackButton>
             </IonButtons>
           <IonTitle>Inbox</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent fullscreen>
+      <IonContent className="page-background" fullscreen>
         <IonRefresher slot="fixed" onIonRefresh={refresh}>
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>

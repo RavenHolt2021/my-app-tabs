@@ -1,21 +1,20 @@
-/*
-.page-content {
-    color: violet;
+.page-background {
+    --ion-background-color: black!important;
 }
-*/
 
 .title-bar {
     font-size: large;
-    background-color: deeppink;
-    color: white;
+    background-color: white;
+    color: black;
 }
 
 .big-button {
     font-size: xx-large;
-    background-color: darkblue;
+    background-color: blueviolet;
     margin: 1em;
 }
 
 .footer-content {
     text-align: center;
+    color: white;
 }
