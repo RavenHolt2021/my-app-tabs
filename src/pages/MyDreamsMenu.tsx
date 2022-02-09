@@ -34,29 +34,20 @@ const MyDreamsMenu: React.FC = () => {
 
   return (
     <IonPage id="home-page">
-      {/* <IonHeader>
+    <IonHeader>
         <IonToolbar>
-          <IonTitle>Lucid Companion</IonTitle>
+          <IonButton slot="start">
+            <IonBackButton></IonBackButton>
+          </IonButton>
+          <IonTitle size="large" color="danger">
+          Lucid Companion
+          </IonTitle>
         </IonToolbar>
-      </IonHeader> */}
-
-      {/* Keep this how it is for now. Speak with teacher if need be! */}
-
+      </IonHeader>
       <IonContent color="success" fullscreen>
         <IonRefresher slot="fixed" onIonRefresh={refresh}>
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
-
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonButton slot="start">
-              <IonBackButton></IonBackButton>
-            </IonButton>
-            <IonTitle size="large" color="danger">
-            Lucid Companion
-            </IonTitle>
-          </IonToolbar>
-        </IonHeader>
         <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Search</IonButton>
         <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Dream Signs</IonButton>
         <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Progress Chart</IonButton>

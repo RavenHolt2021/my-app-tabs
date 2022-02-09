@@ -34,20 +34,7 @@ const PauseAlarmsMenu: React.FC = () => {
 
   return (
     <IonPage id="home-page">
-      {/* <IonHeader>
-        <IonToolbar>
-          <IonTitle>Lucid Companion</IonTitle>
-        </IonToolbar>
-      </IonHeader> */}
-
-      {/* Keep this how it is for now. Speak with teacher if need be! */}
-
-      <IonContent color="success" fullscreen>
-        <IonRefresher slot="fixed" onIonRefresh={refresh}>
-          <IonRefresherContent></IonRefresherContent>
-        </IonRefresher>
-
-        <IonHeader collapse="condense">
+      <IonHeader>
           <IonToolbar>
             <IonButton slot="start">
               <IonBackButton></IonBackButton>
@@ -57,6 +44,10 @@ const PauseAlarmsMenu: React.FC = () => {
             </IonTitle>
           </IonToolbar>
         </IonHeader>
+      <IonContent color="success" fullscreen>
+        <IonRefresher slot="fixed" onIonRefresh={refresh}>
+          <IonRefresherContent></IonRefresherContent>
+        </IonRefresher>
         <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Temporarily Disable Alarms</IonButton>
         <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Schedule Alarm Vacation</IonButton>
         <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Custom Alarm Disabling</IonButton>

@@ -15,6 +15,7 @@ import SmartAlarmMenu from './pages/SmartAlarmMenu';
 import RecallHelpMenu from './pages/RecallHelpMenu';
 import AlarmSoundsMenu from './pages/AlarmSoundsMenu';
 import PauseAlarmsMenu from './pages/PauseAlarmsMenu';
+import AlarmCustom from './pages/AlarmCustom';
 
 
 /* ABOVE ViewMessage YOU SHOULD HAVE import GET/LUCID & SETTINGS */
@@ -95,6 +96,10 @@ const App: React.FC = () => (
 
         <Route path="/pausealarmsmenu" exact={true}>
           <PauseAlarmsMenu />
+        </Route>
+
+        <Route path="/alarmcustom" exact={true}>
+          <AlarmCustom />
         </Route>
 
         <Route path="/alarm" exact={true}>

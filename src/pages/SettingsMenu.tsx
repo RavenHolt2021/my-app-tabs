@@ -34,29 +34,21 @@ const SettingsMenu: React.FC = () => {
 
   return (
     <IonPage id="home-page">
-      {/* <IonHeader>
-        <IonToolbar>
-          <IonTitle>Lucid Companion</IonTitle>
-        </IonToolbar>
-      </IonHeader> */}
-
-      {/* Keep this how it is for now. Speak with teacher if need be! */}
-
-      <IonContent color="success" fullscreen>
-        <IonRefresher slot="fixed" onIonRefresh={refresh}>
-          <IonRefresherContent></IonRefresherContent>
-        </IonRefresher>
-
-        <IonHeader collapse="condense">
+      
+      <IonHeader>
           <IonToolbar>
             <IonButton slot="start">
               <IonBackButton></IonBackButton>
             </IonButton>
-            <IonTitle className="title-bar">
-            Settings
+            <IonTitle size="large" color="danger">
+            Lucid Companion
             </IonTitle>
           </IonToolbar>
         </IonHeader>
+      <IonContent color="success" fullscreen>
+        <IonRefresher slot="fixed" onIonRefresh={refresh}>
+          <IonRefresherContent></IonRefresherContent>
+        </IonRefresher>
         <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Screen Settings</IonButton>
         <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Data Settings</IonButton>
         <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Passwords</IonButton>
