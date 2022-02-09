@@ -45,7 +45,7 @@ const AlarmMenu: React.FC = () => {
         </IonToolbar>
       </IonHeader>
 
-      <IonContent color="success" fullscreen>
+      <IonContent className="page-background" fullscreen>
         <IonRefresher slot="fixed" onIonRefresh={refresh}>
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
