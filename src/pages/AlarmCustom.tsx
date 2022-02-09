@@ -48,7 +48,7 @@ const AlarmCustom: React.FC = () => {
           <IonButton slot="start">
             <IonBackButton></IonBackButton>
           </IonButton>
-          <IonTitle size="large" color="danger">
+          <IonTitle className="title-bar">
           Lucid Companion
           </IonTitle>
         </IonToolbar>
