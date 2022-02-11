@@ -2,15 +2,20 @@
     --ion-background-color: black!important;
 }
 
+.back-track {
+    color: rgb(231, 8, 212);
+ }
+
 .title-bar {
     font-size: large;
-    background-color: white;
-    color: black;
+    /* background-color: white; */
+    color: rgb(231, 8, 212);
 }
 
 .big-button {
     font-size: xx-large;
     background-color: rgb(231, 8, 212);
+    color: black;
     margin: 1em;
 }
 
