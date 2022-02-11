@@ -34,10 +34,10 @@ const RecallHelpMenu: React.FC = () => {
 
   return (
     <IonPage id="home-page">
-      <IonHeader>
+      <IonHeader className="header">
           <IonToolbar>
             <IonButton slot="start">
-              <IonBackButton></IonBackButton>
+              <IonBackButton className="back-track"></IonBackButton>
             </IonButton>
             <IonTitle className="title-bar">
             Lucid Companion
@@ -49,9 +49,9 @@ const RecallHelpMenu: React.FC = () => {
         <IonRefresher slot="fixed" onIonRefresh={refresh}>
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
-        <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Dream Recall Guide</IonButton>
-        <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">My Dream Signs</IonButton>
-        <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Dream Template</IonButton>
+        <IonButton href="#" className="big-button">Dream Recall Guide</IonButton>
+        <IonButton href="#" className="big-button">My Dream Signs</IonButton>
+        <IonButton href="#" className="big-button">Dream Template</IonButton>
         {/* <IonList>
           {messages.map(m => <MessageListItem key={m.id} message={m} />)}
         </IonList> */}

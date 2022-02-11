@@ -34,10 +34,10 @@ const MyDreamsMenu: React.FC = () => {
 
   return (
     <IonPage id="home-page">
-    <IonHeader>
+    <IonHeader className="header">
         <IonToolbar>
           <IonButton slot="start">
-            <IonBackButton></IonBackButton>
+            <IonBackButton className="back-track"></IonBackButton>
           </IonButton>
           <IonTitle className="title-bar">
           Lucid Companion
@@ -48,10 +48,10 @@ const MyDreamsMenu: React.FC = () => {
         <IonRefresher slot="fixed" onIonRefresh={refresh}>
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
-        <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Search</IonButton>
-        <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Dream Signs</IonButton>
-        <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Progress Chart</IonButton>
-        <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Random</IonButton>
+        <IonButton href="#" className="big-button">Search</IonButton>
+        <IonButton href="#" className="big-button">Dream Signs</IonButton>
+        <IonButton href="#" className="big-button">Progress Chart</IonButton>
+        <IonButton href="#" className="big-button">Random</IonButton>
         {/* <IonList>
           {messages.map(m => <MessageListItem key={m.id} message={m} />)}
         </IonList> */}

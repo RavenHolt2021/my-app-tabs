@@ -35,10 +35,10 @@ const SettingsMenu: React.FC = () => {
   return (
     <IonPage id="home-page">
       
-      <IonHeader>
+      <IonHeader className="header">
           <IonToolbar>
             <IonButton slot="start">
-              <IonBackButton></IonBackButton>
+              <IonBackButton className="back-track"></IonBackButton>
             </IonButton>
             <IonTitle className="title-bar">
             Lucid Companion
@@ -49,9 +49,9 @@ const SettingsMenu: React.FC = () => {
         <IonRefresher slot="fixed" onIonRefresh={refresh}>
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
-        <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Screen Settings</IonButton>
-        <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Data Settings</IonButton>
-        <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Passwords</IonButton>
+        <IonButton href="#" className="big-button">Screen Settings</IonButton>
+        <IonButton href="#" className="big-button">Data Settings</IonButton>
+        <IonButton href="#" className="big-button">Passwords</IonButton>
         {/* <IonList>
           {messages.map(m => <MessageListItem key={m.id} message={m} />)}
         </IonList> */}

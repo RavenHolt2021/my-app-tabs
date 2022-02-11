@@ -34,10 +34,10 @@ const PauseAlarmsMenu: React.FC = () => {
 
   return (
     <IonPage id="home-page">
-      <IonHeader>
+      <IonHeader className="header">
           <IonToolbar>
             <IonButton slot="start">
-              <IonBackButton></IonBackButton>
+              <IonBackButton className="back-track"></IonBackButton>
             </IonButton>
             <IonTitle className="title-bar">
             Lucid Companion
@@ -48,10 +48,10 @@ const PauseAlarmsMenu: React.FC = () => {
         <IonRefresher slot="fixed" onIonRefresh={refresh}>
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
-        <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Temporarily Disable Alarms</IonButton>
-        <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Schedule Alarm Vacation</IonButton>
-        <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Custom Alarm Disabling</IonButton>
-        <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Stop All Alarms</IonButton>
+        <IonButton href="#" className="big-button">Temporarily Disable Alarms</IonButton>
+        <IonButton href="#" className="big-button">Schedule Alarm Vacation</IonButton>
+        <IonButton href="#" className="big-button">Custom Alarm Disabling</IonButton>
+        <IonButton href="#" className="big-button">Stop All Alarms</IonButton>
         {/* <IonList>
           {messages.map(m => <MessageListItem key={m.id} message={m} />)}
         </IonList> */}

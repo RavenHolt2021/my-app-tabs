@@ -34,10 +34,10 @@ const JournalMenu: React.FC = () => {
 
   return (
     <IonPage id="home-page">
-      <IonHeader>
+      <IonHeader className="header">
           <IonToolbar>
             <IonButton slot="start">
-              <IonBackButton></IonBackButton>
+              <IonBackButton className="back-track"></IonBackButton>
             </IonButton>
             <IonTitle className="title-bar">
             Lucid Companion
@@ -48,10 +48,10 @@ const JournalMenu: React.FC = () => {
         <IonRefresher slot="fixed" onIonRefresh={refresh}>
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
-        <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">New Entries</IonButton>
-        <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Today's Entries</IonButton>
-        <IonButton routerLink="/mydreamsmenu" className="big-button" expand="full" fill="outline" color="dark">My Dreams</IonButton>
-        <IonButton routerLink="/recallhelpmenu" className="big-button" expand="full" fill="outline" color="dark">Recall Help</IonButton>
+        <IonButton href="#" className="big-button">New Entries</IonButton>
+        <IonButton href="#" className="big-button">Today's Entries</IonButton>
+        <IonButton routerLink="/mydreamsmenu" className="big-button">My Dreams</IonButton>
+        <IonButton routerLink="/recallhelpmenu" className="big-button">Recall Help</IonButton>
         {/* <IonList>
           {messages.map(m => <MessageListItem key={m.id} message={m} />)}
         </IonList> */}

@@ -34,10 +34,10 @@ const LucidMenu: React.FC = () => {
 
   return (
     <IonPage id="home-page">
-    <IonHeader>
+    <IonHeader className="header">
         <IonToolbar>
           <IonButton slot="start">
-            <IonBackButton></IonBackButton>
+            <IonBackButton className="back-track"></IonBackButton>
           </IonButton>
           <IonTitle className="title-bar">
           Lucid Companion
@@ -48,10 +48,10 @@ const LucidMenu: React.FC = () => {
         <IonRefresher slot="fixed" onIonRefresh={refresh}>
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
-        <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">My Techniques</IonButton>
-        <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Day Practices</IonButton>
-        <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Night Practices</IonButton>
-        <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Other Guides</IonButton>
+        <IonButton href="#" className="big-button">My Techniques</IonButton>
+        <IonButton href="#" className="big-button">Day Practices</IonButton>
+        <IonButton href="#" className="big-button">Night Practices</IonButton>
+        <IonButton href="#" className="big-button">Other Guides</IonButton>
         {/* <IonList>
           {messages.map(m => <MessageListItem key={m.id} message={m} />)}
         </IonList> */}
