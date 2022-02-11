@@ -34,10 +34,10 @@ const AlarmSoundsMenu: React.FC = () => {
 
   return (
     <IonPage id="home-page">
-    <IonHeader>
+    <IonHeader className="header">
         <IonToolbar>
           <IonButton slot="start">
-            <IonBackButton></IonBackButton>
+            <IonBackButton className="back-track"></IonBackButton>
           </IonButton>
           <IonTitle className="title-bar">
           Lucid Companion
@@ -48,10 +48,10 @@ const AlarmSoundsMenu: React.FC = () => {
         <IonRefresher slot="fixed" onIonRefresh={refresh}>
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
-        <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Browse Alarm Sounds</IonButton>
-        <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Upload A Custom Alarm Sound</IonButton>
-        <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Record A Personalized Alarm</IonButton>
-        <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">My Sounds</IonButton>
+        <IonButton href="#" className="big-button">Browse Alarm Sounds</IonButton>
+        <IonButton href="#" className="big-button">Upload A Custom Alarm Sound</IonButton>
+        <IonButton href="#" className="big-button">Record A Personalized Alarm</IonButton>
+        <IonButton href="#" className="big-button">My Sounds</IonButton>
         {/* <IonList>
           {messages.map(m => <MessageListItem key={m.id} message={m} />)}
         </IonList> */}

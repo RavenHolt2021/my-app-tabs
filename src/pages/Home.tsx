@@ -33,29 +33,23 @@ const Home: React.FC = () => {
 
   return (
     <IonPage id="home-page">
-      {/* <IonHeader>
-        <IonToolbar>
-          <IonTitle>Lucid Companion</IonTitle>
-        </IonToolbar>
-      </IonHeader> */}
-
-      {/* Keep this how it is for now. Speak with teacher if need be! */}
+      
+    <IonHeader  className="header">
+      <IonToolbar>
+        <IonTitle className="title-bar">
+        Lucid Companion
+        </IonTitle>
+      </IonToolbar>
+    </IonHeader>
 
       <IonContent className="page-background" fullscreen>
         <IonRefresher slot="fixed" onIonRefresh={refresh}>
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle className="title-bar">
-            Lucid Companion
-            </IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <IonButton routerLink="/journalmenu" className="big-button" expand="full" fill="outline" color="dark">Journal</IonButton>
-        <IonButton routerLink="/alarmmenu" className="big-button" expand="full" fill="outline" color="dark">Alarm</IonButton>
-        <IonButton routerLink="/lucidmenu" className="big-button" expand="full" fill="outline" color="dark">Get Lucid</IonButton>
-        <IonButton routerLink="/settingsmenu" className="big-button" expand="full" fill="outline" color="dark">Settings</IonButton>
+        <IonButton routerLink="/journalmenu" className="big-button">Journal</IonButton>
+        <IonButton routerLink="/alarmmenu" className="big-button">Alarm</IonButton>
+        <IonButton routerLink="/lucidmenu" className="big-button">Get Lucid</IonButton>
+        <IonButton routerLink="/settingsmenu" className="big-button">Settings</IonButton>
         {/* <IonList>
           {messages.map(m => <MessageListItem key={m.id} message={m} />)}
         </IonList> */}

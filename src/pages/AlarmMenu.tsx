@@ -34,10 +34,10 @@ const AlarmMenu: React.FC = () => {
 
   return (
     <IonPage id="home-page">
-    <IonHeader>
+    <IonHeader className="header">
         <IonToolbar>
           <IonButton slot="start">
-            <IonBackButton></IonBackButton>
+            <IonBackButton className="back-track"></IonBackButton>
           </IonButton>
           <IonTitle className="title-bar">
           Lucid Companion
@@ -49,11 +49,11 @@ const AlarmMenu: React.FC = () => {
         <IonRefresher slot="fixed" onIonRefresh={refresh}>
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
-        <IonButton routerLink="/manualalarmmenu" className="big-button" expand="full" fill="outline" color="dark">Manual Alarms</IonButton>
-        <IonButton routerLink="/smartalarmmenu" className="big-button" expand="full" fill="outline" color="dark">Smart Alarms</IonButton>
-        <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">View Alarms</IonButton>
-        <IonButton routerLink="/alarmsoundsmenu" className="big-button" expand="full" fill="outline" color="dark">Alarm Sounds</IonButton>
-        <IonButton routerLink="/pausealarmsmenu" className="big-button" expand="full" fill="outline" color="dark">Stop Alarms</IonButton>
+        <IonButton routerLink="/manualalarmmenu" className="big-button">Manual Alarms</IonButton>
+        <IonButton routerLink="/smartalarmmenu" className="big-button">Smart Alarms</IonButton>
+        <IonButton href="#" className="big-button">View Alarms</IonButton>
+        <IonButton routerLink="/alarmsoundsmenu" className="big-button">Alarm Sounds</IonButton>
+        <IonButton routerLink="/pausealarmsmenu" className="big-button">Stop Alarms</IonButton>
         {/* <IonList>
           {messages.map(m => <MessageListItem key={m.id} message={m} />)}
         </IonList> */}

@@ -43,10 +43,10 @@ const AlarmCustom: React.FC = () => {
     const[selected, setSelected] = useState<string>('biff');
   return(
     <IonPage id="home-page">
-    <IonHeader>
+    <IonHeader className="header">
         <IonToolbar>
           <IonButton slot="start">
-            <IonBackButton></IonBackButton>
+            <IonBackButton className="back-track"></IonBackButton>
           </IonButton>
           <IonTitle className="title-bar">
           Lucid Companion
@@ -75,7 +75,7 @@ const AlarmCustom: React.FC = () => {
             <IonTextarea>note</IonTextarea>
 
             <IonFooter className="footer-content">
-                <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Create Alarm</IonButton>
+                <IonButton href="#" className="big-button">Create Alarm</IonButton>
                 this page is broken? why won't it show anything?
             </IonFooter>
         </IonContent>

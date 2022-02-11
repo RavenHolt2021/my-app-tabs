@@ -34,10 +34,10 @@ const ManualAlarmMenu: React.FC = () => {
 
   return (
     <IonPage id="home-page">
-    <IonHeader>
+    <IonHeader className="header">
         <IonToolbar>
           <IonButton slot="start">
-            <IonBackButton></IonBackButton>
+            <IonBackButton className="back-track"></IonBackButton>
           </IonButton>
           <IonTitle className="title-bar">
           Lucid Companion
@@ -48,9 +48,9 @@ const ManualAlarmMenu: React.FC = () => {
         <IonRefresher slot="fixed" onIonRefresh={refresh}>
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
-        <IonButton routerLink="/alarmcustom" className="big-button" expand="full" fill="outline" color="dark">Add An Alarm</IonButton>
-        <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Edit An Alarm</IonButton>
-        <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Clone and Edit an Alarm</IonButton>
+        <IonButton routerLink="/alarmcustom" className="big-button">Add An Alarm</IonButton>
+        <IonButton href="#" className="big-button">Edit An Alarm</IonButton>
+        <IonButton href="#" className="big-button">Clone and Edit an Alarm</IonButton>
         {/* <IonList>
           {messages.map(m => <MessageListItem key={m.id} message={m} />)}
         </IonList> */}

@@ -35,10 +35,10 @@ const SmartAlarmMenu: React.FC = () => {
   return (
     <IonPage id="home-page">
       
-      <IonHeader>
+      <IonHeader className="header">
           <IonToolbar>
             <IonButton slot="start">
-              <IonBackButton></IonBackButton>
+              <IonBackButton className="back-track"></IonBackButton>
             </IonButton>
             <IonTitle className="title-bar">
             Lucid Companion
@@ -51,9 +51,9 @@ const SmartAlarmMenu: React.FC = () => {
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
 
-        <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Technique Alarms</IonButton>
-        <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">REM Alarms</IonButton>
-        <IonButton href="#" className="big-button" expand="full" fill="outline" color="dark">Reminder Alarms</IonButton>
+        <IonButton href="#" className="big-button">Technique Alarms</IonButton>
+        <IonButton href="#" className="big-button">REM Alarms</IonButton>
+        <IonButton href="#" className="big-button">Reminder Alarms</IonButton>
         {/* <IonList>
           {messages.map(m => <MessageListItem key={m.id} message={m} />)}
         </IonList> */}
