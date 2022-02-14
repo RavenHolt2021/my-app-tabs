@@ -1,14 +1,21 @@
 .page-background {
-    --ion-background-color: black!important;
+    --background: url('../images/starbackground.jpg')!important;
 }
 
 .back-track {
     color: rgb(231, 8, 212);
  }
 
+/* .back-2-home {
+
+} */
+
+.header {
+
+}
+
 .title-bar {
     font-size: large;
-    /* background-color: white; */
     color: rgb(231, 8, 212);
 }
 

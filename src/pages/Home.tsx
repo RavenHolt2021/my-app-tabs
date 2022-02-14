@@ -34,7 +34,7 @@ const Home: React.FC = () => {
   return (
     <IonPage id="home-page">
       
-    <IonHeader  className="header">
+    <IonHeader className="header">
       <IonToolbar>
         <IonTitle className="title-bar">
         Lucid Companion
