@@ -1,5 +1,5 @@
 .page-background {
-    --background: url('../images/starbackground.jpg')!important;
+    --background: url('../images/starbackground.jpg') 0 0/100% 100% no-repeat!important;
 }
 
 .back-track {
