@@ -2,23 +2,23 @@ import MessageListItem from '../components/MessageListItem';
 import { useState } from 'react';
 import { Message, getMessages } from '../data/messages';
 import {
-  IonContent,
-  IonHeader,
-  IonList,
-  IonPage,
-  IonRefresher,
-  IonRefresherContent,
-  IonTitle,
-  IonFooter,
-  IonButton,
-  IonToolbar,
-  useIonViewWillEnter,
-  IonBackButton
+    IonContent,
+    IonHeader,
+    IonList,
+    IonPage,
+    IonRefresher,
+    IonRefresherContent,
+    IonTitle,
+    IonFooter,
+    IonButton,
+    IonToolbar,
+    useIonViewWillEnter,
+    IonBackButton
 } from '@ionic/react';
 import './Home.css';
 
-const MyDreamsMenu: React.FC = () => {
-
+const ScreenMenu: React.FC = () => {
+    
   const [messages, setMessages] = useState<Message[]>([]);
 
   useIonViewWillEnter(() => {
@@ -32,7 +32,7 @@ const MyDreamsMenu: React.FC = () => {
     }, 3000);
   };
 
-  return (
+return(
     <IonPage id="home-page">
     <IonHeader className="header">
         <IonToolbar>
@@ -48,19 +48,13 @@ const MyDreamsMenu: React.FC = () => {
         <IonRefresher slot="fixed" onIonRefresh={refresh}>
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
-        <IonButton href="#" className="big-button">Search</IonButton>
-        <IonButton href="#" className="big-button">Dream Signs</IonButton>
-        <IonButton href="#" className="big-button">My Goals</IonButton>
-        <IonButton href="#" className="big-button">Progress Chart</IonButton>
-        <IonButton href="#" className="big-button">Random</IonButton>
-        {/* <IonList>
-          {messages.map(m => <MessageListItem key={m.id} message={m} />)}
-        </IonList> */}
+        
         <IonFooter className="footer-content">
         </IonFooter>
       </IonContent>
     </IonPage>
-  );
+
+);
 };
 
-export default MyDreamsMenu;
+export default ScreenMenu;
