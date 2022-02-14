@@ -4,6 +4,7 @@ import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
 import Journal from './pages/Journal';
 import JournalMenu from './pages/JournalMenu';
+import GuidesIndex from './pages/GuidesIndex';
 import ViewMessage from './pages/ViewMessage';
 import LucidMenu from './pages/LucidMenu';
 import AlarmMenu from './pages/AlarmMenu';
@@ -15,6 +16,7 @@ import SmartAlarmMenu from './pages/SmartAlarmMenu';
 import RecallHelpMenu from './pages/RecallHelpMenu';
 import AlarmSoundsMenu from './pages/AlarmSoundsMenu';
 import PauseAlarmsMenu from './pages/PauseAlarmsMenu';
+
 
 
 /* ABOVE ViewMessage YOU SHOULD HAVE import GET/LUCID & SETTINGS */
@@ -100,6 +102,11 @@ const App: React.FC = () => (
         <Route path="/alarm" exact={true}>
           <Redirect to="/alarm" />
           <Alarm />
+        </Route>
+
+        <Route path="/guidesindex" exact={true}>
+          <Redirect to="/guidesindex" />
+          <GuidesIndex />
         </Route>
 
         {/* THIS SHOULD BE GET LUCID
