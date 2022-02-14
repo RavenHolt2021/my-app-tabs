@@ -49,7 +49,7 @@ const LucidMenu: React.FC = () => {
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
         <IonButton href="#" className="big-button">My Techniques</IonButton>
-        <IonButton href="#" className="big-button">Day Practices</IonButton>
+        <IonButton routerLink="/guidesindex" className="big-button">Day Practices</IonButton>
         <IonButton href="#" className="big-button">Night Practices</IonButton>
         <IonButton href="#" className="big-button">Other Guides</IonButton>
         {/* <IonList>
