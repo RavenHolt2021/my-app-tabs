@@ -3,7 +3,7 @@
 }
 
 .back-track {
-    color: rgb(231, 8, 212);
+    color: rgb(167, 12, 214);
  }
 
 /* .back-2-home {
@@ -16,17 +16,20 @@
 
 .title-bar {
     font-size: large;
-    color: rgb(231, 8, 212);
+    color: rgb(167, 12, 214);
 }
 
 .big-button {
+    background-color: rgb(167, 12, 214);
+    display: flex;
     font-size: xx-large;
-    background-color: rgb(231, 8, 212);
     color: black;
     margin: 1em;
 }
 
 .footer-content {
+    margin-top: 2em;
     text-align: center;
     color: white;
+    background-color: rgb(167, 12, 214);
 }
