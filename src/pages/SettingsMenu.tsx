@@ -49,7 +49,7 @@ const SettingsMenu: React.FC = () => {
         <IonRefresher slot="fixed" onIonRefresh={refresh}>
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
-        <IonButton href="#" className="big-button">Screen Settings</IonButton>
+        <IonButton routerLink="/screenmenu" className="big-button">Screen Settings</IonButton>
         <IonButton href="#" className="big-button">Data Settings</IonButton>
         <IonButton href="#" className="big-button">Passwords</IonButton>
         {/* <IonList>

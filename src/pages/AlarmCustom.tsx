@@ -24,12 +24,21 @@ import {
   IonLabel,
   IonItem,
   IonRadio,
+  IonSelect,
+  IonItemDivider,
+  IonInput,
 } from '@ionic/react';
 import './Home.css';
 
 const AlarmCustom: React.FC = () => {
     const [messages, setMessages] = useState<Message[]>([]);
-  
+    const[text,setText] = useState<string>();
+    const[tone, setTone] = useState<string>('alarm tone 1');
+    const[length, setLength] = useState<number>();
+    const[days, setDays] = useState<string[]>([]);
+    const[touchless, setTouchless] = useState<boolean>();
+    const[note, setNote] = useState<boolean>();
+
     useIonViewWillEnter(() => {
       const msgs = getMessages();
       setMessages(msgs);
@@ -41,6 +50,8 @@ const AlarmCustom: React.FC = () => {
       }, 3000);
     };
     const[selected, setSelected] = useState<string>('biff');
+
+
   return(
     <IonPage id="home-page">
     <IonHeader className="header">
@@ -57,26 +68,55 @@ const AlarmCustom: React.FC = () => {
             <IonRefresher slot="fixed" onIonRefresh={refresh}>
                 <IonRefresherContent></IonRefresherContent>
             </IonRefresher>
-            <IonDatetime presentation = "time" minuteValues = "0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55"> </IonDatetime>
+
             <IonList>
-                <IonRadioGroup value={selected} onIonChange={ e=> setSelected(e.detail.value)}>
-                    <IonListHeader>
-                        <IonLabel>Biff</IonLabel>
-                    </IonListHeader>
+              
+            <IonItem>
+                  <IonLabel>Days</IonLabel>
+                  <IonSelect value={days} placeholder="Days" multiple={true} onIonChange={e => setDays(e.detail.value)}>
+                    <IonSelectOption>Sunday</IonSelectOption>
+                    <IonSelectOption>Monday</IonSelectOption>
+                    <IonSelectOption>Tuesday</IonSelectOption>
+                    <IonSelectOption>Wednesday</IonSelectOption>
+                    <IonSelectOption>Thursday</IonSelectOption>
+                    <IonSelectOption>Friday</IonSelectOption>
+                    <IonSelectOption>Saturday</IonSelectOption>
+                  </IonSelect>
+                </IonItem>
+              <IonLabel>Time</IonLabel>
+              <IonDatetime presentation = "time" minuteValues = "0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55"> </IonDatetime>
 
                     <IonItem>
-                        <IonLabel>Griff</IonLabel>
-                        <IonRadio slot ="start" value="griff" />
+                      <IonLabel>Touchless Alarm</IonLabel>
+                      <IonCheckbox checked={touchless} onIonChange={e => setTouchless(e.detail.checked)} />
                     </IonItem>
-                </IonRadioGroup>
+
+                <IonItem>
+                  <IonInput type="number" value ={length} placeholder="Enter Length of the Auto Alarm" onIonChange={e => setLength(parseInt(e.detail.value!, 10))}></IonInput>Seconds
+                </IonItem>
+
+                <IonItem>
+                  <IonLabel>Audio</IonLabel>
+                  <IonSelect value={tone} placeholder="Select your Alarm Sound" onIonChange={e => setTone(e.detail.value)}>
+                    <IonSelectOption>Audio Tone 1</IonSelectOption>
+                    <IonSelectOption>Audio Tone 2</IonSelectOption>
+                    <IonSelectOption>Audio Tone 3</IonSelectOption>
+                    <IonSelectOption>Audio Tone 4</IonSelectOption>
+                  </IonSelect>
+                </IonItem>
+                <IonLabel>Note:</IonLabel>
+                <IonItem>
+                  <IonTextarea value={text} onIonChange={e => setText(e.detail.value!)}></IonTextarea>
+                </IonItem>
+
+                <IonItem>
+                  <IonLabel>Show Note With Alarm</IonLabel>
+                  <IonCheckbox checked={note} onIonChange={e => setNote(e.detail.checked)} />
+                </IonItem>
             </IonList>
-            <IonDatetime presentation ="time">Touchless Time</IonDatetime>
-            <IonSelectOption>Audio</IonSelectOption>
-            <IonTextarea>note</IonTextarea>
 
             <IonFooter className="footer-content">
                 <IonButton href="#" className="big-button">Create Alarm</IonButton>
-                this page is broken? why won't it show anything?
             </IonFooter>
         </IonContent>
     </IonPage>

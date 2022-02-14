@@ -16,6 +16,7 @@ import RecallHelpMenu from './pages/RecallHelpMenu';
 import AlarmSoundsMenu from './pages/AlarmSoundsMenu';
 import PauseAlarmsMenu from './pages/PauseAlarmsMenu';
 import AlarmCustom from './pages/AlarmCustom';
+import ScreenMenu from './pages/ScreenMenu';
 
 
 /* ABOVE ViewMessage YOU SHOULD HAVE import GET/LUCID & SETTINGS */
@@ -100,6 +101,11 @@ const App: React.FC = () => (
 
         <Route path="/alarmcustom" exact={true}>
           <AlarmCustom />
+        </Route>
+        
+
+        <Route path="/screenmenu" exact={true}>
+          <ScreenMenu />
         </Route>
 
         <Route path="/alarm" exact={true}>
