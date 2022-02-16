@@ -12,7 +12,8 @@ import {
   IonHeader,
   IonToolbar,
   IonBackButton,
-  IonTitle
+  IonTitle,
+  IonButtons
 } from '@ionic/react';
 import './Home.css';
 const GuidesIndex: React.FC = () => {
@@ -33,12 +34,15 @@ return (
     <IonPage id="get-lucid">
     <IonHeader className="header">
         <IonToolbar>
-          <IonButton slot="start">
-            <IonBackButton className="back-track"></IonBackButton>
-          </IonButton>
+          <IonButtons className="back-track" slot="start">
+            <IonBackButton></IonBackButton>
+          </IonButtons>
           <IonTitle className="title-bar">
           Lucid Companion
           </IonTitle>
+          <IonButtons className="back-2-home" slot="end">
+            <IonButton routerLink="/home">Home</IonButton>
+          </IonButtons>
         </IonToolbar>
       </IonHeader>
     <IonContent className="page-background" fullscreen>

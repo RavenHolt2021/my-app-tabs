@@ -13,7 +13,8 @@ import {
   IonButton,
   IonToolbar,
   useIonViewWillEnter,
-  IonBackButton
+  IonBackButton,
+  IonButtons
 } from '@ionic/react';
 import './Home.css';
 
@@ -34,16 +35,19 @@ const PauseAlarmsMenu: React.FC = () => {
 
   return (
     <IonPage id="home-page">
-      <IonHeader className="header">
-          <IonToolbar>
-            <IonButton slot="start">
-              <IonBackButton className="back-track"></IonBackButton>
-            </IonButton>
-            <IonTitle className="title-bar">
-            Lucid Companion
-            </IonTitle>
-          </IonToolbar>
-        </IonHeader>
+    <IonHeader className="header">
+        <IonToolbar>
+          <IonButtons className="back-track" slot="start">
+            <IonBackButton></IonBackButton>
+          </IonButtons>
+          <IonTitle className="title-bar">
+          Lucid Companion
+          </IonTitle>
+          <IonButtons className="back-2-home" slot="end">
+            <IonButton routerLink="/home">Home</IonButton>
+          </IonButtons>
+        </IonToolbar>
+      </IonHeader>
       <IonContent className="page-background" fullscreen>
         <IonRefresher slot="fixed" onIonRefresh={refresh}>
           <IonRefresherContent></IonRefresherContent>
