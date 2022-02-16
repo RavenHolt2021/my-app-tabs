@@ -4,18 +4,26 @@
 
 .back-track {
     color: rgb(167, 12, 214);
+    align-self: left;
+    display: flex;
  }
 
-/* .back-2-home {
-
-} */
+.back-2-home {
+    align-self: right;
+    font-size: small;
+    color: rgb(167, 12, 214);
+    display: flex;
+}
 
 .header {
-
+    display: flex;
+    
 }
 
 .title-bar {
     font-size: large;
+    display: flex;
+    align-self: center;
     color: rgb(167, 12, 214);
 }
 
