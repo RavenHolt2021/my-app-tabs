@@ -11,6 +11,7 @@ import {
   IonTitle,
   IonFooter,
   IonButton,
+  IonButtons,
   IonToolbar,
   useIonViewWillEnter
 } from '@ionic/react';
@@ -46,10 +47,10 @@ const Home: React.FC = () => {
         <IonRefresher slot="fixed" onIonRefresh={refresh}>
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
-        <IonButton routerLink="/journalmenu" className="big-button">Journal</IonButton>
-        <IonButton routerLink="/alarmmenu" className="big-button">Alarm</IonButton>
-        <IonButton routerLink="/lucidmenu" className="big-button">Get Lucid</IonButton>
-        <IonButton routerLink="/settingsmenu" className="big-button">Settings</IonButton>
+          <IonButton routerLink="/journalmenu" className="big-button">Journal</IonButton>
+          <IonButton routerLink="/alarmmenu" className="big-button">Alarm</IonButton>
+          <IonButton routerLink="/lucidmenu" className="big-button">Get Lucid</IonButton>
+          <IonButton routerLink="/settingsmenu" className="big-button">Settings</IonButton>
         {/* <IonList>
           {messages.map(m => <MessageListItem key={m.id} message={m} />)}
         </IonList> */}
