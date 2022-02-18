@@ -55,7 +55,7 @@ const SmartAlarmMenu: React.FC = () => {
         </IonRefresher>
 
         <IonButton href="#" className="big-button">Technique Alarms</IonButton>
-        <IonButton href="#" className="big-button">REM Alarms</IonButton>
+        <IonButton routerLink="/remalarmsmenu" className="big-button">REM Alarms</IonButton>
         <IonButton href="#" className="big-button">Reminder Alarms</IonButton>
         {/* <IonList>
           {messages.map(m => <MessageListItem key={m.id} message={m} />)}

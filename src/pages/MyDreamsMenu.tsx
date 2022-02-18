@@ -52,10 +52,10 @@ const MyDreamsMenu: React.FC = () => {
         <IonRefresher slot="fixed" onIonRefresh={refresh}>
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
-        <IonButton href="#" className="big-button">Search</IonButton>
-        <IonButton href="#" className="big-button">Dream Signs</IonButton>
-        <IonButton href="#" className="big-button">My Goals</IonButton>
-        <IonButton href="#" className="big-button">Progress Chart</IonButton>
+        <IonButton routerLink="/dreamsearch" className="big-button">Search</IonButton>
+        <IonButton routerLink="/dreamsignsmenu" className="big-button">Dream Signs</IonButton>
+        <IonButton routerLink="/goals" className="big-button">My Goals</IonButton>
+        <IonButton routerLink="/progresschart" className="big-button">Progress Chart</IonButton>
         <IonButton href="#" className="big-button">Random</IonButton>
         {/* <IonList>
           {messages.map(m => <MessageListItem key={m.id} message={m} />)}
