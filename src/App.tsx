@@ -13,6 +13,8 @@ import JournalMenu from './pages/JournalMenu';
 import LucidMenu from './pages/LucidMenu';
 import ManualAlarmMenu from './pages/ManualAlarmMenu';
 import MyDreamsMenu from './pages/MyDreamsMenu';
+import NightGuidesIndex from './pages/NightGuideIndex';
+import OtherGuidesIndex from './pages/OtherGuideIndex';
 import PauseAlarmsMenu from './pages/PauseAlarmsMenu';
 import ProgressChart from './pages/ProgressChart';
 import RecallHelpMenu from './pages/RecallHelpMenu';
@@ -103,6 +105,14 @@ const App: React.FC = () => (
 
         <Route path="/mydreamsmenu" exact={true}>
           <MyDreamsMenu />
+        </Route>
+
+        <Route path="/nightguidesindex" exact={true}>
+          <NightGuidesIndex />
+        </Route>
+
+        <Route path="/otherguidesindex" exact={true}>
+          <OtherGuidesIndex />
         </Route>
 
         <Route path="/pausealarmsmenu" exact={true}>
