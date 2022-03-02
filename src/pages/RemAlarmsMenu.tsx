@@ -2,24 +2,24 @@ import MessageListItem from '../components/MessageListItem';
 import { useState } from 'react';
 import { Message, getMessages } from '../data/messages';
 import {
-  IonContent,
-  IonHeader,
-  IonList,
-  IonPage,
-  IonRefresher,
-  IonRefresherContent,
-  IonTitle,
-  IonFooter,
-  IonButton,
-  IonToolbar,
-  useIonViewWillEnter,
-  IonBackButton,
-  IonButtons
+    IonContent,
+    IonHeader,
+    IonList,
+    IonPage,
+    IonRefresher,
+    IonRefresherContent,
+    IonTitle,
+    IonFooter,
+    IonButton,
+    IonToolbar,
+    useIonViewWillEnter,
+    IonBackButton,
+    IonButtons
 } from '@ionic/react';
 import './Home.css';
 
-const RecallHelpMenu: React.FC = () => {
-
+const ScreenMenu: React.FC = () => {
+    
   const [messages, setMessages] = useState<Message[]>([]);
 
   useIonViewWillEnter(() => {
@@ -33,7 +33,7 @@ const RecallHelpMenu: React.FC = () => {
     }, 3000);
   };
 
-  return (
+return(
     <IonPage id="home-page">
     <IonHeader className="header">
         <IonToolbar>
@@ -48,22 +48,17 @@ const RecallHelpMenu: React.FC = () => {
           </IonButtons>
         </IonToolbar>
       </IonHeader>
-
       <IonContent className="page-background" fullscreen>
         <IonRefresher slot="fixed" onIonRefresh={refresh}>
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
-        <IonButton href="#" className="big-button">Dream Recall Guide</IonButton>
-        <IonButton routerLink="/dreamsignsmenu" className="big-button">My Dream Signs</IonButton>
-        <IonButton href="#" className="big-button">Dream Template</IonButton>
-        {/* <IonList>
-          {messages.map(m => <MessageListItem key={m.id} message={m} />)}
-        </IonList> */}
+        
         <IonFooter className="footer-content">
         </IonFooter>
       </IonContent>
     </IonPage>
-  );
+
+);
 };
 
-export default RecallHelpMenu;
+export default ScreenMenu;

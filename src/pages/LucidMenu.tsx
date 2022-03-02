@@ -54,8 +54,8 @@ const LucidMenu: React.FC = () => {
         </IonRefresher>
         <IonButton href="#" className="big-button">My Techniques</IonButton>
         <IonButton routerLink="/guidesindex" className="big-button">Day Practices</IonButton>
-        <IonButton href="#" className="big-button">Night Practices</IonButton>
-        <IonButton href="#" className="big-button">Other Guides</IonButton>
+        <IonButton routerLink="/nightguidesindex" className="big-button">Night Practices</IonButton>
+        <IonButton routerLink="/otherguidesindex" className="big-button">Other Guides</IonButton>
         {/* <IonList>
           {messages.map(m => <MessageListItem key={m.id} message={m} />)}
         </IonList> */}
