@@ -51,11 +51,8 @@ const Home: React.FC = () => {
           <IonButton routerLink="/alarmmenu" className="big-button">Alarm</IonButton>
           <IonButton routerLink="/lucidmenu" className="big-button">Get Lucid</IonButton>
           <IonButton routerLink="/settingsmenu" className="big-button">Settings</IonButton>
-        {/* <IonList>
-          {messages.map(m => <MessageListItem key={m.id} message={m} />)}
-        </IonList> */}
         <IonFooter className="footer-content">
-          Still working on the
+          I DID IT!
         </IonFooter>
       </IonContent>
     </IonPage>
