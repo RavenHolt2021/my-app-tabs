@@ -52,6 +52,11 @@ return(
         <IonRefresher slot="fixed" onIonRefresh={refresh}>
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
+
+        <IonButton href="#" className="big-button">Search by Tag</IonButton>
+        <IonButton href="#" className="big-button">Search by Date</IonButton>
+        <IonButton href="#" className="big-button">Search Titles</IonButton>
+        <IonButton href="#" className="big-button">Search Content</IonButton>
         
         <IonFooter className="footer-content">
         </IonFooter>
