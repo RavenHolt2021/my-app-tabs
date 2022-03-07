@@ -1,3 +1,15 @@
+:root {
+    --ion-color-dream: 	#BF40BF;
+    --ion-color-dream-rgb: 167, 12, 214;
+}
+
+.ion-color-dream {
+    --ion-color-base: var(--ion-color-dream);
+    --ion-color-base-rgb: var(--ion-color-dream-rgb);
+}
+
+/* The CSS for the app */
+
 .page-background {
     --background: url('../images/starbackground.jpg') 0 0/100% 100% no-repeat!important;
 }
@@ -17,7 +29,6 @@
 
 .header {
     display: flex;
-    
 }
 
 .title-bar {
@@ -28,11 +39,16 @@
 }
 
 .big-button {
-    background-color: rgb(167, 12, 214);
+    --background: var(--dream, #BF40BF);
+  }
+
+.big-button {
+    --ion-background-color: rgb(167, 12, 214);
     display: flex;
     font-size: xx-large;
     color: black;
     margin: 1em;
+    --ion-font-family: times;
 }
 
 .footer-content {
