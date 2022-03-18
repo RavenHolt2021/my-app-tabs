@@ -23,6 +23,7 @@ import RemAlarmsMenu from './pages/RemAlarmsMenu';
 import ScreenMenu from './pages/ScreenMenu';
 import SettingsMenu from './pages/SettingsMenu';
 import SmartAlarmMenu from './pages/SmartAlarmMenu';
+import TodaysEntries from './pages/TodaysEntries';
 
 import Alarm from './pages/Alarm';
 import Journal from './pages/Journal';
@@ -146,6 +147,10 @@ const App: React.FC = () => (
 
         <Route path="/smartalarmmenu" exact={true}>
           <SmartAlarmMenu />
+        </Route>
+
+        <Route path="/todaysentries" exact={true}>
+          <TodaysEntries />
         </Route>
         
         

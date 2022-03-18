@@ -145,8 +145,14 @@ const ScreenMenu: React.FC = () => {
   }
 
   useIonViewWillEnter(() => {
-    setPage('1');
-    setCount(1);
+    setPage('2');//place holder open newest tab
+    setCount(2);//place holder tab count
+    setTitle1("Place holder Title");
+    setDream1("Place holder Dream");
+    setTags1("Place, holder, tags");
+    setTitle2("Place holder second Title");
+    setDream2("Place holder second Dream");
+    setTags2("Place, holder, second, tags");
   });
 
   useIonViewWillEnter(() => {
