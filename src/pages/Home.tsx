@@ -16,6 +16,13 @@ import {
   useIonViewWillEnter
 } from '@ionic/react';
 import './Home.css';
+/*
+import { Storage } from '@ionic/storage';
+
+const store = new Storage();
+await store.create();
+*/
+
 
 const Home: React.FC = () => {
 
@@ -51,9 +58,6 @@ const Home: React.FC = () => {
           <IonButton routerLink="/alarmmenu" className="big-button">Alarm</IonButton>
           <IonButton routerLink="/lucidmenu" className="big-button">Get Lucid</IonButton>
           <IonButton routerLink="/settingsmenu" className="big-button">Settings</IonButton>
-        <IonFooter className="footer-content">
-          I DID IT!
-        </IonFooter>
       </IonContent>
     </IonPage>
   );
