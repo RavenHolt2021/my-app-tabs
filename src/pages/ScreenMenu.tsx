@@ -14,9 +14,19 @@ import {
     IonToolbar,
     useIonViewWillEnter,
     IonBackButton,
-    IonButtons
+    IonButtons,
+    IonRange,
+    IonIcon,
+    IonInput,
+    IonItem,
+    IonItemDivider,
+    IonGrid,
+    IonRow,
+    IonCol
 } from '@ionic/react';
 import './Home.css';
+import './ScreenMenu.css';
+import { sunny } from 'ionicons/icons';
 
 const ScreenMenu: React.FC = () => {
     
@@ -52,7 +62,29 @@ return(
         <IonRefresher slot="fixed" onIonRefresh={refresh}>
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
-        
+          <div>
+            <h1>Adjust Screen Brightness</h1>
+            <IonRange color="dark" min={0} max={1} step={0.01}>
+              <IonIcon className="icon" size="small" slot="start" icon={sunny} />
+              <IonIcon className="icon" slot="end" icon={sunny} />
+            </IonRange>
+          </div>
+          <div>
+            <h1>Upload Audio File</h1>
+            <IonItem>
+              <input type="file" accept="audio/*" />
+            </IonItem>
+            <IonGrid>
+              <IonRow>
+                <IonCol>
+                  <IonButton color="light" expand="full">Upload</IonButton>
+                </IonCol>
+                <IonCol>
+                  <IonButton color="light" expand="full">Cancel</IonButton>
+                </IonCol>
+              </IonRow>
+            </IonGrid>
+          </div>
         <IonFooter className="footer-content">
         </IonFooter>
       </IonContent>
