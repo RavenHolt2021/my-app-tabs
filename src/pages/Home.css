@@ -58,6 +58,34 @@
     background-color: rgb(167, 12, 214);
 }
 
+/* For Journal - New Entries: */
+
+.tabs {
+    color: white;
+}
+
+.add-button {
+    --background: var(--dream, #BF40BF);
+    display: flex;
+}
+
+.journal-dream {
+    color: white;
+}
+
+.journal-title {
+    font-family: monospace;
+    color: blue;
+}
+
+.journal-entery {
+    
+}
+
+.journal-tags {
+
+}
+
 /* Dormant Style Classes:
 
 .tabs {
