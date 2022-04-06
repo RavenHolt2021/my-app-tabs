@@ -13,6 +13,7 @@ import JournalMenu from './pages/JournalMenu';
 import LucidMenu from './pages/LucidMenu';
 import ManualAlarmMenu from './pages/ManualAlarmMenu';
 import MyDreamsMenu from './pages/MyDreamsMenu';
+import NewEntries from './pages/NewEntries';
 import NightGuidesIndex from './pages/NightGuideIndex';
 import OtherGuidesIndex from './pages/OtherGuideIndex';
 import PauseAlarmsMenu from './pages/PauseAlarmsMenu';
@@ -22,6 +23,7 @@ import RemAlarmsMenu from './pages/RemAlarmsMenu';
 import ScreenMenu from './pages/ScreenMenu';
 import SettingsMenu from './pages/SettingsMenu';
 import SmartAlarmMenu from './pages/SmartAlarmMenu';
+import TodaysEntries from './pages/TodaysEntries';
 
 import Alarm from './pages/Alarm';
 import Journal from './pages/Journal';
@@ -108,6 +110,10 @@ const App: React.FC = () => (
           <MyDreamsMenu />
         </Route>
 
+        <Route path="/newentries" exact={true}>
+          <NewEntries />
+        </Route>
+        
         <Route path="/nightguidesindex" exact={true}>
           <NightGuidesIndex />
         </Route>
@@ -142,6 +148,10 @@ const App: React.FC = () => (
 
         <Route path="/smartalarmmenu" exact={true}>
           <SmartAlarmMenu />
+        </Route>
+
+        <Route path="/todaysentries" exact={true}>
+          <TodaysEntries />
         </Route>
         
         

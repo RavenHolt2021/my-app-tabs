@@ -53,6 +53,10 @@ return(
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
         
+        <IonButton href="#" className="big-button">Recurring Dream Signs</IonButton>{/*things that often happen in your dreams*/}
+        <IonButton href="#" className="big-button">Logic Dream Signs</IonButton>{/*things happening that are impossible or unlikely*/}
+        <IonButton href="#" className="big-button">Routine Dream Signs</IonButton>{/*doing things that are outside your day to day routine*/}
+        
         <IonFooter className="footer-content">
         </IonFooter>
       </IonContent>
