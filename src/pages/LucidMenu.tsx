@@ -14,7 +14,9 @@ import {
   IonToolbar,
   useIonViewWillEnter,
   IonBackButton,
-  IonButtons
+  IonButtons,
+  IonItem,
+  IonLabel
 } from '@ionic/react';
 import './Home.css';
 
@@ -52,6 +54,9 @@ const LucidMenu: React.FC = () => {
         <IonRefresher slot="fixed" onIonRefresh={refresh}>
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
+        <IonItem className="page-title">
+          <IonLabel>Lucid Guides</IonLabel>
+        </IonItem>
         <IonButton href="#" className="big-button">My Techniques</IonButton>
         <IonButton routerLink="/guidesindex" className="big-button">Day Practices</IonButton>
         <IonButton routerLink="/nightguidesindex" className="big-button">Night Practices</IonButton>

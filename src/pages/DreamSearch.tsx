@@ -81,6 +81,9 @@ return(
         <IonRefresher slot="fixed" onIonRefresh={refresh}>
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
+        <IonItem className="page-title">
+          <IonLabel>Search Dreams</IonLabel>
+        </IonItem>
 
         <IonItem>
           <IonLabel>

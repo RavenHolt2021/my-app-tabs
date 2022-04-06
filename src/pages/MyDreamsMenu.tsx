@@ -14,7 +14,9 @@ import {
   IonToolbar,
   useIonViewWillEnter,
   IonBackButton,
-  IonButtons
+  IonButtons,
+  IonLabel,
+  IonItem
 } from '@ionic/react';
 import './Home.css';
 
@@ -52,6 +54,9 @@ const MyDreamsMenu: React.FC = () => {
         <IonRefresher slot="fixed" onIonRefresh={refresh}>
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
+        <IonItem className="page-title">
+          <IonLabel>My Dreams</IonLabel>
+        </IonItem>
         <IonButton routerLink="/dreamsearch" className="big-button">Search</IonButton>
         <IonButton routerLink="/dreamsignsmenu" className="big-button">Dream Signs</IonButton>
         <IonButton routerLink="/goals" className="big-button">My Goals</IonButton>

@@ -14,7 +14,9 @@ import {
   IonToolbar,
   useIonViewWillEnter,
   IonBackButton,
-  IonButtons
+  IonButtons,
+  IonItem,
+  IonLabel
 } from '@ionic/react';
 import './Home.css';
 
@@ -52,6 +54,9 @@ const AlarmSoundsMenu: React.FC = () => {
         <IonRefresher slot="fixed" onIonRefresh={refresh}>
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
+        <IonItem className="page-title">
+          <IonLabel>Alarm Sounds</IonLabel>
+        </IonItem>
         <IonButton href="#" className="big-button">Browse Alarm Sounds</IonButton>
         <IonButton href="#" className="big-button">Upload A Custom Alarm Sound</IonButton>
         <IonButton href="#" className="big-button">Record A Personalized Alarm</IonButton>

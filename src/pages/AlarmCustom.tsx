@@ -73,6 +73,9 @@ const AlarmCustom: React.FC = () => {
             <IonRefresher slot="fixed" onIonRefresh={refresh}>
                 <IonRefresherContent></IonRefresherContent>
             </IonRefresher>
+        <IonItem className="page-title">
+          <IonLabel>Customize Alarm</IonLabel>
+        </IonItem>
 
             <IonList>
               

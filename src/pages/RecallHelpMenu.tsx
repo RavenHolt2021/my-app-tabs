@@ -14,7 +14,9 @@ import {
   IonToolbar,
   useIonViewWillEnter,
   IonBackButton,
-  IonButtons
+  IonButtons,
+  IonItem,
+  IonLabel
 } from '@ionic/react';
 import './Home.css';
 
@@ -53,9 +55,11 @@ const RecallHelpMenu: React.FC = () => {
         <IonRefresher slot="fixed" onIonRefresh={refresh}>
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
+        <IonItem className="page-title">
+          <IonLabel>Recall Help</IonLabel>
+        </IonItem>
         <IonButton href="#" className="big-button">Dream Recall Guide</IonButton>
         <IonButton routerLink="/dreamsignsmenu" className="big-button">My Dream Signs</IonButton>
-        <IonButton href="#" className="big-button">Dream Template</IonButton>
         {/* <IonList>
           {messages.map(m => <MessageListItem key={m.id} message={m} />)}
         </IonList> */}
