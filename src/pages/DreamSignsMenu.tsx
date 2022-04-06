@@ -35,7 +35,7 @@ const ScreenMenu: React.FC = () => {
   const [signs, setSigns] = useState<string>();
   const [type, setType] = useState<Number>();
   const [sign, setSign] = useState<string>();
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
 
   useIonViewWillEnter(() => {
     const msgs = getMessages();
@@ -106,9 +106,9 @@ return(
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
         
-        <IonButton id="trigger" className="big-button">Add Dream Sign</IonButton>
+        <IonButton onClick={e => setShowModal(true)} className="big-button">Add Dream Sign</IonButton>
 
-        <IonModal isOpen={showModal} trigger="trigger" swipeToClose={true}>
+        <IonModal isOpen={showModal} swipeToClose={true}>
           <IonSelect value={type} placeholder="Sign Type" multiple={false} onIonChange={e => setType(e.detail.value)}>
             <IonSelectOption>Recurring</IonSelectOption>
             <IonSelectOption>Context</IonSelectOption>
@@ -118,8 +118,8 @@ return(
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Sign" value={sign} onIonChange={e => setSign(e.detail.value!)}></IonInput>
           </IonItem>
-          <IonButton onClick={e => saveData()} id="trigger" className="big-button" >Save</IonButton>
-          <IonButton className="big-button" id="trigger" onClick={e => setShowModal(false)}>Cancel</IonButton>
+          <IonButton onClick={e => saveData()} className="big-button" >Save</IonButton>
+          <IonButton className="big-button" onClick={e => setShowModal(false)}>Cancel</IonButton>
         </IonModal>
 
         <IonItemGroup class="tabs">
