@@ -14,13 +14,9 @@ import {
     IonToolbar,
     useIonViewWillEnter,
     IonBackButton,
-    IonButtons,
-    IonRange,
-    IonIcon
+    IonButtons
 } from '@ionic/react';
 import './Home.css';
-import './ScreenMenu.css';
-import { sunny } from 'ionicons/icons';
 
 const ScreenMenu: React.FC = () => {
     
@@ -56,13 +52,7 @@ return(
         <IonRefresher slot="fixed" onIonRefresh={refresh}>
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
-        <div>
-            <h1>Adjust Screen Brightness</h1>
-            <IonRange color="dark" min={0} max={1} step={0.01}>
-              <IonIcon className="icon" size="small" slot="start" icon={sunny} />
-              <IonIcon className="icon" slot="end" icon={sunny} />
-            </IonRange>
-          </div>
+        
         <IonFooter className="footer-content">
         </IonFooter>
       </IonContent>

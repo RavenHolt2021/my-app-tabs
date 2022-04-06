@@ -53,8 +53,8 @@ const JournalMenu: React.FC = () => {
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
         {/* <IonButton href="#" className="back-2-home"></IonButton> */}
-        <IonButton routerLink="/newentries" className="big-button">New Entries</IonButton>
-        <IonButton routerLink="/todaysentries" className="big-button">Today's Entries</IonButton>
+        <IonButton href="#" className="big-button">New Entries</IonButton>
+        <IonButton href="#" className="big-button">Today's Entries</IonButton>
         <IonButton routerLink="/mydreamsmenu" className="big-button">My Dreams</IonButton>
         <IonButton routerLink="/recallhelpmenu" className="big-button">Recall Help</IonButton>
         {/* <IonList>

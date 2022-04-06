@@ -53,10 +53,6 @@ return(
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
         
-        <IonButton href="#" className="big-button">View Goals</IonButton>
-        <IonButton href="#" className="big-button">Add a New Goal</IonButton>
-        <IonButton href="#" className="big-button">Archive Goals</IonButton>
-        
         <IonFooter className="footer-content">
         </IonFooter>
       </IonContent>
