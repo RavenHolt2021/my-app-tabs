@@ -49,6 +49,11 @@ const AlarmCustom: React.FC = () => {
         e.detail.complete();
       }, 3000);
     };
+
+    const saveAlarm = () => {
+
+    }
+    
     const[selected, setSelected] = useState<string>('biff');
 
 
@@ -92,7 +97,7 @@ const AlarmCustom: React.FC = () => {
                     </IonItem>
 
                 <IonItem>
-                  <IonInput type="number" value ={length} placeholder="Enter Length of the Auto Alarm" onIonChange={e => setLength(parseInt(e.detail.value!, 10))}></IonInput>Seconds
+                  <IonInput disabled ={!touchless} type="number" value ={length} placeholder="Enter Length of the Auto Alarm" onIonChange={e => setLength(parseInt(e.detail.value!, 10))}></IonInput>Seconds
                 </IonItem>
 
                 <IonItem>
@@ -116,7 +121,7 @@ const AlarmCustom: React.FC = () => {
             </IonList>
 
             <IonFooter className="footer-content">
-                <IonButton href="#" className="big-button">Create Alarm</IonButton>
+                <IonButton onClick={e => saveAlarm()} className="big-button">Create Alarm</IonButton>
             </IonFooter>
         </IonContent>
     </IonPage>
