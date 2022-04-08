@@ -40,6 +40,7 @@ const ScreenMenu: React.FC = () => {
   useIonViewWillEnter(() => {
     const msgs = getMessages();
     setMessages(msgs);
+    setSigns('5');
   });
 
   const refresh = (e: CustomEvent) => {
@@ -136,29 +137,44 @@ return(
           <IonSegmentButton value='4'>
             <IonLabel>Behavioral</IonLabel>
           </IonSegmentButton>
+          <IonSegmentButton value='5'>
+            <IonLabel>Dream Signs</IonLabel>
+          </IonSegmentButton>
         </IonSegment>
         </IonItemGroup>
 context form action innerawareness
         
         <IonList hidden={setVisible('1', signs!)}>
+          <IonLabel>Recurring dream signs are things that occur often in our dreams! They can be useful for triggering reality checks and assisting with dream recall.</IonLabel>
           <IonItem>
 
           </IonItem>
         </IonList>
+
         <IonList hidden={setVisible('2', signs!)}>
+          <IonLabel>Context dream signs happen when a dream's context is unusual to daily life, such as being in your childhood home or wearing pajamas to work.</IonLabel>
           <IonItem>
 
           </IonItem>
         </IonList>
+
         <IonList hidden={setVisible('3', signs!)}>
+          <IonLabel>Impossible dream signs are the most reliable for identifying dreams because they are happenings that are impossible in waking life, such as levitation or moving through walls.</IonLabel>
           <IonItem>
 
           </IonItem>
         </IonList>
+
         <IonList hidden={setVisible('4', signs!)}>
+          <IonLabel>Behavioral dream signs occur when something or someone behaves in contrast to expected behavior, such as the breaks of your car not working or a friend acting out of character.</IonLabel>
           <IonItem>
 
           </IonItem>
+        </IonList>
+
+        <IonList hidden={setVisible('5', signs!)}>
+          <IonLabel>Dream signs referrs to anything in a dream that indicates that it may be a dream and are useful for triggering lucidity. Chances are, all of your dreams have some dream signs in them. This section of the app is designed to allow you a space to record your dream signs and get to know them through critical thinking. It is important to note that dream signs can occur in both waking and dream life and as such should be used to trigger criticality and awareness, just because it's possible in waking life, doesn't mean it's not a dream sign.</IonLabel>
+
         </IonList>
         
         <IonFooter className="footer-content">
