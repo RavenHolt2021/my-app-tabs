@@ -25,6 +25,8 @@ import {
     withIonLifeCycle
 } from '@ionic/react';
 import './Home.css';
+import { statsChartSharp } from 'ionicons/icons';
+import { canConstructResponseFromBodyStream } from 'workbox-core/_private';
 
 const ScreenMenu: React.FC = () => {
     
@@ -32,102 +34,127 @@ const ScreenMenu: React.FC = () => {
 
 
   const[title1,setTitle1] = useState<string>();
+  const[lucid1,setLucid1] = useState<number>(0);
   const[dream1,setDream1] = useState<string>();
   const[tags1, setTags1] = useState<string>();
 
   const[title2,setTitle2] = useState<string>();
+  const[lucid2,setLucid2] = useState<number>(0);
   const[dream2,setDream2] = useState<string>();
   const[tags2, setTags2] = useState<string>();
 
   const[title3,setTitle3] = useState<string>();
+  const[lucid3,setLucid3] = useState<number>(0);
   const[dream3,setDream3] = useState<string>();
   const[tags3, setTags3] = useState<string>();
 
   const[title4,setTitle4] = useState<string>();
+  const[lucid4,setLucid4] = useState<number>(0);
   const[dream4,setDream4] = useState<string>();
   const[tags4, setTags4] = useState<string>();
 
   const[title5,setTitle5] = useState<string>();
+  const[lucid5,setLucid5] = useState<number>(0);
   const[dream5,setDream5] = useState<string>();
   const[tags5, setTags5] = useState<string>();
 
   const[title6,setTitle6] = useState<string>();
+  const[lucid6,setLucid6] = useState<number>(0);
   const[dream6,setDream6] = useState<string>();
   const[tags6, setTags6] = useState<string>();
 
   const[title7,setTitle7] = useState<string>();
+  const[lucid7,setLucid7] = useState<number>(0);
   const[dream7,setDream7] = useState<string>();
   const[tags7, setTags7] = useState<string>();
 
   const[title8,setTitle8] = useState<string>();
+  const[lucid8,setLucid8] = useState<number>(0);
   const[dream8,setDream8] = useState<string>();
   const[tags8, setTags8] = useState<string>();
 
   const[title9,setTitle9] = useState<string>();
+  const[lucid9,setLucid9] = useState<number>(0);
   const[dream9,setDream9] = useState<string>();
   const[tags9, setTags9] = useState<string>();
 
   const[title10,setTitle10] = useState<string>();
+  const[lucid10,setLucid10] = useState<number>(0);
   const[dream10,setDream10] = useState<string>();
   const[tags10, setTags10] = useState<string>();
 
   const[title11,setTitle11] = useState<string>();
+  const[lucid11,setLucid11] = useState<number>(0);
   const[dream11,setDream11] = useState<string>();
   const[tags11, setTags11] = useState<string>();
 
   const[title12,setTitle12] = useState<string>();
+  const[lucid12,setLucid12] = useState<number>(0);
   const[dream12,setDream12] = useState<string>();
   const[tags12, setTags12] = useState<string>();
 
   const[title13,setTitle13] = useState<string>();
+  const[lucid13,setLucid13] = useState<number>(0);
   const[dream13,setDream13] = useState<string>();
   const[tags13, setTags13] = useState<string>();
 
   const[title14,setTitle14] = useState<string>();
+  const[lucid14,setLucid14] = useState<number>(0);
   const[dream14,setDream14] = useState<string>();
   const[tags14, setTags14] = useState<string>();
 
   const[title15,setTitle15] = useState<string>();
+  const[lucid15,setLucid15] = useState<number>(0);
   const[dream15,setDream15] = useState<string>();
   const[tags15, setTags15] = useState<string>();
 
   const[title16,setTitle16] = useState<string>();
+  const[lucid16,setLucid16] = useState<number>(0);
   const[dream16,setDream16] = useState<string>();
   const[tags16, setTags16] = useState<string>();
 
   const[title17,setTitle17] = useState<string>();
+  const[lucid17,setLucid17] = useState<number>(0);
   const[dream17,setDream17] = useState<string>();
   const[tags17, setTags17] = useState<string>();
 
   const[title18,setTitle18] = useState<string>();
+  const[lucid18,setLucid18] = useState<number>(0);
   const[dream18,setDream18] = useState<string>();
   const[tags18, setTags18] = useState<string>();
 
   const[title19,setTitle19] = useState<string>();
+  const[lucid19,setLucid19] = useState<number>(0);
   const[dream19,setDream19] = useState<string>();
   const[tags19, setTags19] = useState<string>();
 
   const[title20,setTitle20] = useState<string>();
+  const[lucid20,setLucid20] = useState<number>(0);
   const[dream20,setDream20] = useState<string>();
   const[tags20, setTags20] = useState<string>();
 
   const[title21,setTitle21] = useState<string>();
+  const[lucid21,setLucid21] = useState<number>(0);
   const[dream21,setDream21] = useState<string>();
   const[tags21, setTags21] = useState<string>();
 
   const[title22,setTitle22] = useState<string>();
+  const[lucid22,setLucid22] = useState<number>(0);
   const[dream22,setDream22] = useState<string>();
   const[tags22, setTags22] = useState<string>();
 
   const[title23,setTitle23] = useState<string>();
+  const[lucid23,setLucid23] = useState<number>(0);
   const[dream23,setDream23] = useState<string>();
   const[tags23, setTags23] = useState<string>();
 
   const[title24,setTitle24] = useState<string>();
+  const[lucid24,setLucid24] = useState<number>(0);
   const[dream24,setDream24] = useState<string>();
   const[tags24, setTags24] = useState<string>();
 
   const[title25,setTitle25] = useState<string>();
+  const[lucid25,setLucid25] = useState<number>(0);
   const[dream25,setDream25] = useState<string>();
   const[tags25, setTags25] = useState<string>();
 
@@ -144,13 +171,23 @@ const ScreenMenu: React.FC = () => {
     setCount(count);
   }
 
+  const starTap = (lucid: number) => {
+    lucid = lucid + 1;
+    if(lucid > 2){
+      lucid = 0;
+    }
+    return lucid;
+  }
+
   useIonViewWillEnter(() => {
     setPage('2');//place holder open newest tab
     setCount(2);//place holder tab count
     setTitle1("Place holder Title");
+    setLucid1(0);
     setDream1("Place holder Dream");
     setTags1("Place, holder, tags");
     setTitle2("Place holder second Title");
+    setLucid2(2)
     setDream2("Place holder second Dream");
     setTags2("Place, holder, second, tags");
   });
@@ -185,6 +222,20 @@ const ScreenMenu: React.FC = () => {
     return val;
   };
 
+  function getImage(type: number): string {
+    var image = "../assets/icon/empty-star-transparent.png";
+    if (type == 0) {
+      image = "../assets/icon/empty-star-transparent.png";
+    }
+    else if (type == 1) {
+      image = "../assets/icon/fullstar-transparent.png";
+    }
+    else {
+      image = "../assets/icon/halfstar-transparent.png";
+    }
+    return image;
+  }
+
 return(
     <IonPage id="home-page">
     <IonHeader className="header">
@@ -204,6 +255,9 @@ return(
         <IonRefresher slot="fixed" onIonRefresh={refresh}>
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
+        <IonItem className="page-title">
+          <IonLabel>Today's Journal</IonLabel>
+        </IonItem>
 
         <IonItemGroup class="tabs">
         <IonSegment ref={selector} scrollable = {true} onIonChange={e => setPage(e.detail.value)} value={page}>
@@ -284,13 +338,14 @@ return(
           </IonSegmentButton>
           </IonSegment>
         
-        <IonButton class="add-button" hidden={!setVisible('25', count!.toString())} onClick={e => addCount(count!)} >+</IonButton>
+        <IonButton class="add-button" hidden={!setVisible('25', count!.toString())} shape="round" onClick={e => addCount(count!)} >+</IonButton>
         </IonItemGroup>
         {/*e => setCount(addCount(count!)); }*/}
 
         <IonItemGroup class="journal-dream" hidden={setVisible('1', page!)}>
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title1} onIonChange={e => setTitle1(e.detail.value!)}></IonInput>
+            <IonButton class="star-button" onClick={e => setLucid1(starTap(lucid1))}><img src={getImage(lucid1)} /></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
             <IonTextarea value={dream1} onIonChange={e => setDream1(e.detail.value!)}></IonTextarea>
@@ -303,6 +358,7 @@ return(
         <IonItemGroup class="journal-dream" hidden={setVisible('2', page!)}>
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title2} onIonChange={e => setTitle2(e.detail.value!)}></IonInput>
+            <IonButton class="star-button" onClick={e => setLucid2(starTap(lucid2))}><img src={getImage(lucid2)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
             <IonTextarea value={dream2} onIonChange={e => setDream2(e.detail.value!)}></IonTextarea>
@@ -315,6 +371,7 @@ return(
         <IonItemGroup class="journal-dream" hidden={setVisible('3', page!)}>
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title3} onIonChange={e => setTitle3(e.detail.value!)}></IonInput>
+            <IonButton class="star-button" onClick={e => setLucid3(starTap(lucid3))}><img src={getImage(lucid3)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
             <IonTextarea value={dream3} onIonChange={e => setDream3(e.detail.value!)}></IonTextarea>
@@ -327,6 +384,7 @@ return(
         <IonItemGroup class="journal-dream" hidden={setVisible('4', page!)}>
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title4} onIonChange={e => setTitle4(e.detail.value!)}></IonInput>
+            <IonButton class="star-button" onClick={e => setLucid4(starTap(lucid4))}><img src={getImage(lucid4)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
             <IonTextarea value={dream4} onIonChange={e => setDream4(e.detail.value!)}></IonTextarea>
@@ -339,6 +397,7 @@ return(
         <IonItemGroup class="journal-dream" hidden={setVisible('5', page!)}>
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title5} onIonChange={e => setTitle5(e.detail.value!)}></IonInput>
+            <IonButton class="star-button" onClick={e => setLucid5(starTap(lucid5))}><img src={getImage(lucid5)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
             <IonTextarea value={dream5} onIonChange={e => setDream5(e.detail.value!)}></IonTextarea>
@@ -351,6 +410,7 @@ return(
         <IonItemGroup class="journal-dream" hidden={setVisible('6', page!)}>
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title6} onIonChange={e => setTitle6(e.detail.value!)}></IonInput>
+            <IonButton class="star-button" onClick={e => setLucid6(starTap(lucid6))}><img src={getImage(lucid6)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
             <IonTextarea value={dream6} onIonChange={e => setDream6(e.detail.value!)}></IonTextarea>
@@ -363,6 +423,7 @@ return(
         <IonItemGroup class="journal-dream" hidden={setVisible('7', page!)}>
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title7} onIonChange={e => setTitle7(e.detail.value!)}></IonInput>
+            <IonButton class="star-button" onClick={e => setLucid7(starTap(lucid7))}><img src={getImage(lucid7)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
             <IonTextarea value={dream7} onIonChange={e => setDream7(e.detail.value!)}></IonTextarea>
@@ -375,6 +436,7 @@ return(
         <IonItemGroup class="journal-dream" hidden={setVisible('8', page!)}>
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title8} onIonChange={e => setTitle8(e.detail.value!)}></IonInput>
+            <IonButton class="star-button" onClick={e => setLucid8(starTap(lucid8))}><img src={getImage(lucid8)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
             <IonTextarea value={dream8} onIonChange={e => setDream8(e.detail.value!)}></IonTextarea>
@@ -387,6 +449,7 @@ return(
         <IonItemGroup class="journal-dream" hidden={setVisible('9', page!)}>
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title9} onIonChange={e => setTitle9(e.detail.value!)}></IonInput>
+            <IonButton class="star-button" onClick={e => setLucid9(starTap(lucid9))}><img src={getImage(lucid9)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
             <IonTextarea value={dream9} onIonChange={e => setDream9(e.detail.value!)}></IonTextarea>
@@ -399,6 +462,7 @@ return(
         <IonItemGroup class="journal-dream" hidden={setVisible('10', page!)}>
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title10} onIonChange={e => setTitle10(e.detail.value!)}></IonInput>
+            <IonButton class="star-button" onClick={e => setLucid10(starTap(lucid10))}><img src={getImage(lucid10)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
             <IonTextarea value={dream10} onIonChange={e => setDream10(e.detail.value!)}></IonTextarea>
@@ -411,6 +475,7 @@ return(
         <IonItemGroup class="journal-dream" hidden={setVisible('11', page!)}>
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title11} onIonChange={e => setTitle11(e.detail.value!)}></IonInput>
+            <IonButton class="star-button" onClick={e => setLucid11(starTap(lucid11))}><img src={getImage(lucid11)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
             <IonTextarea value={dream11} onIonChange={e => setDream11(e.detail.value!)}></IonTextarea>
@@ -423,6 +488,7 @@ return(
         <IonItemGroup class="journal-dream" hidden={setVisible('12', page!)}>
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title12} onIonChange={e => setTitle12(e.detail.value!)}></IonInput>
+            <IonButton class="star-button" onClick={e => setLucid11(starTap(lucid11))}><img src={getImage(lucid12)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
             <IonTextarea value={dream12} onIonChange={e => setDream12(e.detail.value!)}></IonTextarea>
@@ -435,6 +501,7 @@ return(
         <IonItemGroup class="journal-dream" hidden={setVisible('13', page!)}>
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title13} onIonChange={e => setTitle13(e.detail.value!)}></IonInput>
+            <IonButton class="star-button" onClick={e => setLucid13(starTap(lucid13))}><img src={getImage(lucid13)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
             <IonTextarea value={dream13} onIonChange={e => setDream13(e.detail.value!)}></IonTextarea>
@@ -447,6 +514,7 @@ return(
         <IonItemGroup class="journal-dream" hidden={setVisible('14', page!)}>
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title14} onIonChange={e => setTitle14(e.detail.value!)}></IonInput>
+            <IonButton class="star-button" onClick={e => setLucid14(starTap(lucid14))}><img src={getImage(lucid14)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
             <IonTextarea value={dream14} onIonChange={e => setDream14(e.detail.value!)}></IonTextarea>
@@ -459,6 +527,7 @@ return(
         <IonItemGroup class="journal-dream" hidden={setVisible('15', page!)}>
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title15} onIonChange={e => setTitle15(e.detail.value!)}></IonInput>
+            <IonButton class="star-button" onClick={e => setLucid15(starTap(lucid15))}><img src={getImage(lucid15)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
             <IonTextarea value={dream15} onIonChange={e => setDream15(e.detail.value!)}></IonTextarea>
@@ -471,18 +540,20 @@ return(
         <IonItemGroup class="journal-dream" hidden={setVisible('16', page!)}>
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title16} onIonChange={e => setTitle16(e.detail.value!)}></IonInput>
+            <IonButton class="star-button" onClick={e => setLucid16(starTap(lucid16))}><img src={getImage(lucid16)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
-            <IonTextarea value={dream16} placeholder="separate tags with commas" onIonChange={e => setDream16(e.detail.value!)}></IonTextarea>
+            <IonTextarea value={dream16} onIonChange={e => setDream16(e.detail.value!)}></IonTextarea>
           </IonItem>
           <IonItem class="journal-tags">
-            <IonTextarea value={tags16} onIonChange={e => setTags16(e.detail.value!)}></IonTextarea>
+            <IonTextarea value={tags16} placeholder="separate tags with commas" onIonChange={e => setTags16(e.detail.value!)}></IonTextarea>
           </IonItem>
         </IonItemGroup>
 
         <IonItemGroup class="journal-dream" hidden={setVisible('17', page!)}>
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title17} onIonChange={e => setTitle17(e.detail.value!)}></IonInput>
+            <IonButton class="star-button" onClick={e => setLucid17(starTap(lucid17))}><img src={getImage(lucid17)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
             <IonTextarea value={dream17} onIonChange={e => setDream17(e.detail.value!)}></IonTextarea>
@@ -495,6 +566,7 @@ return(
         <IonItemGroup class="journal-dream" hidden={setVisible('18', page!)}>
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title18} onIonChange={e => setTitle18(e.detail.value!)}></IonInput>
+            <IonButton class="star-button" onClick={e => setLucid18(starTap(lucid18))}><img src={getImage(lucid18)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
             <IonTextarea value={dream18} onIonChange={e => setDream18(e.detail.value!)}></IonTextarea>
@@ -507,6 +579,7 @@ return(
         <IonItemGroup class="journal-dream" hidden={setVisible('19', page!)}>
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title19} onIonChange={e => setTitle19(e.detail.value!)}></IonInput>
+            <IonButton class="star-button" onClick={e => setLucid19(starTap(lucid19))}><img src={getImage(lucid19)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
             <IonTextarea value={dream19} onIonChange={e => setDream19(e.detail.value!)}></IonTextarea>
@@ -519,6 +592,7 @@ return(
         <IonItemGroup class="journal-dream" hidden={setVisible('20', page!)}>
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title20} onIonChange={e => setTitle20(e.detail.value!)}></IonInput>
+            <IonButton class="star-button" onClick={e => setLucid20(starTap(lucid20))}><img src={getImage(lucid20)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
             <IonTextarea value={dream20} onIonChange={e => setDream20(e.detail.value!)}></IonTextarea>
@@ -531,6 +605,7 @@ return(
         <IonItemGroup class="journal-dream" hidden={setVisible('21', page!)}>
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title21} onIonChange={e => setTitle21(e.detail.value!)}></IonInput>
+            <IonButton class="star-button" onClick={e => setLucid21(starTap(lucid21))}><img src={getImage(lucid21)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
             <IonTextarea value={dream21} onIonChange={e => setDream21(e.detail.value!)}></IonTextarea>
@@ -543,6 +618,7 @@ return(
         <IonItemGroup class="journal-dream" hidden={setVisible('22', page!)}>
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title22} onIonChange={e => setTitle22(e.detail.value!)}></IonInput>
+            <IonButton class="star-button" onClick={e => setLucid22(starTap(lucid22))}><img src={getImage(lucid22)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
             <IonTextarea value={dream22} onIonChange={e => setDream22(e.detail.value!)}></IonTextarea>
@@ -555,6 +631,7 @@ return(
         <IonItemGroup class="journal-dream" hidden={setVisible('23', page!)}>
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title23} onIonChange={e => setTitle23(e.detail.value!)}></IonInput>
+            <IonButton class="star-button" onClick={e => setLucid23(starTap(lucid23))}><img src={getImage(lucid23)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
             <IonTextarea value={dream23} onIonChange={e => setDream23(e.detail.value!)}></IonTextarea>
@@ -567,6 +644,7 @@ return(
         <IonItemGroup class="journal-dream" hidden={setVisible('24', page!)}>
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title24} onIonChange={e => setTitle24(e.detail.value!)}></IonInput>
+            <IonButton class="star-button" onClick={e => setLucid24(starTap(lucid24))}><img src={getImage(lucid24)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
             <IonTextarea value={dream24} onIonChange={e => setDream24(e.detail.value!)}></IonTextarea>
@@ -579,6 +657,7 @@ return(
         <IonItemGroup class="journal-dream" hidden={setVisible('25', page!)}>
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title25} onIonChange={e => setTitle25(e.detail.value!)}></IonInput>
+            <IonButton class="star-button" onClick={e => setLucid25(starTap(lucid25))}><img src={getImage(lucid25)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
             <IonTextarea value={dream25} onIonChange={e => setDream25(e.detail.value!)}></IonTextarea>
