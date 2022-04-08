@@ -29,7 +29,8 @@ import Alarm from './pages/Alarm';
 import Journal from './pages/Journal';
 import ViewMessage from './pages/ViewMessage';
 
-/* ABOVE ViewMessage YOU SHOULD HAVE import GET/LUCID & SETTINGS */
+// Possible Data Storage Here:
+/* Add content. */
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
