@@ -342,7 +342,7 @@ return(
 
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title1} onIonChange={e => setTitle1(e.detail.value!)}></IonInput>
-            <IonButton class="star-button" onClick={e => setLucid1(starTap(lucid1))}><img src={getImage(lucid1)}/></IonButton>
+            <IonButton color="transparent" class="star-button" onClick={e => setLucid1(starTap(lucid1))}><img src={getImage(lucid1)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
             <IonTextarea value={dream1} onIonChange={e => setDream1(e.detail.value!)}></IonTextarea>
@@ -355,7 +355,7 @@ return(
         <IonItemGroup class="journal-dream" hidden={setVisible('2', page!)}>
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title2} onIonChange={e => setTitle2(e.detail.value!)}></IonInput>
-            <IonButton class="star-button" onClick={e => setLucid2(starTap(lucid2))}><img src={getImage(lucid2)}/></IonButton>
+            <IonButton color="transparent" class="star-button" onClick={e => setLucid2(starTap(lucid2))}><img src={getImage(lucid2)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
             <IonTextarea value={dream2} onIonChange={e => setDream2(e.detail.value!)}></IonTextarea>
@@ -368,7 +368,7 @@ return(
         <IonItemGroup class="journal-dream" hidden={setVisible('3', page!)}>
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title3} onIonChange={e => setTitle3(e.detail.value!)}></IonInput>
-            <IonButton class="star-button" onClick={e => setLucid3(starTap(lucid3))}><img src={getImage(lucid3)}/></IonButton>
+            <IonButton color="transparent" class="star-button" onClick={e => setLucid3(starTap(lucid3))}><img src={getImage(lucid3)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
             <IonTextarea value={dream3} onIonChange={e => setDream3(e.detail.value!)}></IonTextarea>
@@ -381,7 +381,7 @@ return(
         <IonItemGroup class="journal-dream" hidden={setVisible('4', page!)}>
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title4} onIonChange={e => setTitle4(e.detail.value!)}></IonInput>
-            <IonButton class="star-button" onClick={e => setLucid4(starTap(lucid4))}><img src={getImage(lucid4)}/></IonButton>
+            <IonButton color="transparent" class="star-button" onClick={e => setLucid4(starTap(lucid4))}><img src={getImage(lucid4)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
             <IonTextarea value={dream4} onIonChange={e => setDream4(e.detail.value!)}></IonTextarea>
@@ -394,7 +394,7 @@ return(
         <IonItemGroup class="journal-dream" hidden={setVisible('5', page!)}>
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title5} onIonChange={e => setTitle5(e.detail.value!)}></IonInput>
-            <IonButton class="star-button" onClick={e => setLucid5(starTap(lucid5))}><img src={getImage(lucid5)}/></IonButton>
+            <IonButton color="transparent" class="star-button" onClick={e => setLucid5(starTap(lucid5))}><img src={getImage(lucid5)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
             <IonTextarea value={dream5} onIonChange={e => setDream5(e.detail.value!)}></IonTextarea>
@@ -407,7 +407,7 @@ return(
         <IonItemGroup class="journal-dream" hidden={setVisible('6', page!)}>
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title6} onIonChange={e => setTitle6(e.detail.value!)}></IonInput>
-            <IonButton class="star-button" onClick={e => setLucid6(starTap(lucid6))}><img src={getImage(lucid6)}/></IonButton>
+            <IonButton color="transparent" class="star-button" onClick={e => setLucid6(starTap(lucid6))}><img src={getImage(lucid6)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
             <IonTextarea value={dream6} onIonChange={e => setDream6(e.detail.value!)}></IonTextarea>
@@ -420,7 +420,7 @@ return(
         <IonItemGroup class="journal-dream" hidden={setVisible('7', page!)}>
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title7} onIonChange={e => setTitle7(e.detail.value!)}></IonInput>
-            <IonButton class="star-button" onClick={e => setLucid7(starTap(lucid7))}><img src={getImage(lucid7)}/></IonButton>
+            <IonButton color="transparent" class="star-button" onClick={e => setLucid7(starTap(lucid7))}><img src={getImage(lucid7)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
             <IonTextarea value={dream7} onIonChange={e => setDream7(e.detail.value!)}></IonTextarea>
@@ -433,7 +433,7 @@ return(
         <IonItemGroup class="journal-dream" hidden={setVisible('8', page!)}>
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title8} onIonChange={e => setTitle8(e.detail.value!)}></IonInput>
-            <IonButton class="star-button" onClick={e => setLucid8(starTap(lucid8))}><img src={getImage(lucid8)}/></IonButton>
+            <IonButton color="transparent" class="star-button" onClick={e => setLucid8(starTap(lucid8))}><img src={getImage(lucid8)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
             <IonTextarea value={dream8} onIonChange={e => setDream8(e.detail.value!)}></IonTextarea>
@@ -446,7 +446,7 @@ return(
         <IonItemGroup class="journal-dream" hidden={setVisible('9', page!)}>
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title9} onIonChange={e => setTitle9(e.detail.value!)}></IonInput>
-            <IonButton class="star-button" onClick={e => setLucid9(starTap(lucid9))}><img src={getImage(lucid9)}/></IonButton>
+            <IonButton color="transparent" class="star-button" onClick={e => setLucid9(starTap(lucid9))}><img src={getImage(lucid9)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
             <IonTextarea value={dream9} onIonChange={e => setDream9(e.detail.value!)}></IonTextarea>
@@ -459,7 +459,7 @@ return(
         <IonItemGroup class="journal-dream" hidden={setVisible('10', page!)}>
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title10} onIonChange={e => setTitle10(e.detail.value!)}></IonInput>
-            <IonButton class="star-button" onClick={e => setLucid10(starTap(lucid10))}><img src={getImage(lucid10)}/></IonButton>
+            <IonButton color="transparent" class="star-button" onClick={e => setLucid10(starTap(lucid10))}><img src={getImage(lucid10)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
             <IonTextarea value={dream10} onIonChange={e => setDream10(e.detail.value!)}></IonTextarea>
@@ -472,7 +472,7 @@ return(
         <IonItemGroup class="journal-dream" hidden={setVisible('11', page!)}>
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title11} onIonChange={e => setTitle11(e.detail.value!)}></IonInput>
-            <IonButton class="star-button" onClick={e => setLucid11(starTap(lucid11))}><img src={getImage(lucid11)}/></IonButton>
+            <IonButton color="transparent" class="star-button" onClick={e => setLucid11(starTap(lucid11))}><img src={getImage(lucid11)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
             <IonTextarea value={dream11} onIonChange={e => setDream11(e.detail.value!)}></IonTextarea>
@@ -485,7 +485,7 @@ return(
         <IonItemGroup class="journal-dream" hidden={setVisible('12', page!)}>
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title12} onIonChange={e => setTitle12(e.detail.value!)}></IonInput>
-            <IonButton class="star-button" onClick={e => setLucid11(starTap(lucid11))}><img src={getImage(lucid12)}/></IonButton>
+            <IonButton color="transparent" class="star-button" onClick={e => setLucid11(starTap(lucid11))}><img src={getImage(lucid12)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
             <IonTextarea value={dream12} onIonChange={e => setDream12(e.detail.value!)}></IonTextarea>
@@ -498,7 +498,7 @@ return(
         <IonItemGroup class="journal-dream" hidden={setVisible('13', page!)}>
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title13} onIonChange={e => setTitle13(e.detail.value!)}></IonInput>
-            <IonButton class="star-button" onClick={e => setLucid13(starTap(lucid13))}><img src={getImage(lucid13)}/></IonButton>
+            <IonButton color="transparent" class="star-button" onClick={e => setLucid13(starTap(lucid13))}><img src={getImage(lucid13)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
             <IonTextarea value={dream13} onIonChange={e => setDream13(e.detail.value!)}></IonTextarea>
@@ -511,7 +511,7 @@ return(
         <IonItemGroup class="journal-dream" hidden={setVisible('14', page!)}>
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title14} onIonChange={e => setTitle14(e.detail.value!)}></IonInput>
-            <IonButton class="star-button" onClick={e => setLucid14(starTap(lucid14))}><img src={getImage(lucid14)}/></IonButton>
+            <IonButton color="transparent" class="star-button" onClick={e => setLucid14(starTap(lucid14))}><img src={getImage(lucid14)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
             <IonTextarea value={dream14} onIonChange={e => setDream14(e.detail.value!)}></IonTextarea>
@@ -524,7 +524,7 @@ return(
         <IonItemGroup class="journal-dream" hidden={setVisible('15', page!)}>
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title15} onIonChange={e => setTitle15(e.detail.value!)}></IonInput>
-            <IonButton class="star-button" onClick={e => setLucid15(starTap(lucid15))}><img src={getImage(lucid15)}/></IonButton>
+            <IonButton color="transparent" class="star-button" onClick={e => setLucid15(starTap(lucid15))}><img src={getImage(lucid15)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
             <IonTextarea value={dream15} onIonChange={e => setDream15(e.detail.value!)}></IonTextarea>
@@ -537,7 +537,7 @@ return(
         <IonItemGroup class="journal-dream" hidden={setVisible('16', page!)}>
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title16} onIonChange={e => setTitle16(e.detail.value!)}></IonInput>
-            <IonButton class="star-button" onClick={e => setLucid16(starTap(lucid16))}><img src={getImage(lucid16)}/></IonButton>
+            <IonButton color="transparent" class="star-button" onClick={e => setLucid16(starTap(lucid16))}><img src={getImage(lucid16)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
             <IonTextarea value={dream16} onIonChange={e => setDream16(e.detail.value!)}></IonTextarea>
@@ -550,7 +550,7 @@ return(
         <IonItemGroup class="journal-dream" hidden={setVisible('17', page!)}>
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title17} onIonChange={e => setTitle17(e.detail.value!)}></IonInput>
-            <IonButton class="star-button" onClick={e => setLucid17(starTap(lucid17))}><img src={getImage(lucid17)}/></IonButton>
+            <IonButton color="transparent" class="star-button" onClick={e => setLucid17(starTap(lucid17))}><img src={getImage(lucid17)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
             <IonTextarea value={dream17} onIonChange={e => setDream17(e.detail.value!)}></IonTextarea>
@@ -563,7 +563,7 @@ return(
         <IonItemGroup class="journal-dream" hidden={setVisible('18', page!)}>
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title18} onIonChange={e => setTitle18(e.detail.value!)}></IonInput>
-            <IonButton class="star-button" onClick={e => setLucid18(starTap(lucid18))}><img src={getImage(lucid18)}/></IonButton>
+            <IonButton color="transparent" class="star-button" onClick={e => setLucid18(starTap(lucid18))}><img src={getImage(lucid18)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
             <IonTextarea value={dream18} onIonChange={e => setDream18(e.detail.value!)}></IonTextarea>
@@ -576,7 +576,7 @@ return(
         <IonItemGroup class="journal-dream" hidden={setVisible('19', page!)}>
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title19} onIonChange={e => setTitle19(e.detail.value!)}></IonInput>
-            <IonButton class="star-button" onClick={e => setLucid19(starTap(lucid19))}><img src={getImage(lucid19)}/></IonButton>
+            <IonButton color="transparent" class="star-button" onClick={e => setLucid19(starTap(lucid19))}><img src={getImage(lucid19)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
             <IonTextarea value={dream19} onIonChange={e => setDream19(e.detail.value!)}></IonTextarea>
@@ -589,7 +589,7 @@ return(
         <IonItemGroup class="journal-dream" hidden={setVisible('20', page!)}>
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title20} onIonChange={e => setTitle20(e.detail.value!)}></IonInput>
-            <IonButton class="star-button" onClick={e => setLucid20(starTap(lucid20))}><img src={getImage(lucid20)}/></IonButton>
+            <IonButton color="transparent" class="star-button" onClick={e => setLucid20(starTap(lucid20))}><img src={getImage(lucid20)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
             <IonTextarea value={dream20} onIonChange={e => setDream20(e.detail.value!)}></IonTextarea>
@@ -602,7 +602,7 @@ return(
         <IonItemGroup class="journal-dream" hidden={setVisible('21', page!)}>
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title21} onIonChange={e => setTitle21(e.detail.value!)}></IonInput>
-            <IonButton class="star-button" onClick={e => setLucid21(starTap(lucid21))}><img src={getImage(lucid21)}/></IonButton>
+            <IonButton color="transparent" class="star-button" onClick={e => setLucid21(starTap(lucid21))}><img src={getImage(lucid21)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
             <IonTextarea value={dream21} onIonChange={e => setDream21(e.detail.value!)}></IonTextarea>
@@ -615,7 +615,7 @@ return(
         <IonItemGroup class="journal-dream" hidden={setVisible('22', page!)}>
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title22} onIonChange={e => setTitle22(e.detail.value!)}></IonInput>
-            <IonButton class="star-button" onClick={e => setLucid22(starTap(lucid22))}><img src={getImage(lucid22)}/></IonButton>
+            <IonButton color="transparent" class="star-button" onClick={e => setLucid22(starTap(lucid22))}><img src={getImage(lucid22)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
             <IonTextarea value={dream22} onIonChange={e => setDream22(e.detail.value!)}></IonTextarea>
@@ -628,7 +628,7 @@ return(
         <IonItemGroup class="journal-dream" hidden={setVisible('23', page!)}>
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title23} onIonChange={e => setTitle23(e.detail.value!)}></IonInput>
-            <IonButton class="star-button" onClick={e => setLucid23(starTap(lucid23))}><img src={getImage(lucid23)}/></IonButton>
+            <IonButton color="transparent" class="star-button" onClick={e => setLucid23(starTap(lucid23))}><img src={getImage(lucid23)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
             <IonTextarea value={dream23} onIonChange={e => setDream23(e.detail.value!)}></IonTextarea>
@@ -641,7 +641,7 @@ return(
         <IonItemGroup class="journal-dream" hidden={setVisible('24', page!)}>
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title24} onIonChange={e => setTitle24(e.detail.value!)}></IonInput>
-            <IonButton class="star-button" onClick={e => setLucid24(starTap(lucid24))}><img src={getImage(lucid24)}/></IonButton>
+            <IonButton color="transparent" class="star-button" onClick={e => setLucid24(starTap(lucid24))}><img src={getImage(lucid24)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
             <IonTextarea value={dream24} onIonChange={e => setDream24(e.detail.value!)}></IonTextarea>
@@ -654,7 +654,7 @@ return(
         <IonItemGroup class="journal-dream" hidden={setVisible('25', page!)}>
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title25} onIonChange={e => setTitle25(e.detail.value!)}></IonInput>
-            <IonButton class="star-button" onClick={e => setLucid25(starTap(lucid25))}><img src={getImage(lucid25)}/></IonButton>
+            <IonButton color="transparent" class="star-button" onClick={e => setLucid25(starTap(lucid25))}><img src={getImage(lucid25)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
             <IonTextarea value={dream25} onIonChange={e => setDream25(e.detail.value!)}></IonTextarea>
