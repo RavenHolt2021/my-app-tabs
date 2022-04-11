@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import AlarmCustom from './pages/AlarmCustom';
 import AlarmMenu from './pages/AlarmMenu';
 import AlarmSoundsMenu from './pages/AlarmSoundsMenu';
+import DataSettings from './pages/DataSettings';
 import DreamSearch from './pages/DreamSearch';
 import DreamSignsMenu from './pages/DreamSignsMenu';
 import Goals from './pages/Goals';
@@ -76,6 +77,10 @@ const App: React.FC = () => (
 
         <Route path="/alarmsoundsmenu" exact={true}>
           <AlarmSoundsMenu />
+        </Route>
+
+        <Route path="/datasettings" exact={true}>
+          <DataSettings />
         </Route>
 
         <Route path="/dreamsearch" exact={true}>

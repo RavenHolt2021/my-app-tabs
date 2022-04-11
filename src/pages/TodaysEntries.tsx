@@ -160,6 +160,7 @@ const ScreenMenu: React.FC = () => {
 
   const[page, setPage] = useState<string>();
   const[count, setCount] = useState<number>(1);
+  const [today, setToday] = useState<string>();
 
   const selector = useRef(null);
 
@@ -205,6 +206,19 @@ const ScreenMenu: React.FC = () => {
 
   const saveData = () => {
 
+    var date = new Date();
+    var monthOfYearInt = date.getMonth();
+    var monthOfYearString;
+    monthOfYearInt = monthOfYearInt + 1;
+    if(monthOfYearInt < 10){
+      monthOfYearString = '0' + monthOfYearInt.toString();
+    }
+    else{
+      monthOfYearString = monthOfYearInt.toString();
+    }
+    var nowDay = (date.getFullYear().toString() + '-' + monthOfYearString + '-' + date.getDate().toString());
+
+    setToday(nowDay);
   }
 
   const setVisible = (selectedValue: string, compareValue: string): boolean => {
