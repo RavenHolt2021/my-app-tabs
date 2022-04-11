@@ -63,8 +63,10 @@
 /* 
     HERE IS WHAT MUST BE WORKED ON:
     - Find a way to make spacing between dream titles
-    - Find a way to move the button to the right on the entry textbox without fallowing it
-    - (For Dev) Set the entries to where there MUST be a title and blank cannot work
+    - Find a way to move the button to the right on the display dream title, without fallowing it
+    - (For Dev) Set the entries to where there MUST be a title, and blank cannot work
+    - (For Dev) Currently, editing the name of a previous dream and adding it to the dream list will cause add a blank dream to the list. This must be fixed. (This can go hand and hand with the previous task.)
+    - The star button interferes with the text entry box for the dream title. Maybe with should fix that.
     _ ***TO BE CONTINUED!***
 */
 
