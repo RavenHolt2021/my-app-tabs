@@ -276,79 +276,79 @@ return(
         <IonItemGroup class="tabs">
         <IonSegment ref={selector} scrollable = {true} onIonChange={e => setPage(e.detail.value)} value={page}>
           <IonSegmentButton value='1' >
-            <IonLabel>{title1}</IonLabel>
+            <IonLabel> {title1} </IonLabel>
           </IonSegmentButton>
           <IonSegmentButton value='2' hidden={setVisibleNumb(2, count)}>
-            <IonLabel>{title2}</IonLabel>
+            <IonLabel> {title2} </IonLabel>
           </IonSegmentButton>
           <IonSegmentButton value='3' hidden={setVisibleNumb(3, count)}>
-            <IonLabel>{title3}</IonLabel>
+            <IonLabel> {title3} </IonLabel>
           </IonSegmentButton>
           <IonSegmentButton value='4' hidden={setVisibleNumb(4, count)}>
-            <IonLabel>{title4}</IonLabel>
+            <IonLabel> {title4} </IonLabel>
           </IonSegmentButton>
           <IonSegmentButton value='5' hidden={setVisibleNumb(5, count)}>
-            <IonLabel>{title5}</IonLabel>
+            <IonLabel> {title5} </IonLabel>
           </IonSegmentButton>
           <IonSegmentButton value='6' hidden={setVisibleNumb(6, count)}>
-            <IonLabel>{title6}</IonLabel>
+            <IonLabel> {title6} </IonLabel>
           </IonSegmentButton>
           <IonSegmentButton value='7' hidden={setVisibleNumb(7, count)}>
-            <IonLabel>{title7}</IonLabel>
+            <IonLabel> {title7} </IonLabel>
           </IonSegmentButton>
           <IonSegmentButton value='8' hidden={setVisibleNumb(8, count)}>
-            <IonLabel>{title8}</IonLabel>
+            <IonLabel> {title8} </IonLabel>
           </IonSegmentButton>
           <IonSegmentButton value='9' hidden={setVisibleNumb(9, count)}>
-            <IonLabel>{title9}</IonLabel>
+            <IonLabel> {title9} </IonLabel>
           </IonSegmentButton>
           <IonSegmentButton value='10' hidden={setVisibleNumb(10, count)}>
-            <IonLabel>{title10}</IonLabel>
+            <IonLabel> {title10} </IonLabel>
           </IonSegmentButton>
           <IonSegmentButton value='11' hidden={setVisibleNumb(11, count)}>
-            <IonLabel>{title11}</IonLabel>
+            <IonLabel> {title11} </IonLabel>
           </IonSegmentButton>
           <IonSegmentButton value='12' hidden={setVisibleNumb(12, count)}>
-            <IonLabel>{title12}</IonLabel>
+            <IonLabel> {title12} </IonLabel>
           </IonSegmentButton>
           <IonSegmentButton value='13' hidden={setVisibleNumb(13, count)}>
-            <IonLabel>{title13}</IonLabel>
+            <IonLabel> {title13} </IonLabel>
           </IonSegmentButton>
           <IonSegmentButton value='14' hidden={setVisibleNumb(14, count)}>
-            <IonLabel>{title14}</IonLabel>
+            <IonLabel> {title14} </IonLabel>
           </IonSegmentButton>
           <IonSegmentButton value='15' hidden={setVisibleNumb(15, count)}>
-            <IonLabel>{title15}</IonLabel>
+            <IonLabel> {title15} </IonLabel>
           </IonSegmentButton>
           <IonSegmentButton value='16' hidden={setVisibleNumb(16, count)}>
-            <IonLabel>{title16}</IonLabel>
+            <IonLabel> {title16} </IonLabel>
           </IonSegmentButton>
           <IonSegmentButton value='17' hidden={setVisibleNumb(17, count)}>
-            <IonLabel>{title17}</IonLabel>
+            <IonLabel> {title17} </IonLabel>
           </IonSegmentButton>
           <IonSegmentButton value='18' hidden={setVisibleNumb(18, count)}>
-            <IonLabel>{title18}</IonLabel>
+            <IonLabel> {title18} </IonLabel>
           </IonSegmentButton>
           <IonSegmentButton value='19' hidden={setVisibleNumb(19, count)}>
-            <IonLabel>{title19}</IonLabel>
+            <IonLabel> {title19} </IonLabel>
           </IonSegmentButton>
           <IonSegmentButton value='20' hidden={setVisibleNumb(20, count)}>
-            <IonLabel>{title20}</IonLabel>
+            <IonLabel> {title20} </IonLabel>
           </IonSegmentButton>
           <IonSegmentButton value='21' hidden={setVisibleNumb(21, count)}>
-            <IonLabel>{title21}</IonLabel>
+            <IonLabel> {title21} </IonLabel>
           </IonSegmentButton>
           <IonSegmentButton value='22' hidden={setVisibleNumb(22, count)}>
-            <IonLabel>{title22}</IonLabel>
+            <IonLabel> {title22} </IonLabel>
           </IonSegmentButton>
           <IonSegmentButton value='23' hidden={setVisibleNumb(23, count)}>
-            <IonLabel>{title23}</IonLabel>
+            <IonLabel> {title23} </IonLabel>
           </IonSegmentButton>
           <IonSegmentButton value='24' hidden={setVisibleNumb(24, count)}>
-            <IonLabel>{title24}</IonLabel>
+            <IonLabel> {title24} </IonLabel>
           </IonSegmentButton>
           <IonSegmentButton value='25' hidden={setVisibleNumb(25, count)}>
-            <IonLabel>{title25}</IonLabel>
+            <IonLabel> {title25} </IonLabel>
           </IonSegmentButton>
           </IonSegment>
         
