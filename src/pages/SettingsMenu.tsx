@@ -53,7 +53,7 @@ const SettingsMenu: React.FC = () => {
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
         <IonButton routerLink="/screenmenu" className="big-button">Screen Settings</IonButton>
-        <IonButton href="#" className="big-button">Data Settings</IonButton>
+        <IonButton routerLink="/datasettings" className="big-button">Data Settings</IonButton>
         <IonButton href="#" className="big-button">Passwords</IonButton>
         {/* <IonList>
           {messages.map(m => <MessageListItem key={m.id} message={m} />)}
