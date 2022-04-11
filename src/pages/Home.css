@@ -60,48 +60,39 @@
 
 /* For Journal - New Entries: */
 
+/* 
+    HERE IS WHAT MUST BE WORKED ON:
+    - Find a way to put spacing between dream titles
+    - Find a way to move the button to the right on the entry textbox without fallowing it
+    - (For Dev) Set the entries to where there MUST be a title and blank cannot work
+    - ***TO BE CONTINUED!***
+*/
+
 .tabs {
-    color: white;
+    color: #BF40BF;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: black;
+    font-family: monospace;
 }
 
 .add-button {
     --background: var(--dream, #BF40BF);
-    display: flex;
 }
 
 .journal-dream {
-    color: white;
+    color: #BF40BF;
 }
 
 .journal-title {
     font-family: monospace;
-    color: blue;
+    color: black;
 }
 
-.journal-entery {
-    
-}
-
-.journal-tags {
-
-}
-
-/* Dormant Style Classes:
-
-.tabs {
-
-}
-
-.add-button {
-
-}
-
-.journal-dream {
-
-}
-
-.journal-title {
-
+.journal-title .star-button {
+    height: fit-content;
+    width: fit-content;
+    max-width: 70px;
 }
 
 .journal-entery {
@@ -111,4 +102,3 @@
 .journal-tags {
 
 }
-*/
