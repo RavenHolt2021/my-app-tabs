@@ -60,7 +60,7 @@ const ScreenMenu: React.FC = () => {
             <IonRefresher slot="fixed" onIonRefresh={refresh}>
             <IonRefresherContent></IonRefresherContent>
             </IonRefresher>
-            <div>
+            <div className='audiotitle'>
                 <h1>Upload Audio File</h1>
                 <IonItem>
                 <input type="file" accept="audio/*" />

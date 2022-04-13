@@ -110,7 +110,10 @@ font-family: monospace;
 
 .footer-content .big-button {
     position: fixed;
-    bottom:0px;
-    margin: 0 auto;
+    bottom: 0;
+    width: 56%;
+    margin-left: 22%;
+    margin-right: 22%;
+    margin-bottom: 0;
     /* Find a way to center this button */
 }
