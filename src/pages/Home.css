@@ -58,10 +58,11 @@
 
 /* 
     HERE IS WHAT MUST BE WORKED ON:
-    - Find a way to move the button to the right on the display dream title, without fallowing it
+    - Fix the Save Entries button to the bottom
+    - Find a way to move the + button to the right on the display dream title, without fallowing it
     - (For Dev) Set the entries to where there MUST be a title, and blank cannot work
-    - (For Dev) Currently, editing the name of a previous dream and adding it to the dream list will cause add a blank dream to the list. This must be fixed. (This can go hand and hand with the previous task.)
-    - The star button interferes with the text entry box for the dream title. Maybe with should fix that.
+    - (For Dev) Currently, editing the name of a previous dream and adding it to the dream list will cause it to add a blank dream to the list. This must be fixed. (This can go hand and hand with the previous task.)
+    - The star button interferes with the text entry box for the dream title. Maybe we should fix that.
     ***TO BE CONTINUED!***
 */
 
@@ -105,4 +106,11 @@
 .journal-tags {
 color: black;
 font-family: monospace;
+}
+
+.footer-content .big-button {
+    position: fixed;
+    bottom:0px;
+    margin: 0 auto;
+    /* Find a way to center this button */
 }
