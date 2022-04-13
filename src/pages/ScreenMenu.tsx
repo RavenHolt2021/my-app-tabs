@@ -69,22 +69,6 @@ return(
               <IonIcon className="icon" slot="end" icon={sunny} />
             </IonRange>
           </div>
-          <div>
-            <h1>Upload Audio File</h1>
-            <IonItem>
-              <input type="file" accept="audio/*" />
-            </IonItem>
-            <IonGrid>
-              <IonRow>
-                <IonCol>
-                  <IonButton color="light" expand="full">Upload</IonButton>
-                </IonCol>
-                <IonCol>
-                  <IonButton color="light" expand="full">Cancel</IonButton>
-                </IonCol>
-              </IonRow>
-            </IonGrid>
-          </div>
         <IonFooter className="footer-content">
         </IonFooter>
       </IonContent>
