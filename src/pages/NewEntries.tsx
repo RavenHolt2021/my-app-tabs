@@ -28,6 +28,7 @@ import {
 } from '@ionic/react';
 import './Home.css';
 import { image } from 'ionicons/icons';
+import { notStrictEqual } from 'assert';
 
 const ScreenMenu: React.FC = () => {
   type Item = {
@@ -201,6 +202,7 @@ const ScreenMenu: React.FC = () => {
     }, 3000);
   };
 
+  const [dreams, saveDreams] = useState([]);
   const saveData = () => {
     var date = new Date();
     var monthOfYearInt = date.getMonth();
@@ -215,6 +217,14 @@ const ScreenMenu: React.FC = () => {
     var nowDay = (date.getFullYear().toString() + '-' + monthOfYearString + '-' + date.getDate().toString());
 
     setToday(nowDay);
+/*
+    const newEntry = {
+      id: Math.random().toString(36).substr(2, 9),
+      text: dream1,
+    };
+
+    saveDream([...])
+*/
   }
 
   const setVisible = (selectedValue: string, compareValue: string): boolean => {
@@ -358,7 +368,7 @@ return(
             <IonButton color="transparent" class="star-button" onClick={e => setLucid1(starTap(lucid1))}><img src={getImage(lucid1)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
-            <IonTextarea value={dream1} onIonChange={e => setDream1(e.detail.value!)}></IonTextarea>
+            <IonTextarea value={dream1} placeholder = "My dream" onIonChange={e => setDream1(e.detail.value!)}></IonTextarea>
           </IonItem>
           <IonItem class="journal-tags">
             <IonTextarea value={tags1} placeholder="separate tags with commas" onIonChange={e => setTags1(e.detail.value!)}></IonTextarea>
@@ -371,7 +381,7 @@ return(
             <IonButton color="transparent" class="star-button" onClick={e => setLucid2(starTap(lucid2))}><img src={getImage(lucid2)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
-            <IonTextarea value={dream2} onIonChange={e => setDream2(e.detail.value!)}></IonTextarea>
+            <IonTextarea value={dream2} placeholder = "My dream" onIonChange={e => setDream2(e.detail.value!)}></IonTextarea>
           </IonItem>
           <IonItem class="journal-tags">
             <IonTextarea value={tags2} placeholder="separate tags with commas" onIonChange={e => setTags2(e.detail.value!)}></IonTextarea>
@@ -384,7 +394,7 @@ return(
             <IonButton color="transparent" class="star-button" onClick={e => setLucid3(starTap(lucid3))}><img src={getImage(lucid3)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
-            <IonTextarea value={dream3} onIonChange={e => setDream3(e.detail.value!)}></IonTextarea>
+            <IonTextarea value={dream3} placeholder = "My dream" onIonChange={e => setDream3(e.detail.value!)}></IonTextarea>
           </IonItem>
           <IonItem class="journal-tags">
             <IonTextarea value={tags3} placeholder="separate tags with commas" onIonChange={e => setTags3(e.detail.value!)}></IonTextarea>
@@ -397,7 +407,7 @@ return(
             <IonButton color="transparent" class="star-button" onClick={e => setLucid4(starTap(lucid4))}><img src={getImage(lucid4)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
-            <IonTextarea value={dream4} onIonChange={e => setDream4(e.detail.value!)}></IonTextarea>
+            <IonTextarea value={dream4} placeholder = "My dream" onIonChange={e => setDream4(e.detail.value!)}></IonTextarea>
           </IonItem>
           <IonItem class="journal-tags">
             <IonTextarea value={tags4} placeholder="separate tags with commas" onIonChange={e => setTags4(e.detail.value!)}></IonTextarea>
@@ -410,7 +420,7 @@ return(
             <IonButton color="transparent" class="star-button" onClick={e => setLucid5(starTap(lucid5))}><img src={getImage(lucid5)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
-            <IonTextarea value={dream5} onIonChange={e => setDream5(e.detail.value!)}></IonTextarea>
+            <IonTextarea value={dream5} placeholder = "My dream" onIonChange={e => setDream5(e.detail.value!)}></IonTextarea>
           </IonItem>
           <IonItem class="journal-tags">
             <IonTextarea value={tags5} placeholder="separate tags with commas" onIonChange={e => setTags5(e.detail.value!)}></IonTextarea>
@@ -423,7 +433,7 @@ return(
             <IonButton color="transparent" class="star-button" onClick={e => setLucid6(starTap(lucid6))}><img src={getImage(lucid6)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
-            <IonTextarea value={dream6} onIonChange={e => setDream6(e.detail.value!)}></IonTextarea>
+            <IonTextarea value={dream6} placeholder = "My dream" onIonChange={e => setDream6(e.detail.value!)}></IonTextarea>
           </IonItem>
           <IonItem class="journal-tags">
             <IonTextarea value={tags6} placeholder="separate tags with commas" onIonChange={e => setTags6(e.detail.value!)}></IonTextarea>
@@ -436,7 +446,7 @@ return(
             <IonButton color="transparent" class="star-button" onClick={e => setLucid7(starTap(lucid7))}><img src={getImage(lucid7)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
-            <IonTextarea value={dream7} onIonChange={e => setDream7(e.detail.value!)}></IonTextarea>
+            <IonTextarea value={dream7} placeholder = "My dream" onIonChange={e => setDream7(e.detail.value!)}></IonTextarea>
           </IonItem>
           <IonItem class="journal-tags">
             <IonTextarea value={tags7} placeholder="separate tags with commas" onIonChange={e => setTags7(e.detail.value!)}></IonTextarea>
@@ -449,7 +459,7 @@ return(
             <IonButton color="transparent" class="star-button" onClick={e => setLucid8(starTap(lucid8))}><img src={getImage(lucid8)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
-            <IonTextarea value={dream8} onIonChange={e => setDream8(e.detail.value!)}></IonTextarea>
+            <IonTextarea value={dream8} placeholder = "My dream" onIonChange={e => setDream8(e.detail.value!)}></IonTextarea>
           </IonItem>
           <IonItem class="journal-tags">
             <IonTextarea value={tags8} placeholder="separate tags with commas" onIonChange={e => setTags8(e.detail.value!)}></IonTextarea>
@@ -462,7 +472,7 @@ return(
             <IonButton color="transparent" class="star-button" onClick={e => setLucid9(starTap(lucid9))}><img src={getImage(lucid9)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
-            <IonTextarea value={dream9} onIonChange={e => setDream9(e.detail.value!)}></IonTextarea>
+            <IonTextarea value={dream9} placeholder = "My dream" onIonChange={e => setDream9(e.detail.value!)}></IonTextarea>
           </IonItem>
           <IonItem class="journal-tags">
             <IonTextarea value={tags9} placeholder="separate tags with commas" onIonChange={e => setTags9(e.detail.value!)}></IonTextarea>
@@ -475,7 +485,7 @@ return(
             <IonButton color="transparent" class="star-button" onClick={e => setLucid10(starTap(lucid10))}><img src={getImage(lucid10)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
-            <IonTextarea value={dream10} onIonChange={e => setDream10(e.detail.value!)}></IonTextarea>
+            <IonTextarea value={dream10} placeholder = "My dream" onIonChange={e => setDream10(e.detail.value!)}></IonTextarea>
           </IonItem>
           <IonItem class="journal-tags">
             <IonTextarea value={tags10} placeholder="separate tags with commas" onIonChange={e => setTags10(e.detail.value!)}></IonTextarea>
@@ -488,7 +498,7 @@ return(
             <IonButton color="transparent" class="star-button" onClick={e => setLucid11(starTap(lucid11))}><img src={getImage(lucid11)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
-            <IonTextarea value={dream11} onIonChange={e => setDream11(e.detail.value!)}></IonTextarea>
+            <IonTextarea value={dream11} placeholder = "My dream" onIonChange={e => setDream11(e.detail.value!)}></IonTextarea>
           </IonItem>
           <IonItem class="journal-tags">
             <IonTextarea value={tags11} placeholder="separate tags with commas" onIonChange={e => setTags11(e.detail.value!)}></IonTextarea>
@@ -501,7 +511,7 @@ return(
             <IonButton color="transparent" class="star-button" onClick={e => setLucid11(starTap(lucid11))}><img src={getImage(lucid12)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
-            <IonTextarea value={dream12} onIonChange={e => setDream12(e.detail.value!)}></IonTextarea>
+            <IonTextarea value={dream12} placeholder = "My dream" onIonChange={e => setDream12(e.detail.value!)}></IonTextarea>
           </IonItem>
           <IonItem class="journal-tags">
             <IonTextarea value={tags12} placeholder="separate tags with commas" onIonChange={e => setTags12(e.detail.value!)}></IonTextarea>
@@ -514,7 +524,7 @@ return(
             <IonButton color="transparent" class="star-button" onClick={e => setLucid13(starTap(lucid13))}><img src={getImage(lucid13)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
-            <IonTextarea value={dream13} onIonChange={e => setDream13(e.detail.value!)}></IonTextarea>
+            <IonTextarea value={dream13} placeholder = "My dream" onIonChange={e => setDream13(e.detail.value!)}></IonTextarea>
           </IonItem>
           <IonItem class="journal-tags">
             <IonTextarea value={tags13} placeholder="separate tags with commas" onIonChange={e => setTags13(e.detail.value!)}></IonTextarea>
@@ -527,7 +537,7 @@ return(
             <IonButton color="transparent" class="star-button" onClick={e => setLucid14(starTap(lucid14))}><img src={getImage(lucid14)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
-            <IonTextarea value={dream14} onIonChange={e => setDream14(e.detail.value!)}></IonTextarea>
+            <IonTextarea value={dream14} placeholder = "My dream" onIonChange={e => setDream14(e.detail.value!)}></IonTextarea>
           </IonItem>
           <IonItem class="journal-tags">
             <IonTextarea value={tags14} placeholder="separate tags with commas" onIonChange={e => setTags14(e.detail.value!)}></IonTextarea>
@@ -540,7 +550,7 @@ return(
             <IonButton color="transparent" class="star-button" onClick={e => setLucid15(starTap(lucid15))}><img src={getImage(lucid15)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
-            <IonTextarea value={dream15} onIonChange={e => setDream15(e.detail.value!)}></IonTextarea>
+            <IonTextarea value={dream15} placeholder = "My dream" onIonChange={e => setDream15(e.detail.value!)}></IonTextarea>
           </IonItem>
           <IonItem class="journal-tags">
             <IonTextarea value={tags15} placeholder="separate tags with commas" onIonChange={e => setTags15(e.detail.value!)}></IonTextarea>
@@ -553,7 +563,7 @@ return(
             <IonButton color="transparent" class="star-button" onClick={e => setLucid16(starTap(lucid16))}><img src={getImage(lucid16)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
-            <IonTextarea value={dream16} onIonChange={e => setDream16(e.detail.value!)}></IonTextarea>
+            <IonTextarea value={dream16} placeholder = "My dream" onIonChange={e => setDream16(e.detail.value!)}></IonTextarea>
           </IonItem>
           <IonItem class="journal-tags">
             <IonTextarea value={tags16} placeholder="separate tags with commas" onIonChange={e => setTags16(e.detail.value!)}></IonTextarea>
@@ -566,7 +576,7 @@ return(
             <IonButton color="transparent" class="star-button" onClick={e => setLucid17(starTap(lucid17))}><img src={getImage(lucid17)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
-            <IonTextarea value={dream17} onIonChange={e => setDream17(e.detail.value!)}></IonTextarea>
+            <IonTextarea value={dream17} placeholder = "My dream" onIonChange={e => setDream17(e.detail.value!)}></IonTextarea>
           </IonItem>
           <IonItem class="journal-tags">
             <IonTextarea value={tags17} placeholder="separate tags with commas" onIonChange={e => setTags17(e.detail.value!)}></IonTextarea>
@@ -579,7 +589,7 @@ return(
             <IonButton color="transparent" class="star-button" onClick={e => setLucid18(starTap(lucid18))}><img src={getImage(lucid18)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
-            <IonTextarea value={dream18} onIonChange={e => setDream18(e.detail.value!)}></IonTextarea>
+            <IonTextarea value={dream18} placeholder = "My dream" onIonChange={e => setDream18(e.detail.value!)}></IonTextarea>
           </IonItem>
           <IonItem class="journal-tags">
             <IonTextarea value={tags18} placeholder="separate tags with commas" onIonChange={e => setTags18(e.detail.value!)}></IonTextarea>
@@ -592,7 +602,7 @@ return(
             <IonButton color="transparent" class="star-button" onClick={e => setLucid19(starTap(lucid19))}><img src={getImage(lucid19)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
-            <IonTextarea value={dream19} onIonChange={e => setDream19(e.detail.value!)}></IonTextarea>
+            <IonTextarea value={dream19} placeholder = "My dream" onIonChange={e => setDream19(e.detail.value!)}></IonTextarea>
           </IonItem>
           <IonItem class="journal-tags">
             <IonTextarea value={tags19} placeholder="separate tags with commas" onIonChange={e => setTags19(e.detail.value!)}></IonTextarea>
@@ -605,7 +615,7 @@ return(
             <IonButton color="transparent" class="star-button" onClick={e => setLucid20(starTap(lucid20))}><img src={getImage(lucid20)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
-            <IonTextarea value={dream20} onIonChange={e => setDream20(e.detail.value!)}></IonTextarea>
+            <IonTextarea value={dream20} placeholder = "My dream" onIonChange={e => setDream20(e.detail.value!)}></IonTextarea>
           </IonItem>
           <IonItem class="journal-tags">
             <IonTextarea value={tags20} placeholder="separate tags with commas" onIonChange={e => setTags20(e.detail.value!)}></IonTextarea>
@@ -618,7 +628,7 @@ return(
             <IonButton color="transparent" class="star-button" onClick={e => setLucid21(starTap(lucid21))}><img src={getImage(lucid21)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
-            <IonTextarea value={dream21} onIonChange={e => setDream21(e.detail.value!)}></IonTextarea>
+            <IonTextarea value={dream21} placeholder = "My dream" onIonChange={e => setDream21(e.detail.value!)}></IonTextarea>
           </IonItem>
           <IonItem class="journal-tags">
             <IonTextarea value={tags21} placeholder="separate tags with commas" onIonChange={e => setTags21(e.detail.value!)}></IonTextarea>
@@ -631,7 +641,7 @@ return(
             <IonButton color="transparent" class="star-button" onClick={e => setLucid22(starTap(lucid22))}><img src={getImage(lucid22)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
-            <IonTextarea value={dream22} onIonChange={e => setDream22(e.detail.value!)}></IonTextarea>
+            <IonTextarea value={dream22} placeholder = "My dream" onIonChange={e => setDream22(e.detail.value!)}></IonTextarea>
           </IonItem>
           <IonItem class="journal-tags">
             <IonTextarea value={tags22} placeholder="separate tags with commas" onIonChange={e => setTags22(e.detail.value!)}></IonTextarea>
@@ -644,7 +654,7 @@ return(
             <IonButton color="transparent" class="star-button" onClick={e => setLucid23(starTap(lucid23))}><img src={getImage(lucid23)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
-            <IonTextarea value={dream23} onIonChange={e => setDream23(e.detail.value!)}></IonTextarea>
+            <IonTextarea value={dream23} placeholder = "My dream" onIonChange={e => setDream23(e.detail.value!)}></IonTextarea>
           </IonItem>
           <IonItem class="journal-tags">
             <IonTextarea value={tags23} placeholder="separate tags with commas" onIonChange={e => setTags23(e.detail.value!)}></IonTextarea>
@@ -657,7 +667,7 @@ return(
             <IonButton color="transparent" class="star-button" onClick={e => setLucid24(starTap(lucid24))}><img src={getImage(lucid24)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
-            <IonTextarea value={dream24} onIonChange={e => setDream24(e.detail.value!)}></IonTextarea>
+            <IonTextarea value={dream24} placeholder = "My dream" onIonChange={e => setDream24(e.detail.value!)}></IonTextarea>
           </IonItem>
           <IonItem class="journal-tags">
             <IonTextarea value={tags24} placeholder="separate tags with commas" onIonChange={e => setTags24(e.detail.value!)}></IonTextarea>
@@ -670,7 +680,7 @@ return(
             <IonButton color="transparent" class="star-button" onClick={e => setLucid25(starTap(lucid25))}><img src={getImage(lucid25)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
-            <IonTextarea value={dream25} onIonChange={e => setDream25(e.detail.value!)}></IonTextarea>
+            <IonTextarea value={dream25} placeholder = "My dream" onIonChange={e => setDream25(e.detail.value!)}></IonTextarea>
           </IonItem>
           <IonItem class="journal-tags">
             <IonTextarea value={tags25} placeholder="separate tags with commas" onIonChange={e => setTags25(e.detail.value!)}></IonTextarea>

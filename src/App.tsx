@@ -1,5 +1,6 @@
 import { Redirect, Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
+//import { IonicStorageModule } from '@ionic/storage';
 import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
 import AlarmCustom from './pages/AlarmCustom';
