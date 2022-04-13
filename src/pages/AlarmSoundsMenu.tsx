@@ -58,7 +58,7 @@ const AlarmSoundsMenu: React.FC = () => {
           <IonLabel>Alarm Sounds</IonLabel>
         </IonItem>
         <IonButton href="#" className="big-button">Browse Alarm Sounds</IonButton>
-        <IonButton href="#" className="big-button">Upload A Custom Alarm Sound</IonButton>
+        <IonButton routerLink="/uploadalarmsound" className="big-button">Upload A Custom Alarm Sound</IonButton>
         <IonButton href="#" className="big-button">Record A Personalized Alarm</IonButton>
         <IonButton href="#" className="big-button">My Sounds</IonButton>
         {/* <IonList>

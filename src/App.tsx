@@ -1,6 +1,5 @@
 import { Redirect, Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
-//import { IonicStorageModule } from '@ionic/storage';
 import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
 import AlarmCustom from './pages/AlarmCustom';
@@ -26,6 +25,7 @@ import ScreenMenu from './pages/ScreenMenu';
 import SettingsMenu from './pages/SettingsMenu';
 import SmartAlarmMenu from './pages/SmartAlarmMenu';
 import TodaysEntries from './pages/TodaysEntries';
+import UploadAlaramSound from './pages/UploadAlarmSound';
 
 import Alarm from './pages/Alarm';
 import Journal from './pages/Journal';
@@ -158,6 +158,10 @@ const App: React.FC = () => (
 
         <Route path="/todaysentries" exact={true}>
           <TodaysEntries />
+        </Route>
+
+        <Route path="/uploadalarmsound" exact={true}>
+          <UploadAlaramSound />
         </Route>
         
         
