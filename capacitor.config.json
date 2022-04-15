@@ -2,5 +2,13 @@
 	"appId": "io.ionic.starter",
 	"appName": "myApp tabs",
 	"webDir": "build",
-	"bundledWebRuntime": false
+	"bundledWebRuntime": false,
+
+	"plugins": {
+		"SplashScreen": {
+			"launchAutoHide": false,
+			"androidScaleType": "CENTER_CROP",
+			"splashImmersive": true
+			}
+	}
 }
