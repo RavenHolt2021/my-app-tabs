@@ -508,7 +508,7 @@ return(
         <IonItemGroup class="journal-dream" hidden={setVisible('12', page!)}>
           <IonItem class="journal-title">
             <IonInput maxlength={30} inputmode="text" placeholder = "Dream Title" value={title12} onIonChange={e => setTitle12(e.detail.value!)}></IonInput>
-            <IonButton color="transparent" class="star-button" onClick={e => setLucid11(starTap(lucid11))}><img src={getImage(lucid12)}/></IonButton>
+            <IonButton color="transparent" class="star-button" onClick={e => setLucid12(starTap(lucid11))}><img src={getImage(lucid12)}/></IonButton>
           </IonItem>
           <IonItem class="journal-entry">
             <IonTextarea value={dream12} placeholder = "My dream" onIonChange={e => setDream12(e.detail.value!)}></IonTextarea>
