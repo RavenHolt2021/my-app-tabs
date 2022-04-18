@@ -142,7 +142,9 @@ return(
           </IonSegmentButton>
         </IonSegment>
         </IonItemGroup>
-context form action innerawareness
+        <h2 className = "context-action">
+        context form action innerawareness
+        </h2>
         
         <IonList hidden={setVisible('1', signs!)}>
           <IonLabel>Recurring dream signs are things that occur often in our dreams! They can be useful for triggering reality checks and assisting with dream recall.</IonLabel>
