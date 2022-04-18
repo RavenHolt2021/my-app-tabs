@@ -129,7 +129,12 @@ font-family: monospace;
 }
 
 /* For Alarm - Custom Alarms: */
-
+@media  (max-height: 714px) {
+    .media-screen-body {
+        max-height: 500px;
+        overflow: auto;
+    }
+}
 
 /* For Upload Alarm Sound */
 
