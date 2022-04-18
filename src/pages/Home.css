@@ -18,7 +18,7 @@
     color: rgb(167, 12, 214);
     align-self: left;
     display: flex;
- }
+}
 
 .back-2-home {
     align-self: right;
@@ -58,16 +58,16 @@
 
 /* 
     HERE IS WHAT MUST BE WORKED ON:
-    - Fix the Save Entries button to the bottom
     - Find a way to move the + button to the right on the display dream title, without fallowing it
     - (For Dev) Set the entries to where there MUST be a title, and blank cannot work
     - (For Dev) Currently, editing the name of a previous dream and adding it to the dream list will cause it to add a blank dream to the list. This must be fixed. (This can go hand and hand with the previous task.)
     - The star button interferes with the text entry box for the dream title. Maybe we should fix that.
-    ***TO BE CONTINUED!***
+    - The big buttons in the Journal/Alarm sections should not be touching the white parts
+    - ***TBC***
 */
 
 .tabs {
-    color: #BF40BF;
+    color: #ff44ff;
     margin-left: auto;
     margin-right: auto;
     background-color: black;
@@ -83,10 +83,12 @@
     text-decoration: none;
     display: inline-block;
 }
+
 /*
 .journal-dream {
-    /* Still working here. */
-/*}*/
+    RANDOM STUFF!
+}
+*/
 
 .journal-title {
     font-family: monospace;
@@ -108,6 +110,7 @@ color: black;
 font-family: monospace;
 }
 
+/* This applies to other pages as well: */
 .footer-content .big-button {
     position: fixed;
     bottom: 0;
@@ -115,5 +118,14 @@ font-family: monospace;
     margin-left: 22%;
     margin-right: 22%;
     margin-bottom: 0;
-    /* Find a way to center this button */
 }
+
+/* For Journal - Dream Signs: */
+
+.context-action {
+    color: #ff44ff;
+    background-color: black;
+    margin-left: 5%;
+}
+
+/* For Alarm - Custom Alarms: */
