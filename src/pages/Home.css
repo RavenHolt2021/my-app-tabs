@@ -83,10 +83,10 @@
     text-decoration: none;
     display: inline-block;
 }
-
+/*
 .journal-dream {
     /* Still working here. */
-}
+/*}*/
 
 .journal-title {
     font-family: monospace;
@@ -116,4 +116,22 @@ font-family: monospace;
     margin-right: 22%;
     margin-bottom: 0;
     /* Find a way to center this button */
+}
+
+/* For Upload Alarm Sound */
+
+.audio-title {
+    background: #BF40BF;
+    text-align: center;
+    padding-top: .25em;
+    padding-bottom: .25em;
+}
+
+.small-button {
+    --background: var(--dream, #BF40BF);
+    display: flex;
+    font-size: x-large;
+    color: black;
+    margin: .5em;
+    --ion-font-family: times;
 }
