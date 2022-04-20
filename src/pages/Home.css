@@ -125,7 +125,12 @@ font-family: monospace;
 .context-action {
     color: #ff44ff;
     background-color: black;
-    margin-left: 5%;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.dream-sign-info {
+    color: black;
 }
 
 /* For Alarm - Custom Alarms: */
