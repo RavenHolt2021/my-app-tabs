@@ -1,5 +1,5 @@
 import MessageListItem from '../components/MessageListItem';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Message, getMessages } from '../data/messages';
 import {
     IonContent,
@@ -19,11 +19,21 @@ import {
     IonItem,
     IonTextarea,
     IonLabel,
-    IonDatetime
+    IonDatetime,
+    IonAccordion,
+    IonAccordionGroup
 } from '@ionic/react';
 import './Home.css';
 
 const ScreenMenu: React.FC = () => {
+
+
+  const accordionGroupRef = useRef (null);
+  const closeAccordion = () => {
+    // if (accordionGroupRef.current){
+    //   accordionGroupRef.current.value=undefined;
+    // }
+  }
     
   const [messages, setMessages] = useState<Message[]>([]);
   const [tags, setTags] = useState<string>();
@@ -103,21 +113,37 @@ return(
           </IonLabel>
           <IonTextarea value={fragment} placeholder="enter an exact quote from your dream" onIonChange={e => setFragment(e.detail.value!)}></IonTextarea>
         </IonItem>
-        <IonItem>
+          <IonAccordionGroup>
+          <IonAccordion>
+            <IonItem slot="header"><IonLabel>From</IonLabel>
+            </IonItem>
+            <IonItem slot="content">
+            <IonDatetime className="date-info" presentation="date" max={dateEnd} value={dateStart} onIonChange={e => setDateStart(e.detail.value!)}></IonDatetime>{/*Need to set minimum date*/}
+            </IonItem>
+          </IonAccordion>
+          </IonAccordionGroup>
+          <IonAccordionGroup>
+          <IonAccordion>
+            <IonItem slot="header"><IonLabel>To</IonLabel>
+            </IonItem>
+            <IonItem slot="content">
+            <IonDatetime className="date-info" presentation="date" min={dateStart} max={today} value={dateEnd} onIonChange={e => setDateEnd(e.detail.value!)}></IonDatetime>
+            </IonItem>
+          </IonAccordion>
+          </IonAccordionGroup>
+        {/* <IonItem>
           <IonItem>
             <IonLabel position = "stacked">
               From . . .
             </IonLabel>
-            <IonDatetime presentation="date" max={dateEnd} value={dateStart} onIonChange={e => setDateStart(e.detail.value!)}></IonDatetime>{/*Need to set minimum date*/}
           </IonItem>
           <IonItem>
             <IonLabel position = "stacked">
               To . . .
             </IonLabel>
-          <IonDatetime presentation="date" min={dateStart} max={today} value={dateEnd} onIonChange={e => setDateEnd(e.detail.value!)}></IonDatetime>
 
           </IonItem>
-        </IonItem>
+        </IonItem> */}
         
         <IonButton href="#" className="big-button">Search</IonButton>
         
