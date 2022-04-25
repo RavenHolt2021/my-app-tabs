@@ -115,7 +115,7 @@ return(
         </IonItem>
           <IonAccordionGroup>
           <IonAccordion>
-            <IonItem slot="header"><IonLabel>From</IonLabel>
+            <IonItem slot="header"><IonLabel>From...{dateStart}</IonLabel>
             </IonItem>
             <IonItem slot="content">
             <IonDatetime className="date-info" presentation="date" max={dateEnd} value={dateStart} onIonChange={e => setDateStart(e.detail.value!)}></IonDatetime>{/*Need to set minimum date*/}
@@ -124,26 +124,13 @@ return(
           </IonAccordionGroup>
           <IonAccordionGroup>
           <IonAccordion>
-            <IonItem slot="header"><IonLabel>To</IonLabel>
+            <IonItem slot="header"><IonLabel>To...{dateEnd}</IonLabel>
             </IonItem>
             <IonItem slot="content">
             <IonDatetime className="date-info" presentation="date" min={dateStart} max={today} value={dateEnd} onIonChange={e => setDateEnd(e.detail.value!)}></IonDatetime>
             </IonItem>
           </IonAccordion>
           </IonAccordionGroup>
-        {/* <IonItem>
-          <IonItem>
-            <IonLabel position = "stacked">
-              From . . .
-            </IonLabel>
-          </IonItem>
-          <IonItem>
-            <IonLabel position = "stacked">
-              To . . .
-            </IonLabel>
-
-          </IonItem>
-        </IonItem> */}
         
         <IonButton href="#" className="big-button">Search</IonButton>
         
