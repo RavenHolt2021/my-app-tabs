@@ -16,12 +16,6 @@ import {
   useIonViewWillEnter
 } from '@ionic/react';
 import './Home.css';
-/*
-import { Storage } from '@ionic/storage';
-
-const store = new Storage();
-await store.create();
-*/
 
 
 const Home: React.FC = () => {

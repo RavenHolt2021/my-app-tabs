@@ -61,9 +61,7 @@ const MyDreamsMenu: React.FC = () => {
         <IonButton routerLink="/dreamsignsmenu" className="big-button">Dream Signs</IonButton>
         <IonButton routerLink="/goals" className="big-button">My Goals</IonButton>
         <IonButton href="#" className="big-button">Random</IonButton>
-        {/* <IonList>
-          {messages.map(m => <MessageListItem key={m.id} message={m} />)}
-        </IonList> */}
+        
         <IonFooter className="footer-content">
         </IonFooter>
       </IonContent>

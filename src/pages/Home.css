@@ -8,7 +8,7 @@
     --ion-color-base-rgb: var(--ion-color-dream-rgb);
 }
 
-/* The CSS for the app and mostly homepage: */
+/* This and ^^^ is the CSS for the app, but mostly the homepage: */
 
 .page-background {
     --background: url('../images/starbackground.jpg') 0 0/100% 100% no-repeat!important;
