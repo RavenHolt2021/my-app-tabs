@@ -47,6 +47,11 @@
     --ion-font-family: times;
 }
 
+.page-banner {
+    text-align: center;
+    font-family: times;
+}
+
 .footer-content {
     margin-top: 2em;
     text-align: center;

@@ -55,7 +55,7 @@ const MyDreamsMenu: React.FC = () => {
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
         <IonItem className="page-title">
-          <IonLabel>My Dreams</IonLabel>
+          <IonLabel className="page-banner">My Dreams</IonLabel>
         </IonItem>
         <IonButton routerLink="/dreamsearch" className="big-button">Search</IonButton>
         <IonButton routerLink="/dreamsignsmenu" className="big-button">Dream Signs</IonButton>

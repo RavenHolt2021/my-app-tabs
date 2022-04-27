@@ -55,7 +55,7 @@ const AlarmSoundsMenu: React.FC = () => {
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
         <IonItem className="page-title">
-          <IonLabel>Alarm Sounds</IonLabel>
+          <IonLabel className="page-banner">Alarm Sounds</IonLabel>
         </IonItem>
         <IonButton href="#" className="big-button">Browse Alarm Sounds</IonButton>
         <IonButton routerLink="/uploadalarmsound" className="big-button">Upload A Custom Alarm Sound</IonButton>

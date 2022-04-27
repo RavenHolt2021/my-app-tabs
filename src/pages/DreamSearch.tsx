@@ -92,7 +92,7 @@ return(
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
         <IonItem className="page-title">
-          <IonLabel>Search Dreams</IonLabel>
+          <IonLabel className="page-banner">Search Dreams</IonLabel>
         </IonItem>
 
         <IonItem>
