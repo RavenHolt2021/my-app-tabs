@@ -75,7 +75,7 @@ const AlarmCustom: React.FC = () => {
         </IonRefresher>
         <div className="media-screen-body">
           <IonItem className="page-title">
-            <IonLabel>Customize Alarm</IonLabel>
+            <IonLabel className="page-banner">Customize Alarm</IonLabel>
           </IonItem>
 
           <IonList>
