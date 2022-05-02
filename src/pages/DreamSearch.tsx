@@ -160,6 +160,9 @@ const ScreenMenu: React.FC = () => {
     var date = new Date();
     var monthOfYearInt = date.getMonth();
     var monthOfYearString;
+    var day = date.getDate();
+    var dayString;
+
     monthOfYearInt = monthOfYearInt + 1;
     if(monthOfYearInt < 10){
       monthOfYearString = '0' + monthOfYearInt.toString();
@@ -167,7 +170,13 @@ const ScreenMenu: React.FC = () => {
     else{
       monthOfYearString = monthOfYearInt.toString();
     }
-    var nowDay = (date.getFullYear().toString() + '-' + monthOfYearString + '-' + date.getDate().toString());
+    if(day < 10){
+      dayString = '0' + day.toString();
+    }
+    else{
+      dayString = day.toString();
+    }
+    var nowDay = (date.getFullYear().toString() + '-' + monthOfYearString + '-' + dayString);
 
     setTags("");
     setTitle("");
