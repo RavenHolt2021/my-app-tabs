@@ -1,9 +1,75 @@
+import Alarm from "../pages/Alarm";
+
 export interface Message {
   fromName: string;
   subject: string;
   date: string;
   id: number;
 }
+
+export interface Dream {
+  title: string;
+  lucid: number;
+  dreamText: string;
+  tags: string[];
+  date: string;
+  id: string;
+}
+
+export interface TodaysDream{
+  title: string;
+  lucid: number;
+  dreamText: string;
+  tags: string[];
+  date: string;
+  id: string;
+  page: number;
+}
+
+var TodaysDreams: TodaysDream[] = [
+  {
+    title: 'Example Dream for Today',
+    lucid: 1,
+    dreamText: 'Welcome to Lucid Companion! We wish you the best on your lucid journey.',
+    tags: ['dream', 'first', 'example'],
+    date:"2022-04-29",
+    id: "0",
+    page: 1
+  }
+  
+];
+export const getTodaysDreams = () => TodaysDreams;
+
+var Dreams: Dream[] = [
+  {
+    title: 'Example Dream',
+    lucid: 1,
+    dreamText: 'Welcome to Lucid Companion! We wish you the best on your lucid journey.',
+    tags: ['dream', 'first', 'example'],
+    date:"2022-04-29",
+    id: "0"
+  }
+];
+export const getDreams = () => Dreams;
+export const getDream = (id: string) => Dreams.find(m => m.id === id);
+
+export interface Alarm{
+  days: number[];
+  time: string;
+  touchless: boolean;
+  length: number;
+  audio: string;
+  note: string;
+  showNote: boolean;
+  enabled: boolean;
+  id: number;
+}
+
+const Alarms: Alarm[] = [
+
+];
+export const getAlarms = () => Alarms;
+export const getAlarm = (id: number) => Alarms.find(m => m.id === id);
 
 const messages: Message[] = [
   {

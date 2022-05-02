@@ -1,6 +1,9 @@
-import MessageListItem from '../components/MessageListItem';
+
+import DreamListItem from '../components/MessageListItem';
+import {get, set} from '../data/IonicStorage';
+import { Message, getMessages, Dream, getDreams } from '../data/messages';
 import { useState, useRef } from 'react';
-import { Message, getMessages } from '../data/messages';
+
 import {
     IonContent,
     IonHeader,
@@ -20,10 +23,15 @@ import {
     IonTextarea,
     IonLabel,
     IonDatetime,
+
+    IonItemGroup,
+
     IonAccordion,
     IonAccordionGroup
+
 } from '@ionic/react';
 import './Home.css';
+import { chatboxSharp } from 'ionicons/icons';
 
 const ScreenMenu: React.FC = () => {
 
@@ -36,6 +44,7 @@ const ScreenMenu: React.FC = () => {
   }
     
   const [messages, setMessages] = useState<Message[]>([]);
+  //const [dreams, setDreams] = useState([]);
   const [tags, setTags] = useState<string>();
   const [title, setTitle] = useState<string>();
   const [fragment, setFragment] = useState<string>();
@@ -43,11 +52,132 @@ const ScreenMenu: React.FC = () => {
   const [dateStart, setDateStart] = useState<string>();
   const [dateEnd, setDateEnd] = useState<string>();
 
+  const [searching, setSearching] = useState<boolean>(false);
+
+  const [foundDreams, setFoundDreams] = useState<Dream[]>([]);
+
+  var taglist: String[] = [
+
+  ];
+
+
+
+  const dreams = getDreams();
+  const searchDreams = () => {
+    setFoundDreams(foundDreams.splice(0));
+    var nsfw = false;
+    console.log("searching");
+    if(tags != ""){
+      console.log("tags not empty");
+      taglist = [];
+      const chars = Array.from(tags!);
+      var tagWIP = "";
+      chars.forEach((c, i) => {
+        if(chars[i] != ',' && ( chars[i] != ' ' || tagWIP != "")){
+          tagWIP += chars[i];
+        }
+        else if(chars[i] == ','){
+          taglist.push(tagWIP);
+          if(tagWIP == "nsfw" || tagWIP == "NSFW"){
+            nsfw = true;
+          }
+          tagWIP = "";
+        }
+      })
+      taglist.push(tagWIP);
+    }
+    var isGood = true;
+    for(const dream of dreams){
+      
+      for(const dreamTag of dream.tags){
+        if((dreamTag == "nsfw" || dreamTag == "NSFW") && nsfw == false){
+          isGood = false;
+        }
+      }
+      
+      console.log("in Dream Loop");
+      isGood = true;
+      if((dateEnd != today || dateStart != today) && isGood == true){
+        console.log("checking Date");
+        if(dream.date > dateEnd! || dream.date < dateStart!){
+          isGood = false;
+          console.log("Bad Date");
+        }
+      }
+      if(title != "" && isGood == true){
+        console.log("checking title");
+        if(dream.title != title!){
+          isGood = false;
+          console.log("title bad");
+        }
+      }
+      if(tags != "" && isGood == true){
+        console.log("checking tags");
+        for(const tag of taglist){
+          var tagGood = false;
+          for(const dreamTag of dream.tags){
+            if(dreamTag == tag){
+              tagGood = true;
+              console.log("good tag");
+            }
+          }
+          if(tagGood == false){
+            isGood = false;
+            console.log("tags bad");
+          }
+        }
+      }
+      if(fragment != "" && isGood == true){
+        console.log("checking fragment");
+        const Dreamchars = Array.from(dream.dreamText);
+        const Fragchars = Array.from(fragment!);
+        var match;
+        var trueMatch = false;
+        Dreamchars.forEach((c, i) => {
+          if(Dreamchars[i] == Fragchars[0]){
+            match = true;
+            Fragchars.forEach((f, j) => {
+              if(Dreamchars[i + j] != Fragchars[j]){
+                match = false;
+              }
+            })
+            if(match == true){
+              trueMatch = true;
+            }
+          }
+        })
+        if(trueMatch == false){
+          console.log("fragment is Good");
+          isGood = false;
+        }
+      }
+
+      if(isGood == true){
+        setFoundDreams(foundDreams.concat(dream));
+        console.log(isGood);
+      }
+    }
+    setSearching(true);
+  };
+
+  const clearSearch = () => {
+    setTags("");
+    setTitle("");
+    setFragment("");
+    setDateStart(today);
+    setDateEnd(today);
+    setFoundDreams(foundDreams.splice(0));
+    setSearching(false);
+  };
+
   useIonViewWillEnter(() => {
 
     var date = new Date();
     var monthOfYearInt = date.getMonth();
     var monthOfYearString;
+    var day = date.getDate();
+    var dayString;
+
     monthOfYearInt = monthOfYearInt + 1;
     if(monthOfYearInt < 10){
       monthOfYearString = '0' + monthOfYearInt.toString();
@@ -55,8 +185,11 @@ const ScreenMenu: React.FC = () => {
     else{
       monthOfYearString = monthOfYearInt.toString();
     }
+
+
     var day = date.getDate();
     var dayString;
+
     if(day < 10){
       dayString = '0' + day.toString();
     }
@@ -65,9 +198,13 @@ const ScreenMenu: React.FC = () => {
     }
     var nowDay = (date.getFullYear().toString() + '-' + monthOfYearString + '-' + dayString);
 
+    setTags("");
+    setTitle("");
+    setFragment("");
     setDateEnd(nowDay);
     setDateStart(nowDay);
     setToday(nowDay);
+    setFoundDreams(foundDreams.splice(0));
   });
 
   useIonViewWillEnter(() => {
@@ -99,6 +236,8 @@ return(
         <IonRefresher slot="fixed" onIonRefresh={refresh}>
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
+
+        <IonItemGroup hidden={searching}>
         <IonItem className="page-title">
           <IonLabel className="page-banner">Search Dreams</IonLabel>
         </IonItem>
@@ -121,6 +260,23 @@ return(
           </IonLabel>
           <IonTextarea value={fragment} placeholder="enter an exact quote from your dream" onIonChange={e => setFragment(e.detail.value!)}></IonTextarea>
         </IonItem>
+
+        <IonItem>
+          <IonItem>
+            <IonLabel position = "stacked">
+              From . . .
+            </IonLabel>
+            <IonDatetime presentation="date" min={'2022-04-29'} max={dateEnd} value={dateStart} onIonChange={e => setDateStart(e.detail.value!)}></IonDatetime>{/*Need to set minimum date*/}
+          </IonItem>
+          <IonItem>
+            <IonLabel position = "stacked">
+              To . . .
+            </IonLabel>
+          <IonDatetime presentation="date" min={dateStart} max={today} value={dateEnd} onIonChange={e => setDateEnd(e.detail.value!)}></IonDatetime>
+
+          </IonItem>
+        </IonItem>
+
           <IonAccordionGroup>
           <IonAccordion>
             <IonItem slot="header"><IonLabel>From...{dateStart}</IonLabel>
@@ -139,8 +295,18 @@ return(
             </IonItem>
           </IonAccordion>
           </IonAccordionGroup>
+
         
-        <IonButton href="#" className="big-button">Search</IonButton>
+        <IonButton className="big-button" onClick = {e => searchDreams()}>Search</IonButton>
+        <IonButton className="big-button" onClick = {e => clearSearch()}>Clear</IonButton>
+        </IonItemGroup>
+
+        <IonItemGroup hidden={!searching}>
+          <IonList>
+            { dreams && foundDreams.map(m => <DreamListItem key={m.id} dream={m} />)}
+          </IonList>
+          <IonButton className="big-button" onClick = {e => setSearching(false)}>Return</IonButton>
+        </IonItemGroup>
         
         <IonFooter className="footer-content">
         </IonFooter>
