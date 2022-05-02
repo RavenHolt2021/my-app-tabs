@@ -8,7 +8,7 @@
     --ion-color-base-rgb: var(--ion-color-dream-rgb);
 }
 
-/* The CSS for the app */
+/* This and ^^^ is the CSS for the app, but mostly the homepage: */
 
 .page-background {
     --background: url('../images/starbackground.jpg') 0 0/100% 100% no-repeat!important;
@@ -18,7 +18,7 @@
     color: rgb(167, 12, 214);
     align-self: left;
     display: flex;
- }
+}
 
 .back-2-home {
     align-self: right;
@@ -47,27 +47,21 @@
     --ion-font-family: times;
 }
 
+.page-banner {
+    text-align: center;
+    font-family: times;
+}
+
 .footer-content {
     margin-top: 2em;
     text-align: center;
     color: white;
-    /* background-color: rgb(167, 12, 214); (Leave as is for now) */
 }
 
 /* For Journal - New Entries: */
 
-/* 
-    HERE IS WHAT MUST BE WORKED ON:
-    - Fix the Save Entries button to the bottom
-    - Find a way to move the + button to the right on the display dream title, without fallowing it
-    - (For Dev) Set the entries to where there MUST be a title, and blank cannot work
-    - (For Dev) Currently, editing the name of a previous dream and adding it to the dream list will cause it to add a blank dream to the list. This must be fixed. (This can go hand and hand with the previous task.)
-    - The star button interferes with the text entry box for the dream title. Maybe we should fix that.
-    ***TO BE CONTINUED!***
-*/
-
 .tabs {
-    color: #BF40BF;
+    color: #ff44ff;
     margin-left: auto;
     margin-right: auto;
     background-color: black;
@@ -83,10 +77,6 @@
     text-decoration: none;
     display: inline-block;
 }
-/*
-.journal-dream {
-    /* Still working here. */
-/*}*/
 
 .journal-title {
     font-family: monospace;
@@ -108,6 +98,7 @@ color: black;
 font-family: monospace;
 }
 
+/* This applies to other pages as well: */
 .footer-content .big-button {
     position: fixed;
     bottom: 0;
@@ -115,5 +106,50 @@ font-family: monospace;
     margin-left: 22%;
     margin-right: 22%;
     margin-bottom: 0;
-    /* Find a way to center this button */
+}
+
+/* For Journal - Dream Signs: */
+
+.context-action {
+    color: #ff44ff;
+    background-color: black;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+/* For Journal - Dream Search: */
+
+/* Try more stuff. */
+.dream-sign-info {
+    color: black;
+    padding-left: 2%;
+    padding-right: 15%;
+    padding-top: 50%;
+    padding-bottom: 50%;
+}
+
+/* For Alarm - Custom Alarms: */
+@media  (max-height: 714px) {
+    .media-screen-body {
+        max-height: 500px;
+        overflow: auto;
+    }
+}
+
+/* For Alarm - Upload Alarm Sound: */
+
+.audio-title {
+    background: #BF40BF;
+    text-align: center;
+    padding-top: .25em;
+    padding-bottom: .25em;
+}
+
+.small-button {
+    --background: var(--dream, #BF40BF);
+    display: flex;
+    font-size: x-large;
+    color: black;
+    margin: .5em;
+    --ion-font-family: times;
 }

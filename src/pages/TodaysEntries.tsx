@@ -439,7 +439,7 @@ return(
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
         <IonItem className="page-title">
-          <IonLabel>Today's Journal</IonLabel>
+          <IonLabel className="page-banner">Today's Journal</IonLabel>
         </IonItem>
 
         <IonItemGroup class="tabs">

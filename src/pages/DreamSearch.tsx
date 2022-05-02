@@ -1,7 +1,9 @@
+
 import DreamListItem from '../components/MessageListItem';
-import { useState } from 'react';
 import {get, set} from '../data/IonicStorage';
 import { Message, getMessages, Dream, getDreams } from '../data/messages';
+import { useState, useRef } from 'react';
+
 import {
     IonContent,
     IonHeader,
@@ -21,12 +23,25 @@ import {
     IonTextarea,
     IonLabel,
     IonDatetime,
-    IonItemGroup
+
+    IonItemGroup,
+
+    IonAccordion,
+    IonAccordionGroup
+
 } from '@ionic/react';
 import './Home.css';
 import { chatboxSharp } from 'ionicons/icons';
 
 const ScreenMenu: React.FC = () => {
+
+
+  const accordionGroupRef = useRef (null);
+  const closeAccordion = () => {
+    // if (accordionGroupRef.current){
+    //   accordionGroupRef.current.value=undefined;
+    // }
+  }
     
   const [messages, setMessages] = useState<Message[]>([]);
   //const [dreams, setDreams] = useState([]);
@@ -170,6 +185,11 @@ const ScreenMenu: React.FC = () => {
     else{
       monthOfYearString = monthOfYearInt.toString();
     }
+
+
+    var day = date.getDate();
+    var dayString;
+
     if(day < 10){
       dayString = '0' + day.toString();
     }
@@ -219,7 +239,7 @@ return(
 
         <IonItemGroup hidden={searching}>
         <IonItem className="page-title">
-          <IonLabel>Search Dreams</IonLabel>
+          <IonLabel className="page-banner">Search Dreams</IonLabel>
         </IonItem>
 
         <IonItem>
@@ -240,6 +260,7 @@ return(
           </IonLabel>
           <IonTextarea value={fragment} placeholder="enter an exact quote from your dream" onIonChange={e => setFragment(e.detail.value!)}></IonTextarea>
         </IonItem>
+
         <IonItem>
           <IonItem>
             <IonLabel position = "stacked">
@@ -255,6 +276,26 @@ return(
 
           </IonItem>
         </IonItem>
+
+          <IonAccordionGroup>
+          <IonAccordion>
+            <IonItem slot="header"><IonLabel>From...{dateStart}</IonLabel>
+            </IonItem>
+            <IonItem slot="content">
+            <IonDatetime className="date-info" presentation="date" max={dateEnd} value={dateStart} onIonChange={e => setDateStart(e.detail.value!)}></IonDatetime>{/*Need to set minimum date*/}
+            </IonItem>
+          </IonAccordion>
+          </IonAccordionGroup>
+          <IonAccordionGroup>
+          <IonAccordion>
+            <IonItem slot="header"><IonLabel>To...{dateEnd}</IonLabel>
+            </IonItem>
+            <IonItem slot="content">
+            <IonDatetime className="date-info" presentation="date" min={dateStart} max={today} value={dateEnd} onIonChange={e => setDateEnd(e.detail.value!)}></IonDatetime>
+            </IonItem>
+          </IonAccordion>
+          </IonAccordionGroup>
+
         
         <IonButton className="big-button" onClick = {e => searchDreams()}>Search</IonButton>
         <IonButton className="big-button" onClick = {e => clearSearch()}>Clear</IonButton>

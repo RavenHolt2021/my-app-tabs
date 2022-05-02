@@ -55,16 +55,13 @@ const MyDreamsMenu: React.FC = () => {
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
         <IonItem className="page-title">
-          <IonLabel>My Dreams</IonLabel>
+          <IonLabel className="page-banner">My Dreams</IonLabel>
         </IonItem>
         <IonButton routerLink="/dreamsearch" className="big-button">Search</IonButton>
         <IonButton routerLink="/dreamsignsmenu" className="big-button">Dream Signs</IonButton>
         <IonButton routerLink="/goals" className="big-button">My Goals</IonButton>
-        <IonButton routerLink="/progresschart" className="big-button">Progress Chart</IonButton>
         <IonButton href="#" className="big-button">Random</IonButton>
-        {/* <IonList>
-          {messages.map(m => <MessageListItem key={m.id} message={m} />)}
-        </IonList> */}
+        
         <IonFooter className="footer-content">
         </IonFooter>
       </IonContent>
