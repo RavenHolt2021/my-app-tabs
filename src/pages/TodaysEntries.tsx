@@ -1,6 +1,6 @@
 import MessageListItem from '../components/MessageListItem';
 import { useState, useRef } from 'react';
-import { Message, getMessages } from '../data/messages';
+import { Message, getMessages, getTodaysDreams, Dream } from '../data/messages';
 import {
     IonContent,
     IonHeader,
@@ -22,7 +22,8 @@ import {
     IonSegment,
     IonSegmentButton,
     IonItemGroup,
-    withIonLifeCycle
+    withIonLifeCycle,
+    useIonViewWillLeave
 } from '@ionic/react';
 import './Home.css';
 import { statsChartSharp } from 'ionicons/icons';
@@ -180,17 +181,178 @@ const ScreenMenu: React.FC = () => {
     return lucid;
   }
 
+  const toTags = (dream: Dream) => {
+    var tagString = "";
+  
+    for(const tag in dream.tags){
+      tagString = tagString + dream.tags[tag] + ", ";
+    }
+    return tagString;
+  };
+
+  var Dreams = getTodaysDreams();
+
+  var tags: string[];
+
+
   useIonViewWillEnter(() => {
-    setPage('2');//place holder open newest tab
-    setCount(2);//place holder tab count
-    setTitle1("Place holder Title");
-    setLucid1(0);
-    setDream1("Place holder Dream");
-    setTags1("Place, holder, tags");
-    setTitle2("Place holder second Title");
-    setLucid2(2)
-    setDream2("Place holder second Dream");
-    setTags2("Place, holder, second, tags");
+    var Remembercount = 0;
+    for(const dream in Dreams){
+      Remembercount += 1;
+    }
+    setPage('1');//place holder open newest tab
+    setCount(Remembercount);
+    if(Remembercount > 0){
+      setTitle1(Dreams[0].title);
+      setLucid1(Dreams[0].lucid);
+      setDream1(Dreams[0].dreamText);
+      setTags1((toTags(Dreams[0])));
+    }
+    if(Remembercount > 1){
+    setTitle2(Dreams[1].title);
+    setLucid2(Dreams[1].lucid)
+    setDream2(Dreams[1].dreamText);
+    setTags2((toTags(Dreams[1])));
+    }
+    if(Remembercount > 2){
+    setTitle3(Dreams[2].title);
+    setLucid3(Dreams[2].lucid)
+    setDream3(Dreams[2].dreamText);
+    setTags3((toTags(Dreams[2])));
+    }
+    if(Remembercount > 3){
+    setTitle4(Dreams[3].title);
+    setLucid4(Dreams[3].lucid)
+    setDream4(Dreams[3].dreamText);
+    setTags4((toTags(Dreams[3])));
+  }
+    if(Remembercount > 4){
+    setTitle5(Dreams[4].title);
+    setLucid5(Dreams[4].lucid)
+    setDream5(Dreams[4].dreamText);
+    setTags5((toTags(Dreams[4])));
+  }
+    if(Remembercount > 5){
+    setTitle6(Dreams[5].title);
+    setLucid6(Dreams[5].lucid)
+    setDream6(Dreams[5].dreamText);
+    setTags6((toTags(Dreams[5])));
+  }
+    if(Remembercount > 6){
+    setTitle7(Dreams[6].title);
+    setLucid7(Dreams[6].lucid)
+    setDream7(Dreams[6].dreamText);
+    setTags7((toTags(Dreams[6])));
+  }
+    if(Remembercount > 7){
+    setTitle8(Dreams[7].title);
+    setLucid8(Dreams[7].lucid)
+    setDream8(Dreams[7].dreamText);
+    setTags8((toTags(Dreams[7])));
+  }
+    if(Remembercount > 8){
+    setTitle9(Dreams[8].title);
+    setLucid9(Dreams[8].lucid)
+    setDream9(Dreams[8].dreamText);
+    setTags9((toTags(Dreams[8])));
+  }
+    if(Remembercount > 9){
+    setTitle10(Dreams[9].title);
+    setLucid10(Dreams[9].lucid)
+    setDream10(Dreams[9].dreamText);
+    setTags10((toTags(Dreams[9])));
+  }
+    if(Remembercount > 10){
+    setTitle11(Dreams[10].title);
+    setLucid11(Dreams[10].lucid)
+    setDream11(Dreams[10].dreamText);
+    setTags11((toTags(Dreams[10])));
+  }
+    if(Remembercount > 11){
+    setTitle12(Dreams[11].title);
+    setLucid12(Dreams[11].lucid)
+    setDream12(Dreams[11].dreamText);
+    setTags12((toTags(Dreams[11])));
+  }
+    if(Remembercount > 12){
+    setTitle13(Dreams[12].title);
+    setLucid13(Dreams[12].lucid)
+    setDream13(Dreams[12].dreamText);
+    setTags13((toTags(Dreams[12])));
+  }
+    if(Remembercount > 13){
+    setTitle14(Dreams[13].title);
+    setLucid14(Dreams[13].lucid)
+    setDream14(Dreams[13].dreamText);
+    setTags14((toTags(Dreams[13])));
+  }
+    if(Remembercount > 14){
+    setTitle15(Dreams[14].title);
+    setLucid15(Dreams[14].lucid)
+    setDream15(Dreams[14].dreamText);
+    setTags15((toTags(Dreams[14])));
+  }
+    if(Remembercount > 15){
+    setTitle16(Dreams[15].title);
+    setLucid16(Dreams[15].lucid)
+    setDream16(Dreams[15].dreamText);
+    setTags16((toTags(Dreams[15])));
+  }
+    if(Remembercount > 16){
+    setTitle17(Dreams[16].title);
+    setLucid17(Dreams[16].lucid)
+    setDream17(Dreams[16].dreamText);
+    setTags17((toTags(Dreams[16])));
+  }
+    if(Remembercount > 17){
+    setTitle18(Dreams[17].title);
+    setLucid18(Dreams[17].lucid)
+    setDream18(Dreams[17].dreamText);
+    setTags18((toTags(Dreams[17])));
+  }
+    if(Remembercount > 18){
+    setTitle19(Dreams[18].title);
+    setLucid19(Dreams[18].lucid)
+    setDream19(Dreams[18].dreamText);
+    setTags19((toTags(Dreams[18])));
+  }
+    if(Remembercount > 19){
+    setTitle20(Dreams[19].title);
+    setLucid20(Dreams[19].lucid)
+    setDream20(Dreams[19].dreamText);
+    setTags20((toTags(Dreams[19])));
+  }
+    if(Remembercount > 20){
+    setTitle21(Dreams[20].title);
+    setLucid21(Dreams[20].lucid)
+    setDream21(Dreams[20].dreamText);
+    setTags21((toTags(Dreams[20])));
+  }
+    if(Remembercount > 21){
+    setTitle22(Dreams[21].title);
+    setLucid22(Dreams[21].lucid)
+    setDream22(Dreams[21].dreamText);
+    setTags22((toTags(Dreams[21])));
+  }
+    if(Remembercount > 22){
+    setTitle23(Dreams[22].title);
+    setLucid23(Dreams[22].lucid)
+    setDream23(Dreams[22].dreamText);
+    setTags23((toTags(Dreams[22])));
+  }
+    if(Remembercount > 23){
+    setTitle24(Dreams[23].title);
+    setLucid24(Dreams[23].lucid)
+    setDream24(Dreams[23].dreamText);
+    setTags24((toTags(Dreams[23])));
+  }
+    if(Remembercount > 24){
+    setTitle25(Dreams[24].title);
+    setLucid25(Dreams[24].lucid)
+    setDream25(Dreams[24].dreamText);
+    setTags25((toTags(Dreams[24])));
+  }
+
   });
 
   useIonViewWillEnter(() => {
@@ -219,7 +381,14 @@ const ScreenMenu: React.FC = () => {
     var nowDay = (date.getFullYear().toString() + '-' + monthOfYearString + '-' + date.getDate().toString());
 
     setToday(nowDay);
+
+
+
   }
+
+  useIonViewWillLeave(() => {
+    saveData();
+  });
 
   const setVisible = (selectedValue: string, compareValue: string): boolean => {
     let val = true;
