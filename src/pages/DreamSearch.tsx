@@ -55,7 +55,15 @@ const ScreenMenu: React.FC = () => {
     else{
       monthOfYearString = monthOfYearInt.toString();
     }
-    var nowDay = (date.getFullYear().toString() + '-' + monthOfYearString + '-' + date.getDate().toString());
+    var day = date.getDate();
+    var dayString;
+    if(day < 10){
+      dayString = '0' + day.toString();
+    }
+    else{
+      dayString = day.toString();
+    }
+    var nowDay = (date.getFullYear().toString() + '-' + monthOfYearString + '-' + dayString);
 
     setDateEnd(nowDay);
     setDateStart(nowDay);
