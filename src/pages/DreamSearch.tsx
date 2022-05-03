@@ -1,9 +1,7 @@
-
 import DreamListItem from '../components/MessageListItem';
+import { useState, useRef } from 'react';
 import {get, set} from '../data/IonicStorage';
 import { Message, getMessages, Dream, getDreams } from '../data/messages';
-import { useState, useRef } from 'react';
-
 import {
     IonContent,
     IonHeader,
@@ -23,24 +21,18 @@ import {
     IonTextarea,
     IonLabel,
     IonDatetime,
-
     IonItemGroup,
-
     IonAccordion,
     IonAccordionGroup
-
 } from '@ionic/react';
 import './Home.css';
 import { chatboxSharp } from 'ionicons/icons';
 
 const ScreenMenu: React.FC = () => {
 
-
-  const accordionGroupRef = useRef (null);
-  const closeAccordion = () => {
-    // if (accordionGroupRef.current){
-    //   accordionGroupRef.current.value=undefined;
-    // }
+  const accordionGroupRef = useRef(null);
+  const closeAccordion = () =>{
+  
   }
     
   const [messages, setMessages] = useState<Message[]>([]);
@@ -185,11 +177,6 @@ const ScreenMenu: React.FC = () => {
     else{
       monthOfYearString = monthOfYearInt.toString();
     }
-
-
-    var day = date.getDate();
-    var dayString;
-
     if(day < 10){
       dayString = '0' + day.toString();
     }
@@ -260,7 +247,6 @@ return(
           </IonLabel>
           <IonTextarea value={fragment} placeholder="enter an exact quote from your dream" onIonChange={e => setFragment(e.detail.value!)}></IonTextarea>
         </IonItem>
-
         <IonItem>
           <IonItem>
             <IonLabel position = "stacked">
@@ -275,9 +261,8 @@ return(
           <IonDatetime presentation="date" min={dateStart} max={today} value={dateEnd} onIonChange={e => setDateEnd(e.detail.value!)}></IonDatetime>
 
           </IonItem>
-        </IonItem>
-
-          <IonAccordionGroup>
+        </IonItem> 
+        <IonAccordionGroup>
           <IonAccordion>
             <IonItem slot="header"><IonLabel>From...{dateStart}</IonLabel>
             </IonItem>
@@ -295,7 +280,6 @@ return(
             </IonItem>
           </IonAccordion>
           </IonAccordionGroup>
-
         
         <IonButton className="big-button" onClick = {e => searchDreams()}>Search</IonButton>
         <IonButton className="big-button" onClick = {e => clearSearch()}>Clear</IonButton>
