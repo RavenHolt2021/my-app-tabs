@@ -1,6 +1,7 @@
 import MessageListItem from '../components/MessageListItem';
 import { useState, useRef, useEffect } from 'react';
 import { Message, getMessages, TodaysDream } from '../data/messages';
+import{get, set, setObjectDream, getObject} from '../data/IonicStorage';
 import{useParams} from 'react-router';
 import {
     IonContent,
@@ -28,7 +29,6 @@ import {
     IonThumbnail
 } from '@ionic/react';
 import './Home.css';
-import{get, set, setObjectDream, getObject} from '../data/IonicStorage';
 import { image } from 'ionicons/icons';
 import { notStrictEqual } from 'assert';
 import { stringify } from 'querystring';
