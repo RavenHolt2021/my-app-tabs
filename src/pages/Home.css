@@ -162,3 +162,7 @@ font-family: monospace;
     background: none;
     border: none;
 }
+
+.wrap{
+    display: wrap;
+}

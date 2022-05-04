@@ -101,12 +101,12 @@ interface DreamListItemProps{
       <IonButton class="none" onClick = {e => showDream(dream)}>
         <div slot="start" className="dot dot-unread"></div>
         <IonLabel className="ion-text-wrap">
-          <h2>
+          <p>
             {dream.title}
             <span className="date">
               <IonNote>{dream.date}</IonNote>
             </span>
-          </h2>
+          </p>
           <h2>{dream.dreamText}</h2>
           <p>
             {(toTags(dream))}
@@ -363,14 +363,14 @@ return(
         <IonModal isOpen={showDreamW} swipeToClose={true}>
           <IonItemGroup class="journal-dream">
           <IonItem class="journal-title">
-            <>{dream!.title}</>
+            <p>{dream!.title}</p>
             <p className="star-button"><img src={getImage(dream!.lucid)}/></p>
           </IonItem>
           <IonItem class="journal-entry">
-            <p>{dream!.dreamText}</p>
+            <p className="wrap" >{dream!.dreamText}</p>
           </IonItem>
           <IonItem class="journal-tags">
-            <p>{toTags(dream!)}</p>
+            <p className="wrap">{toTags(dream!)}</p>
           </IonItem>
           <IonButton className="big-button" onClick = {e => setShowDreamW(false)}>Return</IonButton>
         </IonItemGroup>
