@@ -43,7 +43,7 @@
     display: flex;
     font-size: xx-large;
     color: black;
-    margin: 1em;
+    margin: 1.5em;
     --ion-font-family: times;
 }
 
@@ -124,7 +124,6 @@ font-family: monospace;
 
 /* For Journal - Dream Search: */
 
-/* Try more stuff. */
 .dream-sign-info {
     color: black;
     padding-left: 2%;
