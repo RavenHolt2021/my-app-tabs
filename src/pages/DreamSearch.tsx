@@ -273,7 +273,10 @@ interface DreamListItemProps{
       setDateEndShort(shortDate);
     }
   }
-
+  const toDate = (date: string):string => {
+    date = date.substr(0, 10);
+    return date;
+  }
   useIonViewWillEnter(() => {
     const msgs = getMessages();
   });
@@ -327,7 +330,7 @@ return(
         </IonItem>
         <IonAccordionGroup>
           <IonAccordion>
-            <IonItem slot="header"><IonLabel>From... {dateStartShort}</IonLabel>
+            <IonItem slot="header"><IonLabel>From... {toDate(dateStart!)}</IonLabel>
             </IonItem>
             <IonItem slot="content">
             <IonDatetime className="date-info" presentation="date" min={'2022-04-29'} max={dateEnd} value={dateStart} onIonChange={e => getDate(e.detail.value!, true)}></IonDatetime>{/*Need to set minimum date*/}
@@ -336,7 +339,7 @@ return(
           </IonAccordionGroup>
           <IonAccordionGroup>
           <IonAccordion>
-            <IonItem slot="header"><IonLabel>To... {dateEndShort}</IonLabel>
+            <IonItem slot="header"><IonLabel>To... {toDate(dateEnd!)}</IonLabel>
             </IonItem>
             <IonItem slot="content">
             <IonDatetime className="date-info" presentation="date" min={dateStart} max={today} value={dateEnd} onIonChange={e => getDate(e.detail.value!, false)}></IonDatetime>
