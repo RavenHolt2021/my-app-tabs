@@ -3,23 +3,11 @@ import {
   IonLabel,
   IonNote
   } from '@ionic/react';
-import { Message, Dream} from '../data/messages';
+import { Message } from '../data/messages';
 import './MessageListItem.css';
-
-const toTags = (dream: Dream) => {
-  var tagString = "";
-
-  for(const tag in dream.tags){
-    tagString = tagString + dream.tags[tag] + ", ";
-  }
-  return tagString;
-};
 
 interface MessageListItemProps {
   message: Message;
-}
-interface DreamListItemProps{
-  dream: Dream;
 }
 
 const MessageListItem: React.FC<MessageListItemProps> = ({ message }) => {
@@ -42,24 +30,4 @@ const MessageListItem: React.FC<MessageListItemProps> = ({ message }) => {
   );
 };
 
-const DreamListItem: React.FC<DreamListItemProps> = ({ dream }) => {
-  return(
-    <IonItem routerLink={`dream/${dream.id}`} detail={false}>
-      <div slot="start" className="dot dot-unread"></div>
-      <IonLabel className="ion-text-wrap">
-        <h2>
-          {dream.title}
-          <span className="date">
-            <IonNote>{dream.date}</IonNote>
-          </span>
-        </h2>
-        <h3>{(toTags(dream))}</h3>
-        <p>
-          {dream.dreamText.substr(0, 30)}
-        </p>
-      </IonLabel>
-    </IonItem>
-  );
-};
-
-export default DreamListItem;
+export default MessageListItem;
