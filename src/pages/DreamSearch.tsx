@@ -1,4 +1,3 @@
-import DreamListItem from '../components/MessageListItem';
 import { useState, useRef } from 'react';
 import {get, set} from '../data/IonicStorage';
 import { Message, getMessages, Dream, getDreams } from '../data/messages';
@@ -23,9 +22,12 @@ import {
     IonDatetime,
     IonItemGroup,
     IonAccordion,
-    IonAccordionGroup
+    IonAccordionGroup,
+    IonModal,
+    IonNote
 } from '@ionic/react';
 import './Home.css';
+import '../components/MessageListItem.css';
 import { chatboxSharp } from 'ionicons/icons';
 
 const ScreenMenu: React.FC = () => {
@@ -48,13 +50,79 @@ const ScreenMenu: React.FC = () => {
 
   const [foundDreams, setFoundDreams] = useState<Dream[]>([]);
 
+  const [dateEndShort, setDateEndShort] = useState<string>("");
+  const [dateStartShort, setDateStartShort] = useState<string>("");
+  const [showDreamW, setShowDreamW] = useState<boolean>(false);
+
+  const [dream, setDream] = useState<Dream>({
+    title: "",
+    lucid: 0,
+    dreamText: "",
+    tags: [],
+    date: "",
+    id: "",
+  });
+
   var taglist: String[] = [
 
   ];
 
-
-
+  
   const dreams = getDreams();
+
+  function getImage(type: number): string {
+    var image = "../assets/icon/empty-star-transparent.png";
+    if (type == 0) {
+      image = "../assets/icon/empty-star-transparent.png";
+    }
+    else if (type == 1) {
+      image = "../assets/icon/fullstar-transparent.png";
+    }
+    else {
+      image = "../assets/icon/halfstar-transparent.png";
+    }
+    return image;
+  }
+  const toTags = (dream: Dream) => {
+    var tagString = "";
+  
+    for(const tag in dream.tags){
+      tagString = tagString + dream.tags[tag] + ", ";
+    }
+    return tagString;
+  };
+  
+interface DreamListItemProps{
+  dream: Dream;
+}
+
+  const DreamListItem: React.FC<DreamListItemProps> = ({ dream }) => {
+    return(
+      <IonButton class="none" onClick = {e => showDream(dream)}>
+        <div slot="start" className="dot dot-unread"></div>
+        <IonLabel className="ion-text-wrap">
+          <h2>
+            {dream.title}
+            <span className="date">
+              <IonNote>{dream.date}</IonNote>
+            </span>
+          </h2>
+          <h2>{dream.dreamText}</h2>
+          <p>
+            {(toTags(dream))}
+            <span className="date">
+            <img className="star-button" src={getImage(dream.lucid)}/></span>
+          </p>
+        </IonLabel>
+      </IonButton>
+    );
+  };
+
+  const showDream = (dreamGot: Dream) => {
+    setDream(dreamGot);
+    setShowDreamW(true);
+  }
+
   const searchDreams = () => {
     setFoundDreams(foundDreams.splice(0));
     var nsfw = false;
@@ -194,6 +262,21 @@ const ScreenMenu: React.FC = () => {
     setFoundDreams(foundDreams.splice(0));
   });
 
+  const getDate = (date: string, start: boolean) => {
+    var shortDate: string = "";
+    for(var i = 0; i < 10; i++){
+      shortDate.concat(date[i]);
+    }
+    if(start == true){
+      setDateStartShort(shortDate);
+      setDateStart(date);
+    }
+    else{
+      setDateEnd(date);
+      setDateEndShort(shortDate);
+    }
+  }
+
   useIonViewWillEnter(() => {
     const msgs = getMessages();
   });
@@ -247,36 +330,21 @@ return(
           </IonLabel>
           <IonTextarea value={fragment} placeholder="enter an exact quote from your dream" onIonChange={e => setFragment(e.detail.value!)}></IonTextarea>
         </IonItem>
-        <IonItem>
-          <IonItem>
-            <IonLabel position = "stacked">
-              From . . .
-            </IonLabel>
-            <IonDatetime presentation="date" min={'2022-04-29'} max={dateEnd} value={dateStart} onIonChange={e => setDateStart(e.detail.value!)}></IonDatetime>{/*Need to set minimum date*/}
-          </IonItem>
-          <IonItem>
-            <IonLabel position = "stacked">
-              To . . .
-            </IonLabel>
-          <IonDatetime presentation="date" min={dateStart} max={today} value={dateEnd} onIonChange={e => setDateEnd(e.detail.value!)}></IonDatetime>
-
-          </IonItem>
-        </IonItem> 
         <IonAccordionGroup>
           <IonAccordion>
-            <IonItem slot="header"><IonLabel>From...{dateStart}</IonLabel>
+            <IonItem slot="header"><IonLabel>From... {dateStartShort}</IonLabel>
             </IonItem>
             <IonItem slot="content">
-            <IonDatetime className="date-info" presentation="date" max={dateEnd} value={dateStart} onIonChange={e => setDateStart(e.detail.value!)}></IonDatetime>{/*Need to set minimum date*/}
+            <IonDatetime className="date-info" presentation="date" min={'2022-04-29'} max={dateEnd} value={dateStart} onIonChange={e => getDate(e.detail.value!, true)}></IonDatetime>{/*Need to set minimum date*/}
             </IonItem>
           </IonAccordion>
           </IonAccordionGroup>
           <IonAccordionGroup>
           <IonAccordion>
-            <IonItem slot="header"><IonLabel>To...{dateEnd}</IonLabel>
+            <IonItem slot="header"><IonLabel>To... {dateEndShort}</IonLabel>
             </IonItem>
             <IonItem slot="content">
-            <IonDatetime className="date-info" presentation="date" min={dateStart} max={today} value={dateEnd} onIonChange={e => setDateEnd(e.detail.value!)}></IonDatetime>
+            <IonDatetime className="date-info" presentation="date" min={dateStart} max={today} value={dateEnd} onIonChange={e => getDate(e.detail.value!, false)}></IonDatetime>
             </IonItem>
           </IonAccordion>
           </IonAccordionGroup>
@@ -291,6 +359,23 @@ return(
           </IonList>
           <IonButton className="big-button" onClick = {e => setSearching(false)}>Return</IonButton>
         </IonItemGroup>
+
+        <IonModal isOpen={showDreamW} swipeToClose={true}>
+          <IonItemGroup class="journal-dream">
+          <IonItem class="journal-title">
+            <>{dream!.title}</>
+            <p className="star-button"><img src={getImage(dream!.lucid)}/></p>
+          </IonItem>
+          <IonItem class="journal-entry">
+            <p>{dream!.dreamText}</p>
+          </IonItem>
+          <IonItem class="journal-tags">
+            <p>{toTags(dream!)}</p>
+          </IonItem>
+          <IonButton className="big-button" onClick = {e => setShowDreamW(false)}>Return</IonButton>
+        </IonItemGroup>
+        
+    </IonModal>
         
         <IonFooter className="footer-content">
         </IonFooter>

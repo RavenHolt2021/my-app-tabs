@@ -96,7 +96,7 @@ var Dreams: Dream[] = [
     title: 'Example Dream',
     lucid: 1,
     dreamText: 'Welcome to Lucid Companion! We wish you the best on your lucid journey.',
-    tags: ['dream', 'first', 'example'],
+    tags: ['dream', 'first', 'example', 'tags', 'tagged', 'april', 'spring', 'lucid'],
     date:"2022-04-29",
     id: "0"
   }

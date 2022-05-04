@@ -89,6 +89,11 @@
     max-width: 70px;
 }
 
+.date .star-button {
+    height: fit-content;
+    width: fit-content;
+    max-width: 70px;
+}
 .journal-entry {
     color: black;
 }
@@ -152,4 +157,9 @@ font-family: monospace;
     color: black;
     margin: .5em;
     --ion-font-family: times;
+}
+
+.none{
+    background: none;
+    border: none;
 }
