@@ -1,5 +1,5 @@
+import MessageListItem from '../components/MessageListItem';
 import { useState, useRef } from 'react';
-import {get, set} from '../data/IonicStorage';
 import { Message, getMessages, Dream, getDreams } from '../data/messages';
 import {
     IonContent,
@@ -20,11 +20,11 @@ import {
     IonTextarea,
     IonLabel,
     IonDatetime,
-    IonItemGroup,
     IonAccordion,
     IonAccordionGroup,
     IonModal,
-    IonNote
+    IonNote,
+    IonItemGroup
 } from '@ionic/react';
 import './Home.css';
 import '../components/MessageListItem.css';
@@ -32,20 +32,21 @@ import { chatboxSharp } from 'ionicons/icons';
 
 const ScreenMenu: React.FC = () => {
 
-  const accordionGroupRef = useRef(null);
-  const closeAccordion = () =>{
-  
+
+  const accordionGroupRef = useRef (null);
+  const closeAccordion = () => {
+    // if (accordionGroupRef.current){
+    //   accordionGroupRef.current.value=undefined;
+    // }
   }
     
   const [messages, setMessages] = useState<Message[]>([]);
-  //const [dreams, setDreams] = useState([]);
   const [tags, setTags] = useState<string>();
   const [title, setTitle] = useState<string>();
   const [fragment, setFragment] = useState<string>();
   const [today, setToday] = useState<string>();
   const [dateStart, setDateStart] = useState<string>();
   const [dateEnd, setDateEnd] = useState<string>();
-
   const [searching, setSearching] = useState<boolean>(false);
 
   const [foundDreams, setFoundDreams] = useState<Dream[]>([]);
@@ -235,9 +236,6 @@ interface DreamListItemProps{
     var date = new Date();
     var monthOfYearInt = date.getMonth();
     var monthOfYearString;
-    var day = date.getDate();
-    var dayString;
-
     monthOfYearInt = monthOfYearInt + 1;
     if(monthOfYearInt < 10){
       monthOfYearString = '0' + monthOfYearInt.toString();
@@ -245,21 +243,11 @@ interface DreamListItemProps{
     else{
       monthOfYearString = monthOfYearInt.toString();
     }
-    if(day < 10){
-      dayString = '0' + day.toString();
-    }
-    else{
-      dayString = day.toString();
-    }
-    var nowDay = (date.getFullYear().toString() + '-' + monthOfYearString + '-' + dayString);
+    var nowDay = (date.getFullYear().toString() + '-' + monthOfYearString + '-' + date.getDate().toString());
 
-    setTags("");
-    setTitle("");
-    setFragment("");
     setDateEnd(nowDay);
     setDateStart(nowDay);
     setToday(nowDay);
-    setFoundDreams(foundDreams.splice(0));
   });
 
   const getDate = (date: string, start: boolean) => {
@@ -306,8 +294,6 @@ return(
         <IonRefresher slot="fixed" onIonRefresh={refresh}>
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
-
-        <IonItemGroup hidden={searching}>
         <IonItem className="page-title">
           <IonLabel className="page-banner">Search Dreams</IonLabel>
         </IonItem>
@@ -351,7 +337,7 @@ return(
         
         <IonButton className="big-button" onClick = {e => searchDreams()}>Search</IonButton>
         <IonButton className="big-button" onClick = {e => clearSearch()}>Clear</IonButton>
-        </IonItemGroup>
+        {/*</IonContent></IonItemGroup>*/}
 
         <IonItemGroup hidden={!searching}>
           <IonList>
@@ -376,6 +362,7 @@ return(
         </IonItemGroup>
         
     </IonModal>
+        <IonButton href="#" className="big-button">Search</IonButton>
         
         <IonFooter className="footer-content">
         </IonFooter>

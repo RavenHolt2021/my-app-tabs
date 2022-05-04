@@ -3,9 +3,16 @@ import {
   IonLabel,
   IonNote
   } from '@ionic/react';
-import { Message, Dream} from '../data/messages';
+import { Message, Dream } from '../data/messages';
 import './MessageListItem.css';
 import '../pages/Home.css';
+
+interface MessageListItemProps {
+  message: Message;
+}
+interface DreamListItemProps {
+  dream: Dream;
+}
 
 const toTags = (dream: Dream) => {
   var tagString = "";
@@ -15,13 +22,6 @@ const toTags = (dream: Dream) => {
   }
   return tagString;
 };
-
-interface MessageListItemProps {
-  message: Message;
-}
-interface DreamListItemProps{
-  dream: Dream;
-}
 
 const MessageListItem: React.FC<MessageListItemProps> = ({ message }) => {
   return (
@@ -79,3 +79,4 @@ const DreamListItem: React.FC<DreamListItemProps> = ({ dream }) => {
 };
 
 export default DreamListItem;
+//export default MessageListItem;
