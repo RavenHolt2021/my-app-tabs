@@ -1,6 +1,7 @@
 import MessageListItem from '../components/MessageListItem';
 import { useState } from 'react';
-import { Message, getMessages } from '../data/messages';
+import { Message, getMessages, getTodaysDreams } from '../data/messages';
+import {get, set} from '../data/IonicStorage';
 import {
   IonContent,
   IonHeader,
@@ -19,6 +20,11 @@ import {
   IonLabel
 } from '@ionic/react';
 import './Home.css';
+
+const saveTodaysDreams = () => {
+  //Add Today's Dreams to Proper Dream List
+  //Clear Today's Dreams
+}
 
 const JournalMenu: React.FC = () => {
 
@@ -58,7 +64,7 @@ const JournalMenu: React.FC = () => {
         <IonLabel className="page-banner">My Journal</IonLabel>
         </IonItem>
         {/* <IonButton href="#" className="back-2-home"></IonButton> */}
-        <IonButton routerLink="/newentries" className="big-button">New Entries</IonButton>
+        <IonButton routerLink="/newentries" className="big-button" onClick={e => saveTodaysDreams()}> New Entries</IonButton>
         <IonButton routerLink="/todaysentries" className="big-button">Today's Entries</IonButton>
         <IonButton routerLink="/mydreamsmenu" className="big-button">My Dreams</IonButton>
         <IonButton routerLink="/recallhelpmenu" className="big-button">Recall Help</IonButton>
