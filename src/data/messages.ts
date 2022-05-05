@@ -130,6 +130,5 @@ export const getDream = (id: string) => Dreams.find(m => m.id === id);
 export const getTodaysDreams = () => TodaysDreams;
 export const getTodaysDream = (id: number) => TodaysDreams.find(m => m.page === id);
 
-
 export const getAlarms = () => Alarms;
 export const getAlarm = (id: string) => Alarms.find(m => m.id === id);

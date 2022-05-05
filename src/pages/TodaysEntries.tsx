@@ -226,8 +226,6 @@ const ScreenMenu: React.FC = () => {
       dayString = day.toString();
     }
     var nowDay = (date.getFullYear().toString() + '-' + monthOfYearString + '-' + dayString);
-
-
     setToday(nowDay);
   }
 
