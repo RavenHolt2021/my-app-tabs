@@ -96,27 +96,29 @@ const ScreenMenu: React.FC = () => {
 interface DreamListItemProps{
   dream: Dream;
 }
-
+//RAVEN This section needs some styling! To get to it go Journal>My Dreams>Search>Search>View
   const DreamListItem: React.FC<DreamListItemProps> = ({ dream }) => {
     return(
-      <IonButton class="none" onClick = {e => showDream(dream)}>
-      <IonItem>
-        <div slot="start" className="dot dot-unread"></div>
-        <IonLabel>
-          <p>
-            {dream.title}
-            <span className="date">
-              <IonNote>{dream.date}</IonNote>
-            </span>
-          </p>
-          <h2>{dream.dreamText}</h2>
-          <p>
-            {(toTags(dream))}
-            <span className="date">
-            <img className="star-button" src={getImage(dream.lucid)}/></span>
-          </p>
-        </IonLabel></IonItem>
-      </IonButton>
+      <IonItemGroup>
+        <IonItem>
+          <IonLabel>
+            <h2>
+              {dream.title}
+              <span className="date">
+                <IonNote>{dream.date}</IonNote>
+              </span>
+            </h2>
+            <h3>{dream.dreamText}</h3>
+            <p>
+              {(toTags(dream))}
+            </p>
+            <p>
+              <IonButton class="none" onClick = {e => showDream(dream)}>view</IonButton>
+              <span><img className="star-button" src={getImage(dream.lucid)}/></span>
+            </p>
+          </IonLabel>
+        </IonItem>
+      </IonItemGroup>
     );
   };
 
