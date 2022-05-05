@@ -1,6 +1,7 @@
 import MessageListItem from '../components/MessageListItem';
 import { useState, useRef } from 'react';
-import { Message, getMessages } from '../data/messages';
+import { Message, getMessages, getTodaysDreams, Dream } from '../data/messages';
+import {useHistory, useParams} from 'react-router';
 import {
     IonContent,
     IonHeader,
@@ -22,14 +23,16 @@ import {
     IonSegment,
     IonSegmentButton,
     IonItemGroup,
-    withIonLifeCycle
+    withIonLifeCycle,
+    useIonViewWillLeave
 } from '@ionic/react';
 import './Home.css';
 import { statsChartSharp } from 'ionicons/icons';
 import { canConstructResponseFromBodyStream } from 'workbox-core/_private';
+import { setObject } from '../data/IonicStorage';
 
 const ScreenMenu: React.FC = () => {
-    
+  const params = useParams<{id: string}>();
   const [messages, setMessages] = useState<Message[]>([]);
 
 
@@ -180,17 +183,178 @@ const ScreenMenu: React.FC = () => {
     return lucid;
   }
 
+  const toTags = (dream: Dream) => {
+    var tagString = "";
+  
+    for(const tag in dream.tags){
+      tagString = tagString + dream.tags[tag] + ", ";
+    }
+    return tagString;
+  };
+
+  var Dreams = getTodaysDreams();
+
+  var tags: string[];
+
+
   useIonViewWillEnter(() => {
-    setPage('2');//place holder open newest tab
-    setCount(2);//place holder tab count
-    setTitle1("Place holder Title");
-    setLucid1(0);
-    setDream1("Place holder Dream");
-    setTags1("Place, holder, tags");
-    setTitle2("Place holder second Title");
-    setLucid2(2)
-    setDream2("Place holder second Dream");
-    setTags2("Place, holder, second, tags");
+    var Remembercount = 0;
+    for(const dream in Dreams){
+      Remembercount += 1;
+    }
+    setPage('1');//place holder open newest tab
+    setCount(Remembercount);
+    if(Remembercount > 0){
+      setTitle1(Dreams[0].title);
+      setLucid1(Dreams[0].lucid);
+      setDream1(Dreams[0].dreamText);
+      setTags1((toTags(Dreams[0])));
+    }
+    if(Remembercount > 1){
+    setTitle2(Dreams[1].title);
+    setLucid2(Dreams[1].lucid)
+    setDream2(Dreams[1].dreamText);
+    setTags2((toTags(Dreams[1])));
+    }
+    if(Remembercount > 2){
+    setTitle3(Dreams[2].title);
+    setLucid3(Dreams[2].lucid)
+    setDream3(Dreams[2].dreamText);
+    setTags3((toTags(Dreams[2])));
+    }
+    if(Remembercount > 3){
+    setTitle4(Dreams[3].title);
+    setLucid4(Dreams[3].lucid)
+    setDream4(Dreams[3].dreamText);
+    setTags4((toTags(Dreams[3])));
+  }
+    if(Remembercount > 4){
+    setTitle5(Dreams[4].title);
+    setLucid5(Dreams[4].lucid)
+    setDream5(Dreams[4].dreamText);
+    setTags5((toTags(Dreams[4])));
+  }
+    if(Remembercount > 5){
+    setTitle6(Dreams[5].title);
+    setLucid6(Dreams[5].lucid)
+    setDream6(Dreams[5].dreamText);
+    setTags6((toTags(Dreams[5])));
+  }
+    if(Remembercount > 6){
+    setTitle7(Dreams[6].title);
+    setLucid7(Dreams[6].lucid)
+    setDream7(Dreams[6].dreamText);
+    setTags7((toTags(Dreams[6])));
+  }
+    if(Remembercount > 7){
+    setTitle8(Dreams[7].title);
+    setLucid8(Dreams[7].lucid)
+    setDream8(Dreams[7].dreamText);
+    setTags8((toTags(Dreams[7])));
+  }
+    if(Remembercount > 8){
+    setTitle9(Dreams[8].title);
+    setLucid9(Dreams[8].lucid)
+    setDream9(Dreams[8].dreamText);
+    setTags9((toTags(Dreams[8])));
+  }
+    if(Remembercount > 9){
+    setTitle10(Dreams[9].title);
+    setLucid10(Dreams[9].lucid)
+    setDream10(Dreams[9].dreamText);
+    setTags10((toTags(Dreams[9])));
+  }
+    if(Remembercount > 10){
+    setTitle11(Dreams[10].title);
+    setLucid11(Dreams[10].lucid)
+    setDream11(Dreams[10].dreamText);
+    setTags11((toTags(Dreams[10])));
+  }
+    if(Remembercount > 11){
+    setTitle12(Dreams[11].title);
+    setLucid12(Dreams[11].lucid)
+    setDream12(Dreams[11].dreamText);
+    setTags12((toTags(Dreams[11])));
+  }
+    if(Remembercount > 12){
+    setTitle13(Dreams[12].title);
+    setLucid13(Dreams[12].lucid)
+    setDream13(Dreams[12].dreamText);
+    setTags13((toTags(Dreams[12])));
+  }
+    if(Remembercount > 13){
+    setTitle14(Dreams[13].title);
+    setLucid14(Dreams[13].lucid)
+    setDream14(Dreams[13].dreamText);
+    setTags14((toTags(Dreams[13])));
+  }
+    if(Remembercount > 14){
+    setTitle15(Dreams[14].title);
+    setLucid15(Dreams[14].lucid)
+    setDream15(Dreams[14].dreamText);
+    setTags15((toTags(Dreams[14])));
+  }
+    if(Remembercount > 15){
+    setTitle16(Dreams[15].title);
+    setLucid16(Dreams[15].lucid)
+    setDream16(Dreams[15].dreamText);
+    setTags16((toTags(Dreams[15])));
+  }
+    if(Remembercount > 16){
+    setTitle17(Dreams[16].title);
+    setLucid17(Dreams[16].lucid)
+    setDream17(Dreams[16].dreamText);
+    setTags17((toTags(Dreams[16])));
+  }
+    if(Remembercount > 17){
+    setTitle18(Dreams[17].title);
+    setLucid18(Dreams[17].lucid)
+    setDream18(Dreams[17].dreamText);
+    setTags18((toTags(Dreams[17])));
+  }
+    if(Remembercount > 18){
+    setTitle19(Dreams[18].title);
+    setLucid19(Dreams[18].lucid)
+    setDream19(Dreams[18].dreamText);
+    setTags19((toTags(Dreams[18])));
+  }
+    if(Remembercount > 19){
+    setTitle20(Dreams[19].title);
+    setLucid20(Dreams[19].lucid)
+    setDream20(Dreams[19].dreamText);
+    setTags20((toTags(Dreams[19])));
+  }
+    if(Remembercount > 20){
+    setTitle21(Dreams[20].title);
+    setLucid21(Dreams[20].lucid)
+    setDream21(Dreams[20].dreamText);
+    setTags21((toTags(Dreams[20])));
+  }
+    if(Remembercount > 21){
+    setTitle22(Dreams[21].title);
+    setLucid22(Dreams[21].lucid)
+    setDream22(Dreams[21].dreamText);
+    setTags22((toTags(Dreams[21])));
+  }
+    if(Remembercount > 22){
+    setTitle23(Dreams[22].title);
+    setLucid23(Dreams[22].lucid)
+    setDream23(Dreams[22].dreamText);
+    setTags23((toTags(Dreams[22])));
+  }
+    if(Remembercount > 23){
+    setTitle24(Dreams[23].title);
+    setLucid24(Dreams[23].lucid)
+    setDream24(Dreams[23].dreamText);
+    setTags24((toTags(Dreams[23])));
+  }
+    if(Remembercount > 24){
+    setTitle25(Dreams[24].title);
+    setLucid25(Dreams[24].lucid)
+    setDream25(Dreams[24].dreamText);
+    setTags25((toTags(Dreams[24])));
+  }
+
   });
 
   useIonViewWillEnter(() => {
@@ -216,9 +380,8 @@ const ScreenMenu: React.FC = () => {
     else{
       monthOfYearString = monthOfYearInt.toString();
     }
-    var dayString;
     var day = date.getDate();
-    
+    var dayString;
     if(day < 10){
       dayString = '0' + day.toString();
     }
@@ -226,8 +389,353 @@ const ScreenMenu: React.FC = () => {
       dayString = day.toString();
     }
     var nowDay = (date.getFullYear().toString() + '-' + monthOfYearString + '-' + dayString);
+
     setToday(nowDay);
+    if(count >= 1){
+    var tagList = toTagged(tags1!)
+    var dream: TodaysDream = {
+      title: title1!,
+      lucid: lucid1,
+      dreamText: dream1!,
+      tags: tagList,
+      date: nowDay,
+      id: Math.random().toString(36).substr(2, 9),
+      page: 1
+    }
+    saveDreamEntry(dream);}
+    if(count >= 2){
+    var tagList = toTagged(tags2!)
+    var dream: TodaysDream = {
+      title: title2!,
+      lucid: lucid2,
+      dreamText: dream2!,
+      tags: tagList,
+      date: nowDay,
+      id: Math.random().toString(36).substr(2, 9),
+      page: 2
+    }
+    saveDreamEntry(dream);}
+    if(count >= 3){
+    var tagList = toTagged(tags3!)
+    var dream: TodaysDream = {
+      title: title3!,
+      lucid: lucid3,
+      dreamText: dream3!,
+      tags: tagList,
+      date: nowDay,
+      id: Math.random().toString(36).substr(2, 9),
+      page: 3
+    }
+    saveDreamEntry(dream);}
+    if(count >= 4){
+    var tagList = toTagged(tags4!)
+    var dream: TodaysDream = {
+      title: title4!,
+      lucid: lucid4,
+      dreamText: dream4!,
+      tags: tagList,
+      date: nowDay,
+      id: Math.random().toString(36).substr(2, 9),
+      page: 4
+    }
+    saveDreamEntry(dream);}
+    if(count >= 5){
+    var tagList = toTagged(tags5!)
+    var dream: TodaysDream = {
+      title: title5!,
+      lucid: lucid5,
+      dreamText: dream5!,
+      tags: tagList,
+      date: nowDay,
+      id: Math.random().toString(36).substr(2, 9),
+      page: 5
+    }
+    saveDreamEntry(dream);}
+    if(count >= 6){
+    var tagList = toTagged(tags6!)
+    var dream: TodaysDream = {
+      title: title6!,
+      lucid: lucid6,
+      dreamText: dream6!,
+      tags: tagList,
+      date: nowDay,
+      id: Math.random().toString(36).substr(2, 9),
+      page: 6
+    }
+    saveDreamEntry(dream);}
+    if(count >= 7){
+    var tagList = toTagged(tags7!)
+    var dream: TodaysDream = {
+      title: title7!,
+      lucid: lucid7,
+      dreamText: dream7!,
+      tags: tagList,
+      date: nowDay,
+      id: Math.random().toString(36).substr(2, 9),
+      page: 7
+    }
+    saveDreamEntry(dream);}
+    if(count >= 8){
+    var tagList = toTagged(tags8!)
+    var dream: TodaysDream = {
+      title: title8!,
+      lucid: lucid8,
+      dreamText: dream8!,
+      tags: tagList,
+      date: nowDay,
+      id: Math.random().toString(36).substr(2, 9),
+      page: 8
+    }
+    saveDreamEntry(dream);}
+    if(count >= 9){
+    var tagList = toTagged(tags9!)
+    var dream: TodaysDream = {
+      title: title9!,
+      lucid: lucid9,
+      dreamText: dream9!,
+      tags: tagList,
+      date: nowDay,
+      id: Math.random().toString(36).substr(2, 9),
+      page: 9
+    }
+    saveDreamEntry(dream);}
+    if(count >= 10){
+
+    var tagList = toTagged(tags10!)
+    var dream: TodaysDream = {
+      title: title10!,
+      lucid: lucid10,
+      dreamText: dream10!,
+      tags: tagList,
+      date: nowDay,
+      id: Math.random().toString(36).substr(2, 9),
+      page: 10
+    }
+    saveDreamEntry(dream);}
+    if(count >= 11){
+    
+    var tagList = toTagged(tags11!)
+    var dream: TodaysDream = {
+      title: title11!,
+      lucid: lucid11,
+      dreamText: dream11!,
+      tags: tagList,
+      date: nowDay,
+      id: Math.random().toString(36).substr(2, 9),
+      page: 11
+    }
+    saveDreamEntry(dream);}
+    if(count >= 12){
+    var tagList = toTagged(tags12!)
+    var dream: TodaysDream = {
+      title: title12!,
+      lucid: lucid12,
+      dreamText: dream12!,
+      tags: tagList,
+      date: nowDay,
+      id: Math.random().toString(36).substr(2, 9),
+      page: 12
+    }
+    saveDreamEntry(dream);}
+    if(count >= 13){
+    var tagList = toTagged(tags13!)
+    var dream: TodaysDream = {
+      title: title13!,
+      lucid: lucid13,
+      dreamText: dream13!,
+      tags: tagList,
+      date: nowDay,
+      id: Math.random().toString(36).substr(2, 9),
+      page: 13
+    }
+    saveDreamEntry(dream);}
+    if(count >= 14){
+    var tagList = toTagged(tags14!)
+    var dream: TodaysDream = {
+      title: title14!,
+      lucid: lucid14,
+      dreamText: dream14!,
+      tags: tagList,
+      date: nowDay,
+      id: Math.random().toString(36).substr(2, 9),
+      page: 14
+    }
+    saveDreamEntry(dream);}
+    if(count >= 15){
+    var tagList = toTagged(tags15!)
+    var dream: TodaysDream = {
+      title: title15!,
+      lucid: lucid15,
+      dreamText: dream15!,
+      tags: tagList,
+      date: nowDay,
+      id: Math.random().toString(36).substr(2, 9),
+      page: 15
+    }
+    saveDreamEntry(dream);}
+    if(count >= 16){
+    var tagList = toTagged(tags1!)
+    var dream: TodaysDream = {
+      title: title16!,
+      lucid: lucid16,
+      dreamText: dream16!,
+      tags: tagList,
+      date: nowDay,
+      id: Math.random().toString(36).substr(2, 9),
+      page: 16
+    }
+    saveDreamEntry(dream);}
+    if(count >= 17){
+    var tagList = toTagged(tags1!)
+    var dream: TodaysDream = {
+      title: title17!,
+      lucid: lucid17,
+      dreamText: dream17!,
+      tags: tagList,
+      date: nowDay,
+      id: Math.random().toString(36).substr(2, 9),
+      page: 17
+    }
+    saveDreamEntry(dream);}
+    if(count >= 18){
+    var tagList = toTagged(tags18!)
+    var dream: TodaysDream = {
+      title: title18!,
+      lucid: lucid1,
+      dreamText: dream18!,
+      tags: tagList,
+      date: nowDay,
+      id: Math.random().toString(36).substr(2, 9),
+      page: 18
+    }
+    saveDreamEntry(dream);}
+    if(count >= 19){
+    var tagList = toTagged(tags19!)
+    var dream: TodaysDream = {
+      title: title19!,
+      lucid: lucid19,
+      dreamText: dream19!,
+      tags: tagList,
+      date: nowDay,
+      id: Math.random().toString(36).substr(2, 9),
+      page: 19
+    }
+    saveDreamEntry(dream);}
+    if(count >= 20){
+    var tagList = toTagged(tags20!)
+    var dream: TodaysDream = {
+      title: title20!,
+      lucid: lucid20,
+      dreamText: dream20!,
+      tags: tagList,
+      date: nowDay,
+      id: Math.random().toString(36).substr(2, 9),
+      page: 20
+    }
+    saveDreamEntry(dream);}
+    if(count >= 21){
+    var tagList = toTagged(tags21!)
+    var dream: TodaysDream = {
+      title: title21!,
+      lucid: lucid21,
+      dreamText: dream21!,
+      tags: tagList,
+      date: nowDay,
+      id: Math.random().toString(36).substr(2, 9),
+      page: 21
+    }
+    saveDreamEntry(dream);}
+    if(count >= 22){
+    var tagList = toTagged(tags22!)
+    var dream: TodaysDream = {
+      title: title22!,
+      lucid: lucid22,
+      dreamText: dream22!,
+      tags: tagList,
+      date: nowDay,
+      id: Math.random().toString(36).substr(2, 9),
+      page: 22
+    }
+    saveDreamEntry(dream);}
+    if(count >= 23){
+    var tagList = toTagged(tags23!)
+    var dream: TodaysDream = {
+      title: title23!,
+      lucid: lucid23,
+      dreamText: dream23!,
+      tags: tagList,
+      date: nowDay,
+      id: Math.random().toString(36).substr(2, 9),
+      page: 23
+    }
+    saveDreamEntry(dream);}
+    if(count >= 24){
+    var tagList = toTagged(tags24!)
+    var dream: TodaysDream = {
+      title: title24!,
+      lucid: lucid24,
+      dreamText: dream24!,
+      tags: tagList,
+      date: nowDay,
+      id: Math.random().toString(36).substr(2, 9),
+      page: 24
+    }
+    saveDreamEntry(dream);}
+    if(count >= 25){
+    var tagList = toTagged(tags25!)
+    var dream: TodaysDream = {
+      title: title25!,
+      lucid: lucid25,
+      dreamText: dream25!,
+      tags: tagList,
+      date: nowDay,
+      id: Math.random().toString(36).substr(2, 9),
+      page: 25
+    }
+    saveDreamEntry(dream);}
+
   }
+  interface TodaysDream{
+    title: string;
+    lucid: number;
+    dreamText: string;
+    tags: string[];
+    date: string;
+    id: string;
+    page: number;
+  }
+
+  const toTagged = (tags: string) => {
+    var tagged:string[] = [];
+    if(!tags){
+      tags = "";
+    }
+    const chars = Array.from(tags!);
+    var tagWIP = "";
+    chars.forEach((c, i) => {
+      if(chars[i] != ',' && ( chars[i] != ' ' || tagWIP != "")){
+        tagWIP += chars[i];
+      }
+      else if(chars[i] == ','){
+        tagged.push(tagWIP);
+
+      tagWIP = "";
+    }
+  })
+  tagged.push(tagWIP);
+    return(tagged);
+  };
+
+  const saveDreamEntry = async (dream: TodaysDream) => {
+    console.log("saving")
+    if(dream.page <= count){
+      await setObject("TodaysDreams", params.id, dream)
+    }
+  }
+
+  useIonViewWillLeave(() => {
+    saveData();
+  });
 
   const setVisible = (selectedValue: string, compareValue: string): boolean => {
     let val = true;
@@ -278,7 +786,7 @@ return(
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
         <IonItem className="page-title">
-          <IonLabel className="page-banner">Today's Journal</IonLabel>
+          <IonLabel>Today's Journal</IonLabel>
         </IonItem>
 
         <IonItemGroup class="tabs">
