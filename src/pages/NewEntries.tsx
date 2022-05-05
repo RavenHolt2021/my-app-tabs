@@ -203,7 +203,8 @@ const ScreenMenu: React.FC = () => {
   };
 
   const [dreams, saveDreams] = useState([]);
-  const saveData = () => {
+
+  const saveData = async () => {
     var date = new Date();
     var monthOfYearInt = date.getMonth();
     var monthOfYearString;
@@ -216,7 +217,6 @@ const ScreenMenu: React.FC = () => {
     }
     var dayString;
     var day = date.getDate();
-    
     if(day < 10){
       dayString = '0' + day.toString();
     }
