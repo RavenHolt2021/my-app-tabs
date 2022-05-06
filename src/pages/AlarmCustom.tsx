@@ -27,7 +27,6 @@ import {
   IonSelect,
   IonItemDivider,
   IonInput,
-  IonButtons
 } from '@ionic/react';
 import './Home.css';
 
@@ -68,9 +67,6 @@ const AlarmCustom: React.FC = () => {
           <IonTitle className="title-bar">
             Lucid Companion
           </IonTitle>
-          <IonButtons className="back-2-home" slot="end">
-            <IonButton routerLink="/home">Home</IonButton>
-          </IonButtons>
         </IonToolbar>
       </IonHeader>
       <IonContent className="page-background" fullscreen>

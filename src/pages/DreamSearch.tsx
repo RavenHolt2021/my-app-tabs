@@ -1,9 +1,6 @@
-
-import DreamListItem from '../components/MessageListItem';
-import {get, set} from '../data/IonicStorage';
-import { Message, getMessages, Dream, getDreams } from '../data/messages';
+import MessageListItem from '../components/MessageListItem';
 import { useState, useRef } from 'react';
-
+import { Message, getMessages, Dream, getDreams } from '../data/messages';
 import {
     IonContent,
     IonHeader,
@@ -23,14 +20,14 @@ import {
     IonTextarea,
     IonLabel,
     IonDatetime,
-
-    IonItemGroup,
-
     IonAccordion,
-    IonAccordionGroup
-
+    IonAccordionGroup,
+    IonModal,
+    IonNote,
+    IonItemGroup
 } from '@ionic/react';
 import './Home.css';
+import '../components/MessageListItem.css';
 import { chatboxSharp } from 'ionicons/icons';
 
 const ScreenMenu: React.FC = () => {
@@ -44,25 +41,92 @@ const ScreenMenu: React.FC = () => {
   }
     
   const [messages, setMessages] = useState<Message[]>([]);
-  //const [dreams, setDreams] = useState([]);
-  const [tags, setTags] = useState<string>();
-  const [title, setTitle] = useState<string>();
-  const [fragment, setFragment] = useState<string>();
+  const [tags, setTags] = useState<string>("");
+  const [title, setTitle] = useState<string>("");
+  const [fragment, setFragment] = useState<string>("");
   const [today, setToday] = useState<string>();
   const [dateStart, setDateStart] = useState<string>();
   const [dateEnd, setDateEnd] = useState<string>();
-
   const [searching, setSearching] = useState<boolean>(false);
 
   const [foundDreams, setFoundDreams] = useState<Dream[]>([]);
+
+  const [dateEndShort, setDateEndShort] = useState<string>("");
+  const [dateStartShort, setDateStartShort] = useState<string>("");
+  const [showDreamW, setShowDreamW] = useState<boolean>(false);
+
+  const [dream, setDream] = useState<Dream>({
+    title: "",
+    lucid: 0,
+    dreamText: "",
+    tags: [],
+    date: "",
+    id: "",
+  });
 
   var taglist: String[] = [
 
   ];
 
-
-
+  
   const dreams = getDreams();
+
+  function getImage(type: number): string {
+    var image = "../assets/icon/empty-star-transparent.png";
+    if (type == 0) {
+      image = "../assets/icon/empty-star-transparent.png";
+    }
+    else if (type == 1) {
+      image = "../assets/icon/fullstar-transparent.png";
+    }
+    else {
+      image = "../assets/icon/halfstar-transparent.png";
+    }
+    return image;
+  }
+
+  const toTags = (dream: Dream) => {
+    var tagString = "";
+    for(const tag in dream.tags){
+      tagString = tagString + dream.tags[tag] + ", ";
+    }
+    return tagString;
+  };
+  
+interface DreamListItemProps{
+  dream: Dream;
+}
+//RAVEN This section needs some styling! To get to it go Journal>My Dreams>Search>Search>View
+  const DreamListItem: React.FC<DreamListItemProps> = ({ dream }) => {
+    return(
+      <IonItemGroup>
+        <IonItem>
+          <IonLabel>
+            <h2>
+              {dream.title}
+              <span className="date">
+                <IonNote>{dream.date}</IonNote>
+              </span>
+            </h2>
+            <h3>{dream.dreamText}</h3>
+            <p>
+              {(toTags(dream))}
+            </p>
+            <p>
+              <IonButton class="none" onClick = {e => showDream(dream)}>view</IonButton>
+              <span><img className="star-button" src={getImage(dream.lucid)}/></span>
+            </p>
+          </IonLabel>
+        </IonItem>
+      </IonItemGroup>
+    );
+  };
+
+  const showDream = (dreamGot: Dream) => {
+    setDream(dreamGot);
+    setShowDreamW(true);
+  }
+
   const searchDreams = () => {
     setFoundDreams(foundDreams.splice(0));
     var nsfw = false;
@@ -164,20 +228,17 @@ const ScreenMenu: React.FC = () => {
     setTags("");
     setTitle("");
     setFragment("");
-    setDateStart(today);
-    setDateEnd(today);
+    setDateStart(today!);
+    setDateEnd(today!);
     setFoundDreams(foundDreams.splice(0));
     setSearching(false);
   };
 
   useIonViewWillEnter(() => {
-
+    setSearching(false);
     var date = new Date();
     var monthOfYearInt = date.getMonth();
     var monthOfYearString;
-    var day = date.getDate();
-    var dayString;
-
     monthOfYearInt = monthOfYearInt + 1;
     if(monthOfYearInt < 10){
       monthOfYearString = '0' + monthOfYearInt.toString();
@@ -185,28 +246,40 @@ const ScreenMenu: React.FC = () => {
     else{
       monthOfYearString = monthOfYearInt.toString();
     }
-
-
-    var day = date.getDate();
     var dayString;
-
+    var day = date.getDate();
+    
     if(day < 10){
       dayString = '0' + day.toString();
     }
     else{
       dayString = day.toString();
     }
-    var nowDay = (date.getFullYear().toString() + '-' + monthOfYearString + '-' + dayString);
+    const nowDay = (date.getFullYear().toString() + '-' + monthOfYearString + '-' + dayString);
 
-    setTags("");
-    setTitle("");
-    setFragment("");
     setDateEnd(nowDay);
     setDateStart(nowDay);
     setToday(nowDay);
-    setFoundDreams(foundDreams.splice(0));
   });
 
+  const getDate = (date: string, start: boolean) => {
+    var shortDate: string = "";
+    for(var i = 0; i < 10; i++){
+      shortDate.concat(date[i]);
+    }
+    if(start == true){
+      setDateStartShort(shortDate);
+      setDateStart(date);
+    }
+    else{
+      setDateEnd(date);
+      setDateEndShort(shortDate);
+    }
+  }
+  const toDate = (date: string):string => {
+ //   date = date.substr(0, 10); //Cannot Read properties of undefined 
+    return date;
+  }
   useIonViewWillEnter(() => {
     const msgs = getMessages();
   });
@@ -236,70 +309,50 @@ return(
         <IonRefresher slot="fixed" onIonRefresh={refresh}>
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
-
-        <IonItemGroup hidden={searching}>
         <IonItem className="page-title">
           <IonLabel className="page-banner">Search Dreams</IonLabel>
         </IonItem>
-
-        <IonItem>
-          <IonLabel>
-            Search by Tag
-          </IonLabel>
-          <IonTextarea value={tags} placeholder="separate tags with commas" onIonChange={e => setTags(e.detail.value!)}></IonTextarea>
-        </IonItem>
-        <IonItem>
-          <IonLabel>
-            Search by Title
-          </IonLabel>
-          <IonTextarea value={title} placeholder="enter the full title of your dream" onIonChange={e => setTitle(e.detail.value!)}></IonTextarea>
-        </IonItem>
-        <IonItem>
-          <IonLabel>
-            Search by Content
-          </IonLabel>
-          <IonTextarea value={fragment} placeholder="enter an exact quote from your dream" onIonChange={e => setFragment(e.detail.value!)}></IonTextarea>
-        </IonItem>
-
-        <IonItem>
-          <IonItem>
-            <IonLabel position = "stacked">
-              From . . .
-            </IonLabel>
-            <IonDatetime presentation="date" min={'2022-04-29'} max={dateEnd} value={dateStart} onIonChange={e => setDateStart(e.detail.value!)}></IonDatetime>{/*Need to set minimum date*/}
-          </IonItem>
-          <IonItem>
-            <IonLabel position = "stacked">
-              To . . .
-            </IonLabel>
-          <IonDatetime presentation="date" min={dateStart} max={today} value={dateEnd} onIonChange={e => setDateEnd(e.detail.value!)}></IonDatetime>
-
-          </IonItem>
-        </IonItem>
-
-          <IonAccordionGroup>
-          <IonAccordion>
-            <IonItem slot="header"><IonLabel>From...{dateStart}</IonLabel>
+          <IonContent hidden={searching}>
+            <IonItem>
+              <IonLabel>
+                Search by Tag
+              </IonLabel>
+              <IonTextarea value={tags} placeholder="separate tags with commas" onIonChange={e => setTags(e.detail.value!)}></IonTextarea>
             </IonItem>
-            <IonItem slot="content">
-            <IonDatetime className="date-info" presentation="date" max={dateEnd} value={dateStart} onIonChange={e => setDateStart(e.detail.value!)}></IonDatetime>{/*Need to set minimum date*/}
+            <IonItem>
+              <IonLabel>
+                Search by Title
+              </IonLabel>
+              <IonTextarea value={title} placeholder="enter the full title of your dream" onIonChange={e => setTitle(e.detail.value!)}></IonTextarea>
             </IonItem>
-          </IonAccordion>
-          </IonAccordionGroup>
-          <IonAccordionGroup>
-          <IonAccordion>
-            <IonItem slot="header"><IonLabel>To...{dateEnd}</IonLabel>
+            <IonItem>
+              <IonLabel>
+                Search by Content
+              </IonLabel>
+              <IonTextarea value={fragment} placeholder="enter an exact quote from your dream" onIonChange={e => setFragment(e.detail.value!)}></IonTextarea>
             </IonItem>
-            <IonItem slot="content">
-            <IonDatetime className="date-info" presentation="date" min={dateStart} max={today} value={dateEnd} onIonChange={e => setDateEnd(e.detail.value!)}></IonDatetime>
-            </IonItem>
-          </IonAccordion>
-          </IonAccordionGroup>
-
+            <IonAccordionGroup>
+              <IonAccordion>
+                <IonItem slot="header"><IonLabel>From... {toDate(dateStart!)}</IonLabel>
+                </IonItem>
+                <IonItem slot="content">
+                  <IonDatetime className="date-info" presentation="date" min={'2022-03-29'} max={dateEnd} value={dateStart} onIonChange={e => getDate(e.detail.value!, true)}></IonDatetime>{/*Need to set minimum date*/}
+                </IonItem>
+              </IonAccordion>
+            </IonAccordionGroup>
+            <IonAccordionGroup>
+              <IonAccordion>
+                <IonItem slot="header"><IonLabel>To... {toDate(dateEnd!)}</IonLabel>
+                </IonItem>
+                <IonItem slot="content">
+                  <IonDatetime className="date-info" presentation="date" min={dateStart} max={today} value={dateEnd} onIonChange={e => getDate(e.detail.value!, false)}></IonDatetime>
+                </IonItem>
+              </IonAccordion>
+            </IonAccordionGroup>
         
-        <IonButton className="big-button" onClick = {e => searchDreams()}>Search</IonButton>
-        <IonButton className="big-button" onClick = {e => clearSearch()}>Clear</IonButton>
-        </IonItemGroup>
+            <IonButton className="big-button" onClick = {e => searchDreams()}>Search</IonButton>
+            <IonButton className="big-button" onClick = {e => clearSearch()}>Clear</IonButton>
+          </IonContent>
 
         <IonItemGroup hidden={!searching}>
           <IonList>
@@ -307,6 +360,22 @@ return(
           </IonList>
           <IonButton className="big-button" onClick = {e => setSearching(false)}>Return</IonButton>
         </IonItemGroup>
+
+        <IonModal isOpen={showDreamW} swipeToClose={true}>
+          <IonItemGroup class="journal-dream">
+            <IonItem class="journal-title">
+              <p>{dream!.title}</p>
+              <p className="star-button"><img src={getImage(dream!.lucid)}/></p>
+            </IonItem>
+            <IonItem class="journal-entry">
+              <p className="ion-text-wrap" >{dream!.dreamText}</p>
+            </IonItem>
+            <IonItem class="journal-tags">
+              <p className="ion-text-wrap">{toTags(dream!)}</p>
+            </IonItem>
+            <IonButton className="big-button" onClick = {e => setShowDreamW(false)}>Return</IonButton>
+          </IonItemGroup>
+        </IonModal>
         
         <IonFooter className="footer-content">
         </IonFooter>

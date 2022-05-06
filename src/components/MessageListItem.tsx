@@ -3,8 +3,16 @@ import {
   IonLabel,
   IonNote
   } from '@ionic/react';
-import { Message, Dream} from '../data/messages';
+import { Message, Dream } from '../data/messages';
 import './MessageListItem.css';
+import '../pages/Home.css';
+
+interface MessageListItemProps {
+  message: Message;
+}
+interface DreamListItemProps {
+  dream: Dream;
+}
 
 const toTags = (dream: Dream) => {
   var tagString = "";
@@ -14,13 +22,6 @@ const toTags = (dream: Dream) => {
   }
   return tagString;
 };
-
-interface MessageListItemProps {
-  message: Message;
-}
-interface DreamListItemProps{
-  dream: Dream;
-}
 
 const MessageListItem: React.FC<MessageListItemProps> = ({ message }) => {
   return (
@@ -41,6 +42,19 @@ const MessageListItem: React.FC<MessageListItemProps> = ({ message }) => {
     </IonItem>
   );
 };
+function getImage(type: number): string {
+  var image = "../assets/icon/empty-star-transparent.png";
+  if (type == 0) {
+    image = "../assets/icon/empty-star-transparent.png";
+  }
+  else if (type == 1) {
+    image = "../assets/icon/fullstar-transparent.png";
+  }
+  else {
+    image = "../assets/icon/halfstar-transparent.png";
+  }
+  return image;
+}
 
 const DreamListItem: React.FC<DreamListItemProps> = ({ dream }) => {
   return(
@@ -53,9 +67,11 @@ const DreamListItem: React.FC<DreamListItemProps> = ({ dream }) => {
             <IonNote>{dream.date}</IonNote>
           </span>
         </h2>
-        <h3>{(toTags(dream))}</h3>
+        <h2>{dream.dreamText}</h2>
         <p>
-          {dream.dreamText.substr(0, 30)}
+          {(toTags(dream))}
+          <span className="date">
+          <img className="star-button" src={getImage(dream.lucid)}/></span>
         </p>
       </IonLabel>
     </IonItem>
@@ -63,3 +79,4 @@ const DreamListItem: React.FC<DreamListItemProps> = ({ dream }) => {
 };
 
 export default DreamListItem;
+//export default MessageListItem;

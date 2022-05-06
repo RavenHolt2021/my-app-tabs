@@ -89,6 +89,16 @@
     max-width: 70px;
 }
 
+.date .star-button {
+    height: fit-content;
+    width: fit-content;
+    max-width: 70px;
+}
+.star-button {
+    height: fit-content;
+    width: fit-content;
+    max-width: 70px;
+}
 .journal-entry {
     color: black;
 }
@@ -119,7 +129,6 @@ font-family: monospace;
 
 /* For Journal - Dream Search: */
 
-/* Try more stuff. */
 .dream-sign-info {
     color: black;
     padding-left: 2%;
@@ -152,4 +161,13 @@ font-family: monospace;
     color: black;
     margin: .5em;
     --ion-font-family: times;
+}
+
+.none{
+    background: none;
+    border: none;
+}
+
+.wrap{
+    display: wrap;
 }
