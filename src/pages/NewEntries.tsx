@@ -215,10 +215,26 @@ const ScreenMenu: React.FC = () => {
     else{
       monthOfYearString = monthOfYearInt.toString();
     }
+
+    var day = date.getDate();
+    var dayString;
+    if(day < 10){
+      dayString = '0' + day.toString();
+    }
+    else{
+      dayString = day.toString();
+    }
+    var nowDay = (date.getFullYear().toString() + '-' + monthOfYearString + '-' + dayString);
+
+    setToday(nowDay);
+    for(var i = 1; i <= 25; i++){
+      setidArray(idArray.concat(Math.random().toString(36))); //WHAT IS WRONG WITH THHIS LINE OF CODE???
+
     var dayString;
     var day = date.getDate();
     if(day < 10){
       dayString = '0' + day.toString();
+
     }
     else{
       dayString = day.toString();

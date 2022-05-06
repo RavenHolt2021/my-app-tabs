@@ -1,8 +1,9 @@
 import{Storage, Drivers} from "@ionic/storage";
+import { resolve } from "dns";
 import { removeAllListeners } from "process";
 
 var storage = false;
-
+//resolve.fallback: {"process": false"}
 export const createStore = (name = "_mydb") =>{
     storage = new Storage({
         name,
