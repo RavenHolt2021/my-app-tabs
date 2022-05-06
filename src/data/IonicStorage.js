@@ -1,8 +1,9 @@
 import{Storage, Drivers} from "@ionic/storage";
+import { resolve } from "dns";
 import { removeAllListeners } from "process";
 
 var storage = false;
-
+//resolve.fallback: {"process": false"}
 export const createStore = (name = "_mydb") =>{
     storage = new Storage({
         name,
@@ -29,7 +30,7 @@ export const clear = async () => {
 }
 
 export const setObject = async (key, id, val) => {
-    const all = await storage.get(key);
+    const all = await storage.getItem(key);
     const objIndex = await all.findIndex(a => parseInt(a.id) === parseInt(id));
 
     all[objIndex] = val;
