@@ -61,7 +61,7 @@ const JournalMenu: React.FC = () => {
         <IonButton routerLink="/newentries" className="big-button">New Entries</IonButton>
         <IonButton routerLink="/todaysentries" className="big-button">Today's Entries</IonButton>
         <IonButton routerLink="/mydreamsmenu" className="big-button">My Dreams</IonButton>
-        <IonButton routerLink="/recallhelpmenu" className="big-button">Recall Help</IonButton>
+        {/*<IonButton routerLink="/recallhelpmenu" className="big-button">Recall Help</IonButton>*/}
         {/* <IonList>
           {messages.map(m => <MessageListItem key={m.id} message={m} />)}
         </IonList> */}
