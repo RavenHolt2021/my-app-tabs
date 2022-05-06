@@ -56,7 +56,7 @@ const RecallHelpMenu: React.FC = () => {
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
         <IonItem className="page-title">
-          <IonLabel>Recall Help</IonLabel>
+          <IonLabel className="page-banner">Recall Help</IonLabel>
         </IonItem>
         <IonButton href="#" className="big-button">Dream Recall Guide</IonButton>
         <IonButton routerLink="/dreamsignsmenu" className="big-button">My Dream Signs</IonButton>

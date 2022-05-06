@@ -61,7 +61,7 @@ const JournalMenu: React.FC = () => {
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
         <IonItem className="page-title">
-          <IonLabel>My Journal</IonLabel>
+        <IonLabel className="page-banner">My Journal</IonLabel>
         </IonItem>
         {/* <IonButton href="#" className="back-2-home"></IonButton> */}
         <IonButton routerLink="/newentries" className="big-button" onClick={e => saveTodaysDreams()}> New Entries</IonButton>

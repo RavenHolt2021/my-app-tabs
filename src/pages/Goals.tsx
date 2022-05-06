@@ -141,35 +141,35 @@ return(
         </IonItemGroup>
 
         <IonList hidden={setVisible('1', goals!)}>
-          <IonLabel>Your goals related to lucid practice and getting lucid.</IonLabel>
+          <IonLabel className="dream-sign-info">Your goals related to lucid practice and getting lucid.</IonLabel>
           <IonItem>
 
           </IonItem>
         </IonList>
 
         <IonList hidden={setVisible('2', goals!)}>
-          <IonLabel>Your goals for things you want to experience inside of dreams.</IonLabel>
+          <IonLabel className="dream-sign-info">Your goals for things you want to experience inside of dreams.</IonLabel>
           <IonItem>
 
           </IonItem>
         </IonList>
 
         <IonList hidden={setVisible('3', goals!)}>
-          <IonLabel>Your goals pretaining to dream quality such as control and dream length.</IonLabel>
+          <IonLabel className="dream-sign-info">Your goals pretaining to dream quality such as control and dream length.</IonLabel>
           <IonItem>
 
           </IonItem>
         </IonList>
 
         <IonList hidden={setVisible('4', goals!)}>
-          <IonLabel>Your goals related to remembering dreams and dream signs.</IonLabel>
+          <IonLabel className="dream-sign-info">Your goals related to remembering dreams and dream signs.</IonLabel>
           <IonItem>
 
           </IonItem>
         </IonList>
 
         <IonList hidden={setVisible('5', goals!)}>
-          <IonLabel>Other goals you want to record.</IonLabel>
+          <IonLabel className="dream-sign-info">Other goals you want to record.</IonLabel>
 
         </IonList>
         

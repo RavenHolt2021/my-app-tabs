@@ -60,18 +60,20 @@ const ScreenMenu: React.FC = () => {
             <IonRefresher slot="fixed" onIonRefresh={refresh}>
             <IonRefresherContent></IonRefresherContent>
             </IonRefresher>
-            <div className='audiotitle'>
-                <h1>Upload Audio File</h1>
+            <div>
+                <div className="audio-title">
+                    <h1>Upload Audio File</h1>
+                </div>
                 <IonItem>
                 <input type="file" accept="audio/*" />
                 </IonItem>
                 <IonGrid>
                 <IonRow>
                     <IonCol>
-                        <IonButton color="light" expand="full">Upload</IonButton>
+                        <IonButton className="small-button">Upload</IonButton>
                     </IonCol>
                     <IonCol>
-                        <IonButton href="#" color="light" expand="full">Cancel</IonButton>
+                        <IonButton href="#"className="small-button">Cancel</IonButton>
                     </IonCol>
                 </IonRow>
                 </IonGrid>
