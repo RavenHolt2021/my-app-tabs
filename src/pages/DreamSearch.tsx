@@ -207,16 +207,18 @@ interface DreamListItemProps{
             })
             if(match == true){
               trueMatch = true;
+              console.log("fragment is good");
             }
           }
         })
         if(trueMatch == false){
-          console.log("fragment is Good");
+          console.log("fragment is bad");
           isGood = false;
         }
       }
 
       if(isGood == true){
+        console.log("adding to found dreams");
         setFoundDreams(foundDreams.concat(dream));
         console.log(isGood);
       }
