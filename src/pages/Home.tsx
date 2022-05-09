@@ -50,7 +50,7 @@ const Home: React.FC = () => {
         </IonRefresher>
           <IonButton routerLink="/journalmenu" className="big-button">Journal</IonButton>
           <IonButton routerLink="/alarmmenu" className="big-button">Alarm</IonButton>
-          {/*<IonButton routerLink="/lucidmenu" className="big-button">Get Lucid</IonButton>*/}
+          {/*<IonButton routerLink="/lucidmenu" className="big-button">Get Lucid</IonButton> Exchanged this for a link that directly goes to guides because only one page that this links to does anything*/}
           <IonButton routerLink="/guidesindex" className="big-button">Get Lucid</IonButton>
           <IonButton routerLink="/settingsmenu" className="big-button">Settings</IonButton>
       </IonContent>

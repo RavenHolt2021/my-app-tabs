@@ -61,7 +61,7 @@ const JournalMenu: React.FC = () => {
         <IonButton routerLink="/newentries" className="big-button">New Entries</IonButton>
         <IonButton routerLink="/todaysentries" className="big-button">Today's Entries</IonButton>
         <IonButton routerLink="/mydreamsmenu" className="big-button">My Dreams</IonButton>
-        {/*<IonButton routerLink="/recallhelpmenu" className="big-button">Recall Help</IonButton>*/}
+        {/*<IonButton routerLink="/recallhelpmenu" className="big-button">Recall Help</IonButton> Not sure if we'll keep this or not. Was intended to link to the page about recall, but we don't have that set up as an individual page atm*/}
         {/* <IonList>
           {messages.map(m => <MessageListItem key={m.id} message={m} />)}
         </IonList> */}

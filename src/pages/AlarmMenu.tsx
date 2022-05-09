@@ -54,10 +54,10 @@ const AlarmMenu: React.FC = () => {
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
         <IonButton routerLink="/manualalarmmenu" className="big-button">Manual Alarms</IonButton>
-        {/*<IonButton routerLink="/smartalarmmenu" className="big-button">Smart Alarms</IonButton>*/}
-        {/*<IonButton href="#" className="big-button">View Alarms</IonButton>*/}
+        {/*<IonButton routerLink="/smartalarmmenu" className="big-button">Smart Alarms</IonButton> A thing that will automatically set alarms based on your needs. Takes out the guess work.*/}
+        {/*<IonButton href="#" className="big-button">View Alarms</IonButton> A way to view your saved alarms*/}
         <IonButton routerLink="/alarmsoundsmenu" className="big-button">Alarm Sounds</IonButton>
-        {/*<IonButton routerLink="/pausealarmsmenu" className="big-button">Stop Alarms</IonButton>*/}
+        {/*<IonButton routerLink="/pausealarmsmenu" className="big-button">Stop Alarms</IonButton> This Button is to lead to a way to make all alarms stop from sounding*/} 
         {/* <IonList>
           {messages.map(m => <MessageListItem key={m.id} message={m} />)}
         </IonList> */}
